@@ -1,0 +1,187 @@
+@charset "UTF-8";
+
+/* 초기화 */
+body,
+h1,
+h2,
+h3,
+h4,
+ul,
+fieldset,
+button,
+dl,
+dd,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+.hidden {
+  position: absolute;
+  left: -9999em;
+}
+
+ul li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+address {
+  font-style: normal;
+}
+
+body {
+  background-color: #ccc;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* HEADER */
+header {
+  position: relative;
+  height: 100vh;
+  background: url(../assets/main-1.png) no-repeat center / cover;
+}
+
+header #navWrap {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 130px;
+  overflow: hidden;
+  transition: .6s;
+  position: fixed;
+}
+
+header #navWrap:hover {
+  height: 370px;
+  background-color: #fff;
+}
+
+header #navWrap:hover h1 a {
+  background-position: left top -57px;
+}
+
+header #navWrap:hover #gnb ul li a {
+  color: #000;
+}
+
+header h1 a {
+  display: block;
+  width: 226px;
+  height: 54px;
+  text-indent: -9999em;
+  background-image: url(../assets/sprite.png);
+  background-position: left top;
+  margin-top: 20px;
+}
+
+header #gnb {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 25px;
+}
+
+header #gnb ul {
+  display: flex;
+  margin: 0 15px;
+}
+
+header #gnb ul li {
+  margin: 0 20px;
+
+}
+
+header #gnb ul li a {
+  color: #fff;
+  font-size: 14px;
+  transition: .3s color;
+}
+
+header #navWrap:hover #gnb ul li a:hover {
+  color: rgb(179, 15, 15);
+}
+
+header #lnb {
+  width: 100%;
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+header #lnb .wrap {
+  width: 900px;
+  margin: 0 auto;
+}
+
+header #lnb .wrap>ul {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+header #lnb .wrap ul li {
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  position: relative;
+}
+
+header #lnb .wrap>ul>li::before {
+  content: '';
+  display: block;
+  height: 150px;
+  border-left: 1px solid #ccc;
+  position: absolute;
+  left: -10px;
+  top: 50px;
+}
+
+header #lnb .wrap>ul>li:first-child::before {
+  display: none;
+}
+
+header #navWrap:hover #lnb .wrap ul li {
+  color: #000;
+}
+
+header #lnb .wrap ul li ul {
+  margin: 30px auto 0;
+  width: 120px;
+}
+
+header #lnb .wrap ul li ul li {
+  padding: 8px 0px;
+}
+
+header #lnb .wrap ul li ul li a {
+  font-size: 15px;
+}
+
+header #lnb .wrap ul li ul li a::after {
+  display: block;
+  content: '';
+  margin-top: 2px;
+  /* width를 a의 width를 쓰고싶은데... */
+  border-bottom: solid 1px #000;
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
+  transform-origin: left;
+}
+
+header #lnb .wrap ul li ul li a:hover:after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+form {
+  position: absolute;
+  bottom: 70px;
+  left: calc(50% - 600px);
+  width: 1200px;
+}

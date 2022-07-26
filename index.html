@@ -5,138 +5,162 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>그랜드 하얏트 서울 | 한 눈에 남산과 한강을 담다</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./css/common.css">
 </head>
 
 <body>
+  <!-- HEADER -->
   <header>
-    <h1 class="hidden">그랜드 하얏트 서울</h1>
-    <img src="#" alt="그랜드 하얏트 서울 로고">
-    <nav id="snb">
-      <h2 class="hidden">그랜드 하얏트 서울 서브 메뉴</h2>
+    <div id="navWrap">
+    
+    <h1><a href="#">그랜드하얏트서울 로고</a></h1>
+    <!-- GNB -->
+    <nav id="gnb">
+      <h2 class="hidden">본사사이트 및 예약 회원관련 메뉴</h2>
       <ul>
         <li><a href="#">Grand Hyatt</a></li>
         <li><a href="#">Reservation</a></li>
+      </ul>
+      <ul>
         <li><a href="#">Login</a></li>
         <li><a href="#">Sign in</a></li>
       </ul>
     </nav>
-    <nav>
-      <h2 class="hidden">그랜드 하얏트 서울 메인 메뉴</h2>
-      <ul>
-        <li><a href="#">About</a>
-          <ul>
-            <li><a href="#">호텔 소개</a></li>
-            <li><a href="#">로열티 멤버십</a></li>
-            <li><a href="#">고객 센터</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Rooms</a>
-          <ul>
-            <li><a href="#">스위트 객실</a></li>
-            <li><a href="#">일반 객실</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Offers</a>
-          <ul>
-            <li><a href="#">프로모션</a></li>
-            <li><a href="#">패키지</a></li>
-            <li><a href="#">액티비티</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Dining & Bar</a>
-          <ul>
-            <li><a href="#">322 소월로</a></li>
-            <li><a href="#">라운지</a></li>
-            <li><a href="#">레스토랑</a></li>
-            <li><a href="#">바</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Facilities</a>
-          <ul>
-            <li><a href="#">수영장</a></li>
-            <li><a href="#">클럽 올림푸스</a></li>
-            <li><a href="#">스파</a></li>
-            <li><a href="#">쇼핑 아케이드</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Wedding & Meeting</a>
-          <ul>
-            <li><a href="#">웨딩</a></li>
-            <li><a href="#">비즈니스 미팅</a></li>
-            <li><a href="#">프라이빗 게더링</a></li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
-    <section id="reserv">
-      <form>
-        <h3 class="hidden">빠른 예약</h3>
-        <div class="reserv_content">
-          <input id="content" type="text" readonly value="Room">
-        </div>
-        <div class="reserv_date">
-          <input id="date" type="date">
-        </div>
-        <div class="reserve_opt">
-          <input id="numOfRooms" type="number" value="1" max="10" min="1">
-          <input id="numOfAdult" type="number" value="2" min="1">
-          <input id="numOfChildren" type="number" value="0" min="0">
-        </div>
-        <button>Search</button>
-      </form>
-    </section>
-  </header>
-  <main>
-    <h2>그랜드 하얏트 메인 컨텐츠</h2>
-    <section id="specialOffers">
-      <h3 class="title" title="진행중인 패키지와 프로모션">Special Offers</h3>
-      <dl>
-        <dt>서머 모닝 스플래시</dt>
-        <dd>도심 속 이국적인 공간에서<br>편안한 여름휴가를 즐겨보세요.</dd>
-      </dl>
-      <dl>
-        <dt>리틀 컬러스 위드 크레욜라</dt>
-        <dd>한정판 크레욜라 인스퍼레이션으로<br> 가족과 특별한 추억을 쌓으세요.</dd>
-      </dl>
-      <dl>
-        <dt>베드 앤 브렉퍼스트</dt>
-        <dd>꼭 필요한 혜택만 담은 패키지로<br>든든하고 여유로운 아침을 맞이하세요.</dd>
-      </dl>
-      <dl>
-        <dt>웰니스 모먼트</dt>
-        <dd>편안하고 안락한 분위기 속<br>요가 전문가와 함께 나만의 이너피스를 찾아보세요.</dd>
-      </dl>
-      <dl>
-        <dt>호캉스 in 그랜드 하얏트 서울</dt>
-        <dd>풍부한 혜택과 합리적인 가격으로<br>기억에 남을 여름 휴가를 보내세요.</dd>
-      </dl>
-    </section>
-    <section id="ESG">
-      <h3 class="title" title="지속가능한 경영정책">For the Green Future</h3>
-      <img src="#" alt="나무와 솜으로 만든 빗과 수저 등의 친환경 어메니티">
-      <p>모두가 공존할 미래를 위한<br>그랜드 하얏트 서울의 ESG 정책을 확인하세요.</p>
-      <a href="#">자세히 보기</a>
-    </section>
-    <section id="rooms">
-      <h3 class="title" title="편안한 경험을 위한 품격있는 객실">Dignity for<br>Your Pleasant Experience</h3>
-      <div class="rooms-slider">
-        <figure>
-          <img src="#" alt="프레지덴셜 스위트 객실 전경">
-          <figcaption>Presidential Suite</figcaption>
-        </figure>
-        <figure>
-          <img src="#" alt="그랜드 이그제큐티브 트윈 객실 전경">
-          <figcaption>Grand Executive Twin</figcaption>
-        </figure>
-        <figure>
-          <img src="#" alt="프리미엄 객실 전경">
-          <figcaption>Premium</figcaption>
-        </figure>
-        <figure>
-          <img src="#" alt="디럭스 코너 객실 전경">
-          <figcaption>Delux-Corner</figcaption>
-        </figure>
+    <!-- LNB -->
+    <nav id="lnb">
+      <div class="wrap">
+        <h2 class="hidden">그랜드 하얏트 서울 주요 메뉴</h2>
+        <ul>
+          <li>About
+            <ul>
+              <li><a href="#">호텔 소개</a></li>
+              <li><a href="#">로열티 멤버십</a></li>
+              <li><a href="#">고객 센터</a></li>
+            </ul>
+          </li>
+          <li>Rooms
+            <ul>
+              <li><a href="#">스위트 객실</a></li>
+              <li><a href="#">일반 객실</a></li>
+            </ul>
+          </li>
+          <li>Offers
+            <ul>
+              <li><a href="#">프로모션</a></li>
+              <li><a href="#">패키지</a></li>
+              <li><a href="#">액티비티</a></li>
+            </ul>
+          </li>
+          <li>Dining & Bar
+            <ul>
+              <li><a href="#">322 소월로</a></li>
+              <li><a href="#">라운지</a></li>
+              <li><a href="#">레스토랑</a></li>
+              <li><a href="#">바</a></li>
+            </ul>
+          </li>
+          <li>Facilities
+            <ul>
+              <li><a href="#">수영장</a></li>
+              <li><a href="#">클럽 올림푸스</a></li>
+              <li><a href="#">스파</a></li>
+              <li><a href="#">쇼핑 아케이드</a></li>
+            </ul>
+          </li>
+          <li>Wedding & Meeting
+            <ul>
+              <li><a href="#">웨딩</a></li>
+              <li><a href="#">비즈니스 미팅</a></li>
+              <li><a href="#">프라이빗 게더링</a></li>
+            </ul>
+          </li>
+        </ul>
       </div>
+    </nav>
+  </div>
+    <!-- RESERVATION -->
+    <form>
+      <fieldset>
+        <legend>빠른 예약</legend>
+        <ul id="reserv_content">
+          <li>Room</li>
+          <li>Dining</li>
+        </ul>
+        <label for="reserv_dateIn">Check In</label><input id="reserv_dateIn" type="date">
+        <label for="reserv_dateOut">Check Out</label><input id="reserv_dateOut" type="date">
+        <input id="reserv_numOfRooms" type="number" value="1" max="10" min="1">
+        <input id="reserv_numOfAdult" type="number" value="2" min="1">
+        <input id="reserv_numOfChildren" type="number" value="0" min="0">
+        <button>Search</button>
+      </fieldset>
+    </form>
+  </header>
+  <!-- MAIN -->
+  <main>
+    <!-- SPECIAL OFFERS -->
+    <section id="specialOffers">
+      <h2 class="title" title="진행중인 패키지와 프로모션">Special Offers</h2>
+      <div class="promo-slider">
+        <a href="#">
+          <dl>
+            <dt>서머 모닝 스플래시</dt>
+            <dd>도심 속 이국적인 공간에서<br>편안한 여름휴가를 즐겨보세요.</dd>
+          </dl>
+        </a>
+        <a href="#">
+          <dl>
+            <dt>리틀 컬러스 위드 크레욜라</dt>
+            <dd>한정판 크레욜라 인스퍼레이션으로<br> 가족과 특별한 추억을 쌓으세요.</dd>
+          </dl>
+        </a>
+        <a href="#">
+          <dl>
+            <dt>베드 앤 브렉퍼스트</dt>
+            <dd>꼭 필요한 혜택만 담은 패키지로<br>든든하고 여유로운 아침을 맞이하세요.</dd>
+          </dl>
+        </a>
+        <a href="#">
+          <dl>
+            <dt>웰니스 모먼트</dt>
+            <dd>편안하고 안락한 분위기 속<br>요가 전문가와 함께 나만의 이너피스를 찾아보세요.</dd>
+          </dl>
+        </a>
+        <a href="#">
+          <dl>
+            <dt>호캉스 in 그랜드 하얏트 서울</dt>
+            <dd>풍부한 혜택과 합리적인 가격으로<br>기억에 남을 여름 휴가를 보내세요.</dd>
+          </dl>
+        </a>
+      </div>
+      <div class="promo-control">
+        <a href="#">이전</a>
+        <a href="#">다음</a>
+      </div>
+    </section>
+    <!-- ESG BANNER -->
+    <section id="ESG">
+      <h2 class="hidden">About</h2>
+      <section>
+        <h3>호텔 소개</h3>
+        <article>
+          <h4 class="title" title="지속가능한 경영정책">For the Green Future</h4>
+          <img src="#" alt="나무와 솜으로 만든 빗과 수저 등의 친환경 어메니티">
+          <p>모두가 공존할 미래를 위한<br>그랜드 하얏트 서울의 ESG 정책을 확인하세요.</p>
+          <a href="#" class="btn_black">자세히 보기</a>
+        </article>
+      </section>
+    </section>
+    <!-- ROOMS -->
+    <section id="rooms">
+      <h2 class="title" title="객실 소개">Dignity for<br>Your Pleasant Experience</h2>
+      <ul class="rooms-slider">
+        <li>Presidential Suite</li>
+        <!--이미지 모두 배경으로-->
+        <li>Grand Executive Twin</li>
+        <li>Premium</li>
+        <li>Deluxe-Corner</li>
+      </ul>
       <div class="rooms-pagination">
         <a href="#">01</a>
         <a href="#">02</a>
@@ -144,28 +168,19 @@
         <a href="#">04</a>
       </div>
       <p>시대를 아우르는 편안한 서비스와<br>섬세한 배려가 느껴지는 세련된 품격을 경험해보시길 바랍니다.</p>
-      <a href="#">객실 바로가기</a>
+      <a href="#" class="btn_trpa">객실 바로가기</a>
+      <svg>
+        <line x1="50" y1="250" x2="450" y2="250" /></svg>
     </section>
+    <!-- DINING & BAR -->
     <section id="dining">
-      <h3 class="title" title="럭셔리한 분위기의 완벽한 요리">Exellent Cuisine<br>with Luxurious Mood</h3>
-      <div class="dining-slider">
-        <figure>
-          <img src="#" alt="풀사이드 다이닝 레스토랑 전경">
-          <figcaption>Pool Side Dining</figcaption>
-        </figure>
-        <figure>
-          <img src="#" alt="소월로 322 텐카이 이자카야 레스토랑 전경">
-          <figcaption>322 Sowalro-Tenkai</figcaption>
-        </figure>
-        <figure>
-          <img src="#" alt="더 델리 베이커리 전경">
-          <figcaption>The <span>deli</span></figcaption>
-        </figure>
-        <figure>
-          <img src="#" alt="로비 라운지 전경">
-          <figcaption>Lobby Lounge</figcaption>
-        </figure>
-      </div>
+      <h3 class="title" title="다이닝 및 바 소개">Exellent Cuisine<br>with Luxurious Mood</h3>
+      <ul class="dining-slider">
+        <li>Pool Side Dining</li>
+        <li>322 Sowalro-Tenkai</li>
+        <li>The <span>deli</span></li>
+        <li>Lobby Lounge</li>
+      </ul>
       <div class="dining-pagination">
         <a href="#">01</a>
         <a href="#">02</a>
@@ -173,43 +188,111 @@
         <a href="#">04</a>
       </div>
       <p>11개의 레스토랑과 바의 아름다운 야경을 즐기며<br>다양한 요리와 와인, 칵테일 등을 즐겨보시기 바랍니다.</p>
-      <a href="#">다이닝 바로가기</a>
+      <a href="#" class="btn_trpa">다이닝 바로가기</a>
+      <svg>
+        <line x1="50" y1="250" x2="450" y2="250" /></svg>
     </section>
+    <!-- FACILITIES -->
     <section id="facilities">
-      <h3 class="title" title="독보적인 편의시설">Outstanding Facilities</h3>
-      <dl>
-        <dt>Pool</dt>
-        <dd>한강이 내려다보이는 490m&sup2; 크기의 수영장은<br>여름 동안 여유로운 수영과 일광욕을 하기에<br>완벽한 휴식 공간입니다.</dd>
-        <a href="#">수영장 바로가기</a>
-      </dl>
-      <dl>
-        <dt>Fitness</dt>
-        <dd>최첨단 피트니스 시설 뿐 아니라<br>전문 코칭 프로그램을 갖춘 클럽 올림포스는<br>고객님께 최상의 서비스를 제공합니다.</dd>
-        <a href="#">피트니스 바로가기</a>
-      </dl>
-      <dl>
-        <dt>Spa</dt>
-        <dd>'더 스파'는 9개의 스파 스위트와<br>트리트먼트 룸을 갖추고 복잡한 도시에서 벗어나<br>진정한 몸과 마음의 휴식을 제공합니다.</dd>
-        <a href="#">스파 바로가기</a>
-      </dl>
+      <h2 class="title" title="시설 안내">Outstanding Facilities</h2>
+      <article class="pool">
+        <h3 class="hidden">수영장</h3>
+        <dl>
+          <dt class="facility_title">Pool</dt>
+          <dd>한강이 내려다보이는 490m&sup2; 크기의 수영장은<br>여름 동안 여유로운 수영과 일광욕을 하기에<br>완벽한 휴식 공간입니다.</dd>
+        </dl>
+        <a href="#" class="btn_trpa">수영장 바로가기</a>
+      </article>
+      <article class="fitness">
+        <h3 class="hidden">피트니스</h3>
+        <dl>
+          <dt class="facility_title">Fitness</dt>
+          <dd>최첨단 피트니스 시설과 더불어<br>전문 코칭 프로그램을 갖춘 클럽 올림포스는<br>고객님께 최상의 서비스를 제공합니다.</dd>
+        </dl>
+        <a href="#" class="btn_trpa">피트니스 바로가기</a>
+      </article>
+      <article class="spa">
+        <h3 class="hidden">스파</h3>
+        <dl>
+          <dt class="facility_title">Spa</dt>
+          <dd>'더 스파'는 9개의 스파 스위트와<br>트리트먼트 룸을 갖추고 복잡한 도시에서 벗어나<br>진정한 몸과 마음의 휴식을 제공합니다.</dd>
+        </dl>
+        <a href="#" class="btn_trpa">스파 바로가기</a>
+      </article>
     </section>
+    <!-- MEMBERSHIP -->
     <section id="membership">
-      <h3 class="title" title="멤버십 특권">Privilege Membership</h3>
-      <a href="#">멤버십 바로가기</a>
+      <h2 class="hidden">About</h2>
+      <article>
+        <h3 class="title" title="멤버십 소개">Privilege Membership</h3>
+        <a href="#" class="btn_trpa">멤버십 바로가기</a>
+        <svg>
+          <line x1="50" y1="250" x2="450" y2="250" />
+          <line x1="50" y1="250" x2="450" y2="250" />
+        </svg>
+      </article>
     </section>
+    <!-- WEDDING & MEETING -->
     <section id="wedding">
-      <h3 class="title" title="영원한 추억을 담을 특별한 공간">Special place for Eternal Moments</h3>
+      <h2 class="title" title="웨딩 및 미팅 장소 소개">Special place for Eternal Moments</h2>
       <p>가장 특별한 순간에 걸맞은 품격이 흐르는 공간</p>
-      <a href="#">미팅 & 웨딩 바로가기</a>
+      <a href="#" class="btn_trpa">웨딩 바로가기</a>
+      <a href="#" class="btn_trpa">미팅 바로가기</a>
+      <video src="https://www.youtube.com/embed/SjMU8Qos8m8" autoplay muted loop></video>
     </section>
+    <!-- SNS -->
     <section id="sns">
       <h3 class="title" title="그랜드 하얏트 서울 공식 SNS 게시물">Delightful Times at Grand Hyatt</h3>
       <p>그랜드 하얏트에서 보낸 인상적인 시간들을 확인하세요.</p>
-
+      <div class="posts">
+        <ul>
+          <li><a href="#">마이 리틀 컬러 위드 크레욜라</a></li>
+          <li><a href="#">여름 맞이 제주 감귤 음료 출시</a></li>
+          <li><a href="#">그랜드 하얏트 서울 시그니처 음료 소개</a></li>
+          <li><a href="#">달바 어메니티 교체 프로모션</a></li>
+          <li><a href="#">그랜드 하얏트 서울 홈페이지 리뉴얼</a></li>
+          <li><a href="#">호캉스 프로모션 기간 안내</a></li>
+        </ul>
+      </div>
     </section>
   </main>
+  <!-- TOP BUTTON -->
+  <a href="#" title="문서 최상단으로 올라가기" class="top_btn">TOP</a>
+  <!-- FOOTER -->
   <footer>
-    <h2>그랜드 하얏트 서울 푸터</h2>
+    <ul>
+      <li><a href="#">그랜드 하얏트 바로가기</a></li>
+      <li><a href="#">하얏트 바로가기</a></li>
+      <li><a href="#">하얏트 리젠시 바로가기</a></li>
+      <li><a href="#">파크 하얏트 바로가기</a>
+      <li>
+      <li><a href="#">하얏트 레지던스 클럽 바로가기</a>
+      <li>
+      <li><a href="#">하얏트 플레이스 바로가기</a>
+      <li>
+      <li><a href="#">하얏트 하우스 바로가기</a>
+      <li>
+      <li><a href="#">하얏트 urcove 바로가기</a>
+      <li>
+    </ul>
+    <div>
+      <ul>
+        <li><a href="#">호텔 개요</a></li>
+        <li><a href="#">채용 정보</a></li>
+        <li><a href="#">이용 약관</a></li>
+        <li><a href="#">쿠키 센터</a></li>
+        <li><a href="#">보안 및 안전</a></li>
+        <li><a href="#">현대판 노예제 및 인신매매</a></li>
+      </ul>
+    </div>
+    <div>
+      <p>서울시 용산구 소월로 322, 서울, 대한민국, 04347 </p>
+      <a href="https://world.hyatt.com/content/gp/ko/rewards/mobile.html" target="_blank">하얏트 공식 앱 다운받기</a>
+      <a href="https://www.instagram.com/grandhyattseoul/" target="_blank">그랜드하얏트서울 공식 인스타그램 바로가기</a>
+      <a href="https://www.youtube.com/user/hyatt" target="_blank">하얏트 공식 유튜브 바로가기</a>
+      <address>전화 : +82 2 797 1234 | 팩스 : +82 2 798 6953<br>e-mail:seoul.grand@hyatt.com</address>
+      <small>&copy; 2022 Hyatt Corporation</small>
+    </div>
   </footer>
 </body>
 
