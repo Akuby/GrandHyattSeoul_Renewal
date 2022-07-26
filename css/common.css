@@ -1,5 +1,11 @@
 @charset "UTF-8";
 
+@font-face {
+  font-family: "BaskervilleOldFace";
+  src: url("../assets/BASKVILL.ttf") format("truetype");
+  font-weight: normal;
+}
+
 /* 초기화 */
 body,
 h1,
@@ -179,9 +185,147 @@ header #lnb .wrap ul li ul li a:hover:after {
   transform-origin: left;
 }
 
+/* 빠른예약 */
 form {
   position: absolute;
+  background-color: #fff;
   bottom: 70px;
-  left: calc(50% - 600px);
   width: 1200px;
+  left: calc(50% - 600px);
+  font-family: 'BaskervilleOldFace', serif;
 }
+
+form fieldset {
+  border: none;
+  width: 1200px;
+  height: 140px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#reserv_content {
+  width: 200px;
+  text-align: center;
+  line-height: 140px;
+  overflow: hidden;
+  position: relative;
+}
+
+#reserv_content::before {
+  content: "";
+  display: block;
+  border-right: 1px solid #ccc;
+  height: 80px;
+  position: absolute;
+  right: 0;
+  top: 30px;
+}
+
+#reserv_content:hover {}
+
+#reserv_content li {
+  font-size: 40px;
+}
+
+form fieldset label {
+  color: #bdbdbd;
+}
+
+#reserv_dateIn {}
+
+#reserv_dateOut {}
+
+#reserv_numOfRooms {
+  height: 30px;
+  font-size: 30px;
+  width: 105px;
+}
+
+#reserv_numOfRooms::after {
+  content: "Rooms";
+}
+
+#reserv_numOfAdult {
+  height: 30px;
+  font-size: 30px;
+  width: 105px;
+}
+
+#reserv_numOfAdult::after {
+  content: "Adult";
+}
+
+#reserv_numOfChildren {
+  height: 30px;
+  font-size: 30px;
+  width: 105px;
+}
+
+#reserv_numOfChildren::after {
+  content: 'Children';
+}
+
+#reserv_btn {
+  font-family: 'BaskervilleOldFace', serif;
+  background-color: #000;
+  color: #fff;
+  width: 160px;
+  font-size: 35px;
+  cursor: pointer;
+}
+/* Special Offers */
+#specialOffers{
+  height: 100vh;
+  width: 100%;
+  background-color: #fff;
+  padding: 100px 0;
+  box-sizing: border-box;
+}
+#specialOffers h2 {
+  font-family: 'BaskervilleOldFace', serif;
+  font-size: 40px;
+  text-align: center;
+}
+.promo-slider{
+  margin: 110px auto 0;
+  width: 1200px;
+  height: 420px;
+  overflow: hidden;
+}
+.promo-slider ul {
+  width: 2200px;
+  display: flex;
+  justify-content: space-between;
+  /* 나중에 계산으로 */
+}
+.promo-slider ul li {
+  width: 320px;
+  margin-right: 120px;
+  position: relative;
+}
+.promo-slider ul li::before {
+  content: "";
+  display: block;
+  height: 420px;
+  border-right: 1px solid #ccc;
+  position: absolute;
+  right: -60px;
+}
+.promo-slider ul li a {
+  display: block;
+  border: 1px solid #ccc;
+  height: 420px;
+  position: relative;
+  box-sizing: border-box;
+}
+.promo-slider a dl {
+  width: 320px;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+}
+.promo-slider a dt {
+  font-size: 24px;
+  padding: 10px;
+}
+.promo-slider a dd {}

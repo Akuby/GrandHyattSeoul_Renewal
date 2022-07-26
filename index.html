@@ -13,86 +13,88 @@
   <!-- HEADER -->
   <header>
     <div id="navWrap">
-    
-    <h1><a href="#">그랜드하얏트서울 로고</a></h1>
-    <!-- GNB -->
-    <nav id="gnb">
-      <h2 class="hidden">본사사이트 및 예약 회원관련 메뉴</h2>
-      <ul>
-        <li><a href="#">Grand Hyatt</a></li>
-        <li><a href="#">Reservation</a></li>
-      </ul>
-      <ul>
-        <li><a href="#">Login</a></li>
-        <li><a href="#">Sign in</a></li>
-      </ul>
-    </nav>
-    <!-- LNB -->
-    <nav id="lnb">
-      <div class="wrap">
-        <h2 class="hidden">그랜드 하얏트 서울 주요 메뉴</h2>
+
+      <h1><a href="#">그랜드하얏트서울 로고</a></h1>
+      <!-- GNB -->
+      <nav id="gnb">
+        <h2 class="hidden">본사사이트 및 예약 회원관련 메뉴</h2>
         <ul>
-          <li>About
-            <ul>
-              <li><a href="#">호텔 소개</a></li>
-              <li><a href="#">로열티 멤버십</a></li>
-              <li><a href="#">고객 센터</a></li>
-            </ul>
-          </li>
-          <li>Rooms
-            <ul>
-              <li><a href="#">스위트 객실</a></li>
-              <li><a href="#">일반 객실</a></li>
-            </ul>
-          </li>
-          <li>Offers
-            <ul>
-              <li><a href="#">프로모션</a></li>
-              <li><a href="#">패키지</a></li>
-              <li><a href="#">액티비티</a></li>
-            </ul>
-          </li>
-          <li>Dining & Bar
-            <ul>
-              <li><a href="#">322 소월로</a></li>
-              <li><a href="#">라운지</a></li>
-              <li><a href="#">레스토랑</a></li>
-              <li><a href="#">바</a></li>
-            </ul>
-          </li>
-          <li>Facilities
-            <ul>
-              <li><a href="#">수영장</a></li>
-              <li><a href="#">클럽 올림푸스</a></li>
-              <li><a href="#">스파</a></li>
-              <li><a href="#">쇼핑 아케이드</a></li>
-            </ul>
-          </li>
-          <li>Wedding & Meeting
-            <ul>
-              <li><a href="#">웨딩</a></li>
-              <li><a href="#">비즈니스 미팅</a></li>
-              <li><a href="#">프라이빗 게더링</a></li>
-            </ul>
-          </li>
+          <li><a href="#">Grand Hyatt</a></li>
+          <li><a href="#">Reservation</a></li>
         </ul>
-      </div>
-    </nav>
-  </div>
+        <ul>
+          <li><a href="#">Login</a></li>
+          <li><a href="#">Sign in</a></li>
+        </ul>
+      </nav>
+      <!-- LNB -->
+      <nav id="lnb">
+        <div class="wrap">
+          <h2 class="hidden">그랜드 하얏트 서울 주요 메뉴</h2>
+          <ul>
+            <li>About
+              <ul>
+                <li><a href="#">호텔 소개</a></li>
+                <li><a href="#">로열티 멤버십</a></li>
+                <li><a href="#">고객 센터</a></li>
+              </ul>
+            </li>
+            <li>Rooms
+              <ul>
+                <li><a href="#">스위트 객실</a></li>
+                <li><a href="#">일반 객실</a></li>
+              </ul>
+            </li>
+            <li>Offers
+              <ul>
+                <li><a href="#">프로모션</a></li>
+                <li><a href="#">패키지</a></li>
+                <li><a href="#">액티비티</a></li>
+              </ul>
+            </li>
+            <li>Dining & Bar
+              <ul>
+                <li><a href="#">322 소월로</a></li>
+                <li><a href="#">라운지</a></li>
+                <li><a href="#">레스토랑</a></li>
+                <li><a href="#">바</a></li>
+              </ul>
+            </li>
+            <li>Facilities
+              <ul>
+                <li><a href="#">수영장</a></li>
+                <li><a href="#">클럽 올림푸스</a></li>
+                <li><a href="#">스파</a></li>
+                <li><a href="#">쇼핑 아케이드</a></li>
+              </ul>
+            </li>
+            <li>Wedding & Meeting
+              <ul>
+                <li><a href="#">웨딩</a></li>
+                <li><a href="#">비즈니스 미팅</a></li>
+                <li><a href="#">프라이빗 게더링</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
     <!-- RESERVATION -->
     <form>
       <fieldset>
-        <legend>빠른 예약</legend>
+        <legend class="hidden">빠른 예약</legend>
         <ul id="reserv_content">
-          <li>Room</li>
+          <li class="selected">Room</li>
           <li>Dining</li>
         </ul>
-        <label for="reserv_dateIn">Check In</label><input id="reserv_dateIn" type="date">
-        <label for="reserv_dateOut">Check Out</label><input id="reserv_dateOut" type="date">
+        <label for="reserv_dateIn">Check In</label>
+        <input id="reserv_dateIn" type="date">
+        <label for="reserv_dateOut">Check Out</label>
+        <input id="reserv_dateOut" type="date">
         <input id="reserv_numOfRooms" type="number" value="1" max="10" min="1">
         <input id="reserv_numOfAdult" type="number" value="2" min="1">
         <input id="reserv_numOfChildren" type="number" value="0" min="0">
-        <button>Search</button>
+        <button id="reserv_btn">Search</button>
       </fieldset>
     </form>
   </header>
@@ -102,36 +104,47 @@
     <section id="specialOffers">
       <h2 class="title" title="진행중인 패키지와 프로모션">Special Offers</h2>
       <div class="promo-slider">
-        <a href="#">
-          <dl>
-            <dt>서머 모닝 스플래시</dt>
-            <dd>도심 속 이국적인 공간에서<br>편안한 여름휴가를 즐겨보세요.</dd>
-          </dl>
-        </a>
-        <a href="#">
-          <dl>
-            <dt>리틀 컬러스 위드 크레욜라</dt>
-            <dd>한정판 크레욜라 인스퍼레이션으로<br> 가족과 특별한 추억을 쌓으세요.</dd>
-          </dl>
-        </a>
-        <a href="#">
-          <dl>
-            <dt>베드 앤 브렉퍼스트</dt>
-            <dd>꼭 필요한 혜택만 담은 패키지로<br>든든하고 여유로운 아침을 맞이하세요.</dd>
-          </dl>
-        </a>
-        <a href="#">
-          <dl>
-            <dt>웰니스 모먼트</dt>
-            <dd>편안하고 안락한 분위기 속<br>요가 전문가와 함께 나만의 이너피스를 찾아보세요.</dd>
-          </dl>
-        </a>
-        <a href="#">
-          <dl>
-            <dt>호캉스 in 그랜드 하얏트 서울</dt>
-            <dd>풍부한 혜택과 합리적인 가격으로<br>기억에 남을 여름 휴가를 보내세요.</dd>
-          </dl>
-        </a>
+        <ul>
+          <li>
+            <a href="#">
+              <dl>
+                <dt>서머 모닝 스플래시</dt>
+                <dd>도심 속 이국적인 공간에서<br>편안한 여름휴가를 즐겨보세요.</dd>
+              </dl>
+            </a></li>
+          <li>
+            <a href="#">
+              <dl>
+                <dt>리틀 컬러스 위드 크레욜라</dt>
+                <dd>한정판 크레욜라 인스퍼레이션으로<br> 가족과 특별한 추억을 쌓으세요.</dd>
+              </dl>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <dl>
+                <dt>베드 앤 브렉퍼스트</dt>
+                <dd>꼭 필요한 혜택만 담은 패키지로<br>든든하고 여유로운 아침을 맞이하세요.</dd>
+              </dl>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <dl>
+                <dt>웰니스 모먼트</dt>
+                <dd>편안하고 안락한 분위기 속<br>요가 전문가와 함께 이너피스를 찾아보세요.</dd>
+              </dl>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <dl>
+                <dt>호캉스 in 그랜드 하얏트 서울</dt>
+                <dd>풍부한 혜택과 합리적인 가격으로<br>기억에 남을 여름 휴가를 보내세요.</dd>
+              </dl>
+            </a>
+          </li>
+        </ul>
       </div>
       <div class="promo-control">
         <a href="#">이전</a>
