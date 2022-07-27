@@ -84,13 +84,19 @@
       <fieldset>
         <legend class="hidden">빠른 예약</legend>
         <ul id="reserv_content">
-          <li class="selected">Room</li>
-          <li>Dining</li>
+          <div class="contWrap">
+            <li class="selected">Room</li>
+            <li>Dining</li>
+          </div>
         </ul>
-        <label for="reserv_dateIn">Check In</label>
-        <input id="reserv_dateIn" type="date">
-        <label for="reserv_dateOut">Check Out</label>
-        <input id="reserv_dateOut" type="date">
+        <div class="dateWrap">
+          <label for="reserv_dateIn">Check In</label>
+          <input id="reserv_dateIn" class="reserv_date" type="text" value="2022/06/28">
+        </div>
+        <div class="dateWrap">
+          <label for="reserv_dateOut">Check Out</label>
+          <input id="reserv_dateOut" class="reserv_date" type="text" value="2022/06/29">
+        </div>
         <input id="reserv_numOfRooms" type="number" value="1" max="10" min="1">
         <input id="reserv_numOfAdult" type="number" value="2" min="1">
         <input id="reserv_numOfChildren" type="number" value="0" min="0">

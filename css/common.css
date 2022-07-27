@@ -21,7 +21,9 @@ p {
   margin: 0;
   padding: 0;
 }
-
+input {
+  border: none;
+}
 .hidden {
   position: absolute;
   left: -9999em;
@@ -58,13 +60,16 @@ header #navWrap {
   flex-direction: column;
   align-items: center;
   height: 130px;
+  /* height: 70px; */ /*헤더 아래로 내려갈 경우 */
   overflow: hidden;
   transition: .6s;
   position: fixed;
+  z-index: 999;
 }
 
 header #navWrap:hover {
   height: 370px;
+  /* height: 290px; 헤더 아래로 내려갈 경우 */
   background-color: #fff;
 }
 
@@ -75,7 +80,10 @@ header #navWrap:hover h1 a {
 header #navWrap:hover #gnb ul li a {
   color: #000;
 }
-
+header h1 { /*헤더 아래로 내려갈 경우*/
+  /* height: 0;
+  overflow: hidden; */
+}
 header h1 a {
   display: block;
   width: 226px;
@@ -167,22 +175,24 @@ header #lnb .wrap ul li ul li {
 
 header #lnb .wrap ul li ul li a {
   font-size: 15px;
+  position: relative;
+  padding-bottom: 5px;
 }
 
 header #lnb .wrap ul li ul li a::after {
-  display: block;
+  position: absolute; /*기준을 a로 해주고, width를 100%를 주면 완성!*/
+  width: 100%;
+  bottom: 0; left: 0;
   content: '';
   margin-top: 2px;
-  /* width를 a의 width를 쓰고싶은데... */
   border-bottom: solid 1px #000;
-  transform: scaleX(0);
   transition: transform 250ms ease-in-out;
-  transform-origin: left;
+  transform: scaleX(0);
+  transform-origin: center;
 }
 
 header #lnb .wrap ul li ul li a:hover:after {
   transform: scaleX(1);
-  transform-origin: left;
 }
 
 /* 빠른예약 */
@@ -220,18 +230,64 @@ form fieldset {
   right: 0;
   top: 30px;
 }
-
-#reserv_content:hover {}
-
-#reserv_content li {
+#reserv_content .contWrap {
+  width: 200px;
+  height: 280px;
+  position: absolute;
+}
+#reserv_content .contWrap li {
   font-size: 40px;
+  transition: .5s;
+  color: #ccc;
+}
+
+#reserv_content:hover li{
+  line-height: 50px;
+}
+#reserv_content:hover li:first-child {
+  margin-top: 20px;
+}
+
+#reserv_content li.selected {
+  color: #000;
 }
 
 form fieldset label {
   color: #bdbdbd;
+  display: block;
+  line-height: 30px;
+  margin-top: 30px;
 }
-
-#reserv_dateIn {}
+.dateWrap {
+  width: 180px;
+  height: 140px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 10px;
+  position: relative;
+}
+.dateWrap:first-of-type::after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  border-bottom: 1px solid #ccc;
+  right: -20px;
+  top: 55%;
+}
+.dateWrap:last-of-type::after {
+  content: '';
+  position: absolute;
+  height: 80px;
+  border-right: 1px solid #ccc;
+  right: 0;
+  top: 30px;
+}
+.reserv_date {
+  display: block;
+  line-height: 50px;
+  font-size: 35px;
+  font-family: "BaskervilleOldFace", serif;
+}
 
 #reserv_dateOut {}
 
@@ -272,13 +328,15 @@ form fieldset label {
   width: 160px;
   font-size: 35px;
   cursor: pointer;
+  border: 0px;
+  margin-right: -1px;
 }
 /* Special Offers */
 #specialOffers{
   height: 100vh;
   width: 100%;
   background-color: #fff;
-  padding: 100px 0;
+  padding: 150px 0 50px;
   box-sizing: border-box;
 }
 #specialOffers h2 {
