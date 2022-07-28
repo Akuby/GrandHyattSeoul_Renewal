@@ -5,15 +5,17 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>그랜드 하얏트 서울 | 한 눈에 남산과 한강을 담다</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,100,0,-25" />  
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/common.css">
+  <script src="./js/jquery-3.6.0.min.js" defer></script>
+  <script src="./js/common.js" defer></script>
 </head>
 
 <body>
   <!-- HEADER -->
   <header>
     <div id="navWrap">
-
       <h1><a href="#">그랜드하얏트서울 로고</a></h1>
       <!-- GNB -->
       <nav id="gnb">
@@ -97,9 +99,18 @@
           <label for="reserv_dateOut">Check Out</label>
           <input id="reserv_dateOut" class="reserv_date" type="text" value="2022/06/29">
         </div>
-        <input class="reservOpt" id="reserv_numOfRooms" type="number" value="1" max="10" min="1">
-        <input class="reservOpt" id="reserv_numOfAdult" type="number" value="2" min="1">
-        <input class="reservOpt" id="reserv_numOfChildren" type="number" value="0" min="0">
+        <div class="optWrap">
+          <label for="reserv_numOfRooms">Rooms</label>
+          <input class="reservOpt" id="reserv_numOfRooms" type="number" value="1" max="10" min="1">
+        </div>
+        <div class="optWrap">
+          <label for="reserv_numOfAdult">Adult</label>
+          <input class="reservOpt" id="reserv_numOfAdult" type="number" value="2" min="1">
+        </div>
+        <div class="optWrap">
+          <label for="reserv_numOfChildren">Children</label>
+          <input class="reservOpt" id="reserv_numOfChildren" type="number" value="0" min="0">
+        </div>
         <button id="reserv_btn">Search</button>
       </fieldset>
     </form>
@@ -111,14 +122,14 @@
       <h2 class="title" title="진행중인 패키지와 프로모션">Special Offers</h2>
       <div class="promo-slider">
         <ul>
-          <li>
+          <li data-bg="offer-1">
             <a href="#">
               <dl>
                 <dt>서머 모닝 스플래시</dt>
                 <dd>도심 속 이국적인 공간에서<br>편안한 여름휴가를 즐겨보세요.</dd>
               </dl>
             </a></li>
-          <li>
+          <li data-bg="offer-2">
             <a href="#">
               <dl>
                 <dt>리틀 컬러스 위드 크레욜라</dt>
@@ -126,7 +137,7 @@
               </dl>
             </a>
           </li>
-          <li>
+          <li data-bg="offer-3">
             <a href="#">
               <dl>
                 <dt>베드 앤 브렉퍼스트</dt>
@@ -134,7 +145,7 @@
               </dl>
             </a>
           </li>
-          <li>
+          <li data-bg="offer-4">
             <a href="#">
               <dl>
                 <dt>웰니스 모먼트</dt>
@@ -142,7 +153,7 @@
               </dl>
             </a>
           </li>
-          <li>
+          <li data-bg="offer-5">
             <a href="#">
               <dl>
                 <dt>호캉스 in 그랜드 하얏트 서울</dt>
@@ -153,15 +164,15 @@
         </ul>
       </div>
       <div class="promo-control">
-        <a href="#">이전</a>
-        <a href="#">다음</a>
+        <a href="javascript:void(0)">이전</a>
+        <a href="javascript:void(0)">다음</a>
       </div>
     </section>
     <!-- ESG BANNER -->
     <section id="ESG">
       <h2 class="hidden">About</h2>
       <section>
-        <h3>호텔 소개</h3>
+        <h3 class="hidden">호텔 소개</h3>
         <article>
           <h4 class="title" title="지속가능한 경영정책">For the Green Future</h4>
           <img src="#" alt="나무와 솜으로 만든 빗과 수저 등의 친환경 어메니티">
