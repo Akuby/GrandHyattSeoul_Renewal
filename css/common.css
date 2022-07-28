@@ -43,8 +43,17 @@ address {
 }
 
 body {
-  background-color: #ccc;
   font-family: 'Noto Sans KR', sans-serif;
+}
+
+.btn_black {
+  display: block;
+  width: 150px;
+  line-height: 45px;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  margin-top: 25px;
 }
 
 ::-webkit-scrollbar {
@@ -339,11 +348,10 @@ form fieldset label {
 }
 /* Special Offers */
 #specialOffers{
-  height: 100vh;
+  height: 740px;
   width: 100%;
   background-color: #fff;
-  padding: 150px 0 50px;
-  box-sizing: border-box;
+  padding-top: 120px;
 }
 #specialOffers h2 {
   font-family: 'BaskervilleOldFace', serif;
@@ -418,18 +426,41 @@ form fieldset label {
 
 /* ESG BANNER */
 
-#ESG {}
+#ESG {
+  width: 100%;
+  height: 365px;
+  background: url(../assets/esg-bg.png);
+  background-repeat: repeat-x;
+}
 
-#ESG > section {}
+#ESG > section {
+  width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
 
-#ESG > section article {}
+#ESG > section article {
+  padding-top: 100px;
+}
 
-#ESG > section article h4 {}
+#ESG > section article h4 {
+  font-family: 'BaskervilleOldFace', serif;
+  font-size: 35px;
+}
 
-#ESG > section article img {}
+#ESG > section article img {
+  width: 590px;
+  top: 50px;
+  right: 80px;
+  position: absolute;
+}
 
-#ESG > section article p {}
-
-#ESG > section article a.btn_black {}
+#ESG > section article p {
+  padding-top: 20px;
+}
 
 /*  ROOMS */
+
+#rooms {
+  margin-top: 300px;
+}
