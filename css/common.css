@@ -21,9 +21,11 @@ p {
   margin: 0;
   padding: 0;
 }
+
 input {
   border: none;
 }
+
 .hidden {
   position: absolute;
   left: -9999em;
@@ -69,13 +71,13 @@ body {
   transition: box-shadow 0.5s, color 0.3s;
 }
 
-.btn_black:hover{
-  box-shadow: 2px 2px 20px 0px rgba(0,0,0,0.31);
+.btn_black:hover {
+  box-shadow: 2px 2px 20px 0px rgba(0, 0, 0, 0.31);
 }
 
-.btn_trpt:hover{
+.btn_trpt:hover {
   color: #000;
-  box-shadow: 2px 2px 10px 0px rgba(0,0,0,0.31);
+  box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.31);
 }
 
 h1,
@@ -90,11 +92,18 @@ h4 {
   display: none;
 }
 
+@keyframes lineMove {
+  to {
+    stroke-dashoffset: 0
+  }
+}
+
 /* HEADER */
 header {
   position: relative;
   height: 100vh;
-  background: url(../assets/main-1.png) no-repeat center / cover; /*js로 동적으로 바꿔주기*/
+  background: url(../assets/main-1.png) no-repeat center / cover;
+  /*js로 동적으로 바꿔주기*/
 }
 
 header #navWrap {
@@ -103,7 +112,8 @@ header #navWrap {
   flex-direction: column;
   align-items: center;
   height: 130px;
-  /* height: 70px; */ /*헤더 아래로 내려갈 경우 */
+  /* height: 70px; */
+  /*헤더 아래로 내려갈 경우 */
   overflow: hidden;
   transition: .6s;
   position: fixed;
@@ -123,10 +133,13 @@ header #navWrap:hover h1 a {
 header #navWrap:hover #gnb ul li a {
   color: #000;
 }
-header h1 { /*헤더 아래로 내려갈 경우*/
+
+header h1 {
+  /*헤더 아래로 내려갈 경우*/
   /* height: 0;
   overflow: hidden; */
 }
+
 header h1 a {
   display: block;
   width: 226px;
@@ -223,9 +236,11 @@ header #lnb .wrap ul li ul li a {
 }
 
 header #lnb .wrap ul li ul li a::after {
-  position: absolute; /*기준을 a로 해주고, width를 100%를 주면 완성!*/
+  position: absolute;
+  /*기준을 a로 해주고, width를 100%를 주면 완성!*/
   width: 100%;
-  bottom: 0; left: 0;
+  bottom: 0;
+  left: 0;
   content: '';
   margin-top: 2px;
   border-bottom: solid 1px #000;
@@ -276,19 +291,22 @@ form fieldset input {
   right: 0;
   top: 30px;
 }
+
 #reserv_content .contWrap {
   width: 200px;
   position: absolute;
 }
+
 #reserv_content .contWrap li {
   font-size: 40px;
   transition: .5s;
   color: #ccc;
 }
 
-#reserv_content:hover li{
+#reserv_content:hover li {
   line-height: 50px;
 }
+
 #reserv_content:hover li:first-child {
   margin-top: 20px;
 }
@@ -302,6 +320,7 @@ form fieldset label {
   line-height: 30px;
   margin-top: 30px;
 }
+
 .dateWrap {
   width: 200px;
   display: flex;
@@ -309,6 +328,7 @@ form fieldset label {
   margin: 0 10px;
   position: relative;
 }
+
 .dateWrap:first-of-type::after {
   content: '';
   position: absolute;
@@ -317,6 +337,7 @@ form fieldset label {
   right: -7%;
   top: 60%;
 }
+
 .dateWrap:nth-of-type(2)::after {
   content: '';
   position: absolute;
@@ -325,10 +346,12 @@ form fieldset label {
   right: 0;
   top: 30px;
 }
+
 .reserv_date {
   line-height: 50px;
   font-size: 35px;
 }
+
 .optWrap {
   width: 80px;
   height: 140px;
@@ -337,6 +360,7 @@ form fieldset label {
   margin: 0 10px;
   position: relative;
 }
+
 .optWrap::after {
   content: '';
   position: absolute;
@@ -357,7 +381,7 @@ form fieldset label {
   margin-top: 5px;
 }
 
-.optWrap:last-of-type .reservOpt{
+.optWrap:last-of-type .reservOpt {
   margin-left: 18px;
 }
 
@@ -372,34 +396,39 @@ form fieldset label {
 
 /* Special Offers */
 
-#specialOffers{
+#specialOffers {
   height: 740px;
   width: 100%;
   background-color: #fff;
   margin-top: 180px;
 }
+
 #specialOffers h2 {
   font-family: 'BaskervilleOldFace', serif;
   font-size: 35px;
   text-align: center;
 }
-.promo-slider{
+
+.promo-slider {
   margin: 110px auto 0;
   width: 1040px;
   overflow: hidden;
 }
+
 .promo-slider ul {
   width: 1900px;
   display: flex;
   justify-content: space-between;
   /* 나중에 계산으로 */
 }
+
 .promo-slider ul li {
   width: 300px;
   margin-right: 100px;
   position: relative;
   background: url(../assets/offer-1.png) no-repeat;
 }
+
 .promo-slider ul li::before {
   content: "";
   height: 400px;
@@ -407,23 +436,28 @@ form fieldset label {
   position: absolute;
   right: -50px;
 }
+
 .promo-slider a dl {
   width: 260px;
   text-align: center;
   margin: 0 auto;
   padding-top: 310px;
 }
+
 .promo-slider a dt {
   font-size: 20px;
   padding: 10px;
 }
+
 .promo-slider a dd {
   font-size: 14px;
 }
+
 .promo-control {
   position: relative;
 }
-.promo-control > a {
+
+.promo-control>a {
   width: 55px;
   height: 55px;
   position: absolute;
@@ -432,11 +466,13 @@ form fieldset label {
   border-radius: 50%;
   text-indent: -9999em;
 }
-.promo-control > a:first-child {
+
+.promo-control>a:first-child {
   left: calc(50% - 700px);
   background: url(../assets/sprite.png) no-repeat top -107px left 5px;
 }
-.promo-control > a:last-child {
+
+.promo-control>a:last-child {
   right: calc(50% - 700px);
   background: url(../assets/sprite.png) no-repeat top -148px left 3px;
 }
@@ -451,29 +487,29 @@ form fieldset label {
   background-repeat: repeat-x;
 }
 
-#ESG > section {
+#ESG>section {
   width: 1200px;
   margin: 0 auto;
   position: relative;
 }
 
-#ESG > section article {
+#ESG>section article {
   padding: 100px 80px 0;
 }
 
-#ESG > section article h4 {
+#ESG>section article h4 {
   font-family: 'BaskervilleOldFace', serif;
   font-size: 35px;
 }
 
-#ESG > section article img {
+#ESG>section article img {
   width: 590px;
   top: 50px;
   right: 80px;
   position: absolute;
 }
 
-#ESG > section article p {
+#ESG>section article p {
   padding-top: 20px;
 }
 
@@ -483,33 +519,95 @@ form fieldset label {
   margin-top: 400px;
   position: relative;
 }
+
 #rooms h2 {
   position: absolute;
+  top: 30%;
   left: 58%;
   line-height: 55px;
   font-size: 40px;
 }
+
 #rooms .slider-wrap {
-  width: 50%;
-  /* overflow: hidden; */
+  width: 55vw;
+  overflow: hidden;
 }
+
 #rooms .rooms-slider {
-  width: 3840px;
   display: flex;
+  width: 2020vw;
 }
+
 #rooms .rooms-slider li {
+  width: 55vw;
+  height: 40vw; /*auto로 하고 싶은데*/
   background-repeat: no-repeat;
   background-size: cover;
+  position: relative;
+}
+
+#rooms .rooms-slider li span {
+  font-size: 60px;
+  color: #fff;
+  text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.7);
+  font-family: 'BaskervilleOldFace', serif;
+  position: absolute;
+  bottom: 10px;
+  right: 25px;
+}
+
+#rooms .rooms-pagination {
+  position: absolute;
+  bottom: 0;
+  left: 58%;
+}
+
+#rooms .rooms-pagination a {
+  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
+  font-size: 20px;
+  color: #a6a6a6;
+  margin-right: 5px;
+}
+
+#rooms .rooms-pagination a.on {
+  color: #000;
+}
+
+#rooms .rooms-pagination a.on::after {
+  content: "";
+  display: inline-block;
+  left: 30px;
+  bottom: 5px;
+  width: 85px;
+  border-bottom: 1px solid #000;
+  margin: 0 10px;
 }
 
 #rooms p {
   position: absolute;
+  top: 50%;
   left: 58%;
-  top: 140px;
   line-height: 25px;
 }
+
 #rooms a.btn_trpt {
   position: absolute;
-  top: 250px;
+  top: 70%;
   left: 58%;
+}
+
+#rooms svg {
+  position: absolute;
+  top: 0;
+  left: 58%;
+  width: 100%;
+  height: 1px;
+}
+
+#rooms svg line {
+  stroke-width: 1px;
+  stroke: black;
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
+  animation: lineMove 1s forwards;
 }
