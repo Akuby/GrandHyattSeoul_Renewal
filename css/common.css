@@ -240,7 +240,6 @@ form fieldset input {
 
 #reserv_content::before {
   content: "";
-  display: block;
   border-right: 1px solid #ccc;
   height: 80px;
   position: absolute;
@@ -249,7 +248,6 @@ form fieldset input {
 }
 #reserv_content .contWrap {
   width: 200px;
-  height: 280px;
   position: absolute;
 }
 #reserv_content .contWrap li {
@@ -271,13 +269,11 @@ form fieldset input {
 
 form fieldset label {
   color: #bdbdbd;
-  display: block;
   line-height: 30px;
   margin-top: 30px;
 }
 .dateWrap {
   width: 200px;
-  height: 140px;
   display: flex;
   flex-direction: column;
   margin: 0 10px;
@@ -341,10 +337,7 @@ form fieldset label {
   width: 160px;
   font-size: 35px;
   cursor: pointer;
-  border: 0px;
-  margin-right: -1px;
   font-family: 'BaskervilleOldFace', serif;
-
 }
 /* Special Offers */
 #specialOffers{
@@ -377,17 +370,10 @@ form fieldset label {
 }
 .promo-slider ul li::before {
   content: "";
-  display: block;
   height: 400px;
   border-right: 1px solid #ccc;
   position: absolute;
   right: -50px;
-}
-.promo-slider ul li a {
-  display: block;
-  height: 400px;
-  position: relative;
-  box-sizing: border-box;
 }
 .promo-slider a dl {
   width: 260px;
@@ -406,7 +392,6 @@ form fieldset label {
   position: relative;
 }
 .promo-control > a {
-  display: block;
   width: 55px;
   height: 55px;
   position: absolute;
