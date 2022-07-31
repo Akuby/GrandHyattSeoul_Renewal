@@ -71,6 +71,30 @@ body {
   transition: box-shadow 0.5s, color 0.3s;
 }
 
+.btn_white {
+  display: block;
+  width: 135px;
+  line-height: 40px;
+  background-color: transparent;
+  color: #fff;
+  border: 1px solid #fff;
+  text-align: center;
+  margin-top: 25px;
+  transition: 0.5s;
+}
+
+.btn_gold {
+  display: block;
+  width: 160px;
+  line-height: 40px;
+  background-color: transparent;
+  color: #000;
+  border: 1px solid #d8c3ae;
+  text-align: center;
+  font-size: 14px;
+  transition: box-shadow .5s;
+}
+
 .btn_black:hover {
   box-shadow: 2px 2px 20px 0px rgba(0, 0, 0, 0.31);
 }
@@ -80,12 +104,22 @@ body {
   box-shadow: 2px 2px 10px 0px rgba(0, 0, 0, 0.15);
 }
 
+.btn_white:hover {
+  background-color: #000;
+  border-color: #000;
+}
+
+.btn_gold:hover {
+  box-shadow: 2px 2px 20px 0px rgba(0, 0, 0, 0.15);
+}
+
 h1,
 h2,
 h3,
 h4 {
   font-family: 'BaskervilleOldFace', serif;
   font-size: 35px;
+  text-align: center;
 }
 
 ::-webkit-scrollbar {
@@ -403,28 +437,21 @@ form fieldset label {
   margin-top: 180px;
 }
 
-#specialOffers h2 {
-  font-family: 'BaskervilleOldFace', serif;
-  font-size: 35px;
-  text-align: center;
-}
-
 .promo-slider {
-  margin: 110px auto 0;
-  width: 1040px;
+  margin: 100px auto 0;
+  width: 1000px;
   overflow: hidden;
 }
 
 .promo-slider ul {
-  width: 1900px;
+  width: 1700px;
+  /* 나중에 계산으로 */
   display: flex;
   justify-content: space-between;
-  /* 나중에 계산으로 */
 }
 
 .promo-slider ul li {
   width: 300px;
-  margin-right: 100px;
   position: relative;
   background: url(../assets/offer-1.png) no-repeat;
 }
@@ -434,7 +461,7 @@ form fieldset label {
   height: 400px;
   border-right: 1px solid #ccc;
   position: absolute;
-  right: -50px;
+  right: -25px;
 }
 
 .promo-slider a dl {
@@ -460,8 +487,8 @@ form fieldset label {
 .promo-control>a {
   width: 55px;
   height: 55px;
-  position: absolute;
   top: -250px;
+  position: absolute;
   border: 1px solid #000;
   border-radius: 50%;
   text-indent: -9999em;
@@ -498,8 +525,7 @@ form fieldset label {
 }
 
 #ESG>section article h4 {
-  font-family: 'BaskervilleOldFace', serif;
-  font-size: 35px;
+  text-align: left;
 }
 
 #ESG>section article img {
@@ -522,10 +548,11 @@ form fieldset label {
 
 #rooms h2 {
   position: absolute;
-  top: 30%;
+  top: 25%;
   left: 58%;
   line-height: 55px;
   font-size: 40px;
+  text-align: left;
 }
 
 #rooms .slider-wrap {
@@ -540,7 +567,8 @@ form fieldset label {
 
 #rooms .rooms-slider li {
   width: 55vw;
-  height: 40vw; /*auto로 하고 싶은데*/
+  height: 40vw;
+  /*auto로 하고 싶은데*/
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -585,7 +613,7 @@ form fieldset label {
 
 #rooms p {
   position: absolute;
-  top: 50%;
+  top: 48%;
   left: 58%;
   line-height: 25px;
 }
@@ -608,7 +636,8 @@ form fieldset label {
   stroke-width: 1px;
   stroke: black;
   stroke-dasharray: 700;
-  stroke-dashoffset: 700; /*동적으로 정하기*/
+  stroke-dashoffset: 700;
+  /*동적으로 정하기*/
   animation: lineMove 2s forwards;
 }
 
@@ -620,7 +649,7 @@ form fieldset label {
 
 #dining h2 {
   position: absolute;
-  top: 30%;
+  top: 25%;
   right: 58%;
   line-height: 55px;
   font-size: 40px;
@@ -687,7 +716,7 @@ form fieldset label {
 
 #dining p {
   position: absolute;
-  top: 50%;
+  top: 48%;
   right: 58%;
   line-height: 25px;
   text-align: right;
@@ -702,7 +731,7 @@ form fieldset label {
 #dining svg {
   position: absolute;
   top: 0;
-  right: 56%;
+  right: 58%;
   width: 42%;
   height: 1px;
 }
@@ -711,15 +740,219 @@ form fieldset label {
   stroke-width: 1px;
   stroke: black;
   stroke-dasharray: 700;
-  stroke-dashoffset: 700; /*동적으로 정하기*/
+  stroke-dashoffset: 700;
+  /*동적으로 정하기*/
   animation: lineMove 2s forwards;
 }
 
-@media screen and (max-width: 1500px) and (min-width: 1200px){
-  #rooms h2 {
-    top: 25%;
+/* FACILITIES */
+
+#facilities {
+  margin-top: 200px;
+  width: 100%;
+  height: 100vh;
+}
+
+#facilities h2 {
+  width: fit-content;
+  margin: 0 auto 60px;
+}
+
+#facilities div.facilities_content {
+  width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+#facilities article {
+  width: 32%;
+  text-align: center;
+  background-size: cover;
+  transition: 1s;
+  color: #fff;
+}
+
+.facility_wrap {
+  height: 500px;
+  opacity: 0;
+  transition: opacity .5s, background .7s;
+}
+
+.facility_wrap:hover {
+  opacity: 1;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+#facilities article dl {
+  padding-top: 140px;
+}
+
+#facilities article dl dt {
+  font-family: 'BaskervilleOldFace', serif;
+  font-size: 45px;
+}
+
+#facilities article dl dt::after {
+  content: "";
+  display: block;
+  margin: 20px auto 30px;
+  border-bottom: 1px solid #fff;
+  width: 250px;
+}
+
+#facilities article dl dd {
+  font-size: 14px;
+  line-height: 22px;
+}
+
+#facilities article a {
+  margin: 40px auto 0;
+  font-size: 13px;
+}
+
+/* MEMBERSHIP */
+
+#membership {
+  margin: 50px 0 150px;
+  width: 100%;
+}
+
+#membership article {
+  height: 270px;
+  position: relative;
+  background-image: url(../assets/membership-bg.png), url(../assets/membership-bg.png);
+  background-repeat: no-repeat, no-repeat;
+  background-size: 40%, 40%;
+  background-position: top 18% left -48%, top 18% right -48%;
+}
+
+#membership article h3 {
+  padding-top: 80px;
+}
+
+#membership article a {
+  margin: 40px auto;
+}
+
+#membership article svg {
+  width: 100%;
+  height: 270px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+#membership article svg line {
+  stroke-width: 1px;
+  stroke: #d8c3ae;
+  stroke-dasharray: 1500;
+  stroke-dashoffset: 1500;
+  animation: lineMove 5s forwards;
+}
+
+
+/* WEDDING & MEETING */
+#wedding {
+  width: 100%;
+  height: 100vh;
+  border: 1px solid #000;
+  text-align: center;
+  position: relative;
+  padding: 40vh 0 0;
+  box-sizing: border-box;
+}
+
+#wedding h2 {
+  color: #fff;
+}
+
+#wedding p {
+  color: #fff;
+  padding: 20px 0;
+}
+
+#wedding a {
+  width: 160px;
+  margin: 20px 5px;
+  display: inline-block;
+}
+
+#wedding video {
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+}
+
+#wedding video::before {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: #ccc;
+}
+
+/* SNS */
+
+#sns {}
+
+#sns h3 {}
+
+#sns p {}
+
+#sns .posts {}
+
+#sns .posts ul {}
+
+#sns .posts ul li {}
+
+#sns .posts ul li a {}
+
+/* FOOTER */
+
+footer {}
+
+footer ul {}
+
+footer ul li {}
+
+footer ul li a {}
+
+@media screen and (max-width: 1500px) and (min-width: 1200px) {
+  .promo-slider {
+    width: 70%;
   }
-  #dining h2 {
-    top: 25%;
+
+  .promo-slider ul {
+    width: 120vw;
+  }
+
+  .promo-slider ul li {
+    width: 20vw;
+    background-size: 20vw;
+  }
+
+  .promo-slider ul li::before {
+    right: -12%;
+  }
+
+  .promo-slider a dl {
+    width: auto;
+    padding-top: 103%;
+  }
+
+  .promo-control>a:first-child {
+    left: 5%;
+  }
+
+  .promo-control>a:last-child {
+    right: 5%;
   }
 }
