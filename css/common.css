@@ -751,7 +751,7 @@ form fieldset label {
 #facilities {
   margin-top: 200px;
   width: 100%;
-  height: 100vh;
+  height: 80vh;
 }
 
 #facilities h2 {
@@ -777,12 +777,12 @@ form fieldset label {
 .facility_wrap {
   height: 500px;
   opacity: 0;
-  transition: opacity .5s, background .7s;
+  transition: opacity .5s, background-color .7s;
 }
 
 .facility_wrap:hover {
   opacity: 1;
-  background: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.6);
 }
 
 #facilities article dl {
@@ -822,7 +822,7 @@ form fieldset label {
 /* MEMBERSHIP */
 
 #membership {
-  margin: 50px 0 150px;
+  margin: 150px 0 300px;
   width: 100%;
 }
 
@@ -831,8 +831,8 @@ form fieldset label {
   position: relative;
   background-image: url(../assets/membership-bg.png), url(../assets/membership-bg.png);
   background-repeat: no-repeat, no-repeat;
-  background-size: 40%, 40%;
-  background-position: top 18% left -48%, top 18% right -48%;
+  background-size: 600px, 600px;
+  background-position: top 18% left -418px, top 18% right -418px;
 }
 
 #membership article h3 {
@@ -855,8 +855,8 @@ form fieldset label {
 #membership article svg line {
   stroke-width: 1px;
   stroke: #d8c3ae;
-  stroke-dasharray: 1500;
-  stroke-dashoffset: 1500;
+  stroke-dasharray: 100vw;
+  stroke-dashoffset: 100vw;
   animation: lineMove 5s forwards;
 }
 
@@ -887,7 +887,7 @@ form fieldset label {
   display: inline-block;
 }
 
-#wedding video {
+#wedding iframe {
   position: absolute;
   z-index: -1;
   width: 100%;
@@ -896,7 +896,7 @@ form fieldset label {
   left: 0;
 }
 
-#wedding video::before {
+#wedding iframe::before {
   content: "";
   display: block;
   width: 100%;
@@ -904,13 +904,13 @@ form fieldset label {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: #ccc;
+  background-color: rgba(0, 0, 0, 0.15);
 }
 
 /* SNS */
 
 #sns {
-  margin-top: 200px;
+  margin: 200px 0;
   width: 100%;
   text-align: center;
 }
@@ -944,12 +944,17 @@ a.top_btn {
   position: fixed;
   bottom: 50px;
   right: 90px;
-  text-align: center;
   width: 70px;
   height: 70px;
-  border: 1px solid #000;
   border-radius: 25%;
+  background-color: #776e66;
   box-shadow: 2px 2px 20px 0px rgba(0, 0, 0, 0.2);
+}
+
+a.top_btn span {
+  font-size: 50px;
+  margin: 10px 0 0 10px;
+  color: #fff;
 }
 
 /* FOOTER */
@@ -958,19 +963,51 @@ footer {
   margin-top: 100px;
   width: 100%;
   height: 400px;
-  background: url(../assets/footer-bg.png) repeat-y center / contain;
+  background: url(../assets/footer-bg.png) repeat center / contain;
 }
 
 footer ul {
   display: flex;
 }
 
-footer ul li {}
+footer ul.familySites li a {
+  display: block;
+  text-indent: -999em;
+  background: url(../assets/brandbar.png) no-repeat;
+}
 
-footer ul li a {}
+footer ul li:first-child a {
+  width: 75px;
+  height: 40px;
+  background-position: top -90px left -509px;
+}
 
-@media screen and (max-width: 1500px) and (min-width: 1200px) {
-  .promo-slider {
+footer ul li:nth-child(2) a {
+  width: 75px;
+  height: 40px;
+  background-position: top -394px left -509px;
+}
+
+footer ul li:nth-child(3) a {
+  width: 96px;
+  height: 40px;
+  background-position: top -168px left -106px;
+}
+
+footer ul li:nth-child(4) a {
+  width: 96px;
+  height: 40px;
+  background-position: top -242px left -200px;
+}
+
+footer ul li:nth-child(5) a {
+  width: 96px;
+  height: 40px;
+  background-position: top -242px left -200px;
+}
+
+@media screen and (max-width: 1500px) and (min-width: 1000px) {
+  /* .promo-slider {
     width: 70%;
   }
 
@@ -979,7 +1016,7 @@ footer ul li a {}
   }
 
   .promo-slider ul li {
-    width: 20vw;
+    width: 20%;
     background-size: 20vw;
   }
 
@@ -998,5 +1035,5 @@ footer ul li a {}
 
   .promo-control>a:last-child {
     right: 5%;
-  }
+  } */
 }
