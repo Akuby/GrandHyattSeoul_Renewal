@@ -46,6 +46,11 @@ address {
 
 body {
   font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 300;;
+}
+
+small {
+  margin: 0 10px;
 }
 
 .btn_black {
@@ -234,6 +239,7 @@ header #lnb .wrap ul li {
   color: #fff;
   text-transform: uppercase;
   position: relative;
+  font-weight: 400;
 }
 
 header #lnb .wrap>ul>li::before {
@@ -265,6 +271,7 @@ header #lnb .wrap ul li ul li {
 
 header #lnb .wrap ul li ul li a {
   font-size: 15px;
+  font-weight: 300;
   position: relative;
   padding-bottom: 5px;
 }
@@ -457,6 +464,22 @@ form fieldset label {
   background: url(../assets/offer-1.png) no-repeat;
 }
 
+.promo-slider ul li:nth-child(2) {
+  background-image: url(../assets/offer-2.png);
+}
+
+.promo-slider ul li:nth-child(3) {
+  background-image: url(../assets/offer-3.png);
+}
+
+.promo-slider ul li:nth-child(4) {
+  background-image: url(../assets/offer-4.png);
+}
+
+.promo-slider ul li:nth-child(5) {
+  background-image: url(../assets/offer-5.png);
+}
+
 .promo-slider ul li::before {
   content: "";
   height: 400px;
@@ -569,11 +592,22 @@ form fieldset label {
 #rooms .rooms-slider li {
   width: 55vw;
   height: 40vw;
-  /*auto로 하고 싶은데*/
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: url(../assets/room-1.png) no-repeat center / cover;
   position: relative;
 }
+
+#rooms .rooms-slider li:nth-child(2) {
+  background-image: url(../assets/room-2.png);
+}
+
+#rooms .rooms-slider li:nth-child(3) {
+  background-image: url(../assets/room-3.png);
+}
+
+#rooms .rooms-slider li:nth-child(4) {
+  background-image: url(../assets/room-4.png);
+}
+
 
 #rooms .rooms-slider li span {
   font-size: 60px;
@@ -673,9 +707,20 @@ form fieldset label {
 #dining .dining-slider li {
   width: 55vw;
   height: 40vw;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: url(../assets/dining-1.png) no-repeat center / cover;
   position: relative;
+}
+
+#dining .dining-slider li:nth-child(2) {
+  background-image: url(../assets/dining-2.png);
+}
+
+#dining .dining-slider li:nth-child(3) {
+  background-image: url(../assets/dining-3.png);
+}
+
+#dining .dining-slider li:nth-child(4) {
+  background-image: url(../assets/dining-4.png);
 }
 
 #dining .dining-slider li span {
@@ -769,9 +814,18 @@ form fieldset label {
 #facilities article {
   width: 32%;
   text-align: center;
+  background-image: url(../assets/facilities-1.png);
   background-size: cover;
   transition: 1s;
   color: #fff;
+}
+
+#facilities article:nth-child(2) {
+  background-image: url(../assets/facilities-2.png);
+}
+
+#facilities article:nth-child(3) {
+  background-image: url(../assets/facilities-3.png);
 }
 
 .facility_wrap {
@@ -822,7 +876,7 @@ form fieldset label {
 /* MEMBERSHIP */
 
 #membership {
-  margin: 150px 0 300px;
+  margin: 150px 0 200px;
   width: 100%;
 }
 
@@ -885,26 +939,28 @@ form fieldset label {
   width: 160px;
   margin: 20px 5px;
   display: inline-block;
+  font-size: 14px;
 }
 
 #wedding iframe {
   position: absolute;
-  z-index: -1;
+  z-index: -2;
   width: 100%;
   height: 100vh;
   top: 0;
   left: 0;
 }
 
-#wedding iframe::before {
+#wedding::before {
   content: "";
   display: block;
+  z-index: -1;
   width: 100%;
   height: 100%;
   position: absolute;
   top: 0;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.15);
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 /* SNS */
@@ -933,7 +989,29 @@ form fieldset label {
   margin: 0 20px;
   text-indent: -9999em;
   background-size: cover;
+  background-image: url(../assets/sns-1.png);
 }
+
+#sns .posts ul li:nth-child(2) a {
+  background-image: url(../assets/sns-2.png);
+}
+
+#sns .posts ul li:nth-child(3) a {
+  background-image: url(../assets/sns-3.png);
+}
+
+#sns .posts ul li:nth-child(4) a {
+  background-image: url(../assets/sns-4.png);
+}
+
+#sns .posts ul li:nth-child(5) a {
+  background-image: url(../assets/sns-5.png);
+}
+
+#sns .posts ul li:nth-child(6) a {
+  background-image: url(../assets/sns-6.png);
+}
+
 #sns .posts ul li:nth-child(2n) a {
   margin-top: 80px;
 }
@@ -944,66 +1022,186 @@ a.top_btn {
   position: fixed;
   bottom: 50px;
   right: 90px;
-  width: 70px;
-  height: 70px;
   border-radius: 25%;
   background-color: #776e66;
   box-shadow: 2px 2px 20px 0px rgba(0, 0, 0, 0.2);
+  z-index: 10;
 }
 
 a.top_btn span {
-  font-size: 50px;
-  margin: 10px 0 0 10px;
-  color: #fff;
+  display: block;
+  width: 60px;
+  height: 60px;
+  background: url(../assets/sprite.png) no-repeat;
+  background-position: left 6px top -196px;
 }
 
 /* FOOTER */
 
 footer {
+  position: relative;
+  display: flex;
+  justify-content: space-evenly;
   margin-top: 100px;
   width: 100%;
-  height: 400px;
+  height: 320px;
+  color: #bbb;
   background: url(../assets/footer-bg.png) repeat center / contain;
 }
 
-footer ul {
-  display: flex;
+footer a {
+  color: #bbb;
 }
 
-footer ul.familySites li a {
+footer>span {
+  display: block;
+  position: absolute;
+  top: 70px;
+  left: 20%;
+  width: 226px;
+  height: 54px;
+  background: url(../assets/sprite.png) no-repeat left bottom;
+}
+
+footer .familySites {
+  margin-top: 170px;
+  width: 45%;
+  display: flex;
+  justify-content: space-between;
+}
+
+footer .familySites li a {
   display: block;
   text-indent: -999em;
-  background: url(../assets/brandbar.png) no-repeat;
+  background: url(../assets/sprite.png) no-repeat;
 }
 
-footer ul li:first-child a {
+footer .familySites li:first-child a {
+  width: 79px;
+  height: 39px;
+  background-position: top -57px left -231px;
+}
+
+footer .familySites li:nth-child(2) a {
   width: 75px;
-  height: 40px;
-  background-position: top -90px left -509px;
+  height: 38px;
+  background-position: top -233px left -334px;
 }
 
-footer ul li:nth-child(2) a {
-  width: 75px;
+footer .familySites li:nth-child(3) a {
+  width: 105px;
   height: 40px;
-  background-position: top -394px left -509px;
+  background-position: top -150px left -231px;
 }
 
-footer ul li:nth-child(3) a {
-  width: 96px;
+footer .familySites li:nth-child(4) a {
+  width: 105px;
   height: 40px;
-  background-position: top -168px left -106px;
+  background-position: top -241px left -231px;
 }
 
-footer ul li:nth-child(4) a {
-  width: 96px;
-  height: 40px;
-  background-position: top -242px left -200px;
+footer .familySites li:nth-child(5) a {
+  width: 50px;
+  height: 51px;
+  background-position: top -55px left -336px;
 }
 
-footer ul li:nth-child(5) a {
-  width: 96px;
-  height: 40px;
-  background-position: top -242px left -200px;
+footer .familySites li:nth-child(6) a {
+  width: 54px;
+  height: 50px;
+  background-position: top -353px left -235px;
+}
+
+footer .familySites li:nth-child(7) a {
+  width: 51px;
+  height: 50px;
+  background-position: top -158px left -335px;
+}
+
+footer .familySites li:nth-child(8) a {
+  width: 73px;
+  height: 50px;
+  background-position: top -340px left -333px;
+}
+
+footer > div:nth-child(3) {
+  width: 100%;
+  height: 50px;
+  position: absolute;
+  bottom: 0;
+  background: #4b4642;
+  border-top: 1px solid #615b56;
+}
+
+footer .info {
+  width: 820px;
+  line-height: 50px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  font-size: 14px;
+}
+
+footer .info li {
+  margin: 0 15px;
+  position: relative;
+}
+
+footer .info li::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 15px;
+  right: -15px;
+  height: 20px;
+  border-right: 1px solid #706963;
+}
+footer .info li:last-child::after {
+  display: none;
+}
+
+footer > div:last-child {
+  position: relative;
+  width: 45%;
+  height: 270px;
+  padding: 50px 30px;
+  box-sizing: border-box;
+}
+footer > div:last-child .footer_sns {
+  position: absolute;
+  bottom: 55px;
+}
+footer > div:last-child .footer_sns a {
+  display: inline-block;
+  width: 62px;
+  height: 62px;
+  margin-right: 10px;
+  text-indent: -999em;
+  background: url(../assets/sprite.png) no-repeat;
+  background-position: top -281px left -81px;
+}
+
+footer > div:last-child .footer_sns a:first-child {
+  background-position: top -281px left 1px;
+}
+footer > div:last-child .footer_sns a:last-child {
+  background-position: top -281px left -163px;
+}
+
+footer > div:last-child::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 40px;
+  height: 200px;
+  border-left: 1px solid #706963;
+}
+footer > div:last-child * {
+  line-height: 27px;
+}
+footer >div:last-child address {
+  display: inline;
 }
 
 @media screen and (max-width: 1500px) and (min-width: 1000px) {
