@@ -2,11 +2,19 @@
 
 @font-face {
   font-family: "BaskervilleOldFace";
-  src: url("../assets/BASKVILL.ttf") format("truetype");
+  src: url("../assets/fonts/BASKVILL.ttf") format("truetype");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "SpoqaHanSansNeo";
+  src: url("../assets/fonts/SpoqaHanSansNeo-Light.ttf") format("truetype");
   font-weight: normal;
 }
 
 /* 초기화 */
+html {
+  scroll-behavior: smooth;
+}
 body,
 h1,
 h2,
@@ -46,7 +54,8 @@ address {
 
 body {
   font-family: 'Noto Sans KR', sans-serif;
-  font-weight: 300;;
+  font-weight: 300;
+  
 }
 
 small {
@@ -155,7 +164,7 @@ header #navWrap {
   /*헤더 아래로 내려갈 경우 */
   overflow: hidden;
   transition: .6s;
-  position: fixed;
+  position: absolute;
   z-index: 999;
 }
 
@@ -171,12 +180,6 @@ header #navWrap:hover h1 a {
 
 header #navWrap:hover #gnb ul li a {
   color: #000;
-}
-
-header h1 {
-  /*헤더 아래로 내려갈 경우*/
-  /* height: 0;
-  overflow: hidden; */
 }
 
 header h1 a {
@@ -204,7 +207,6 @@ header #gnb ul {
 
 header #gnb ul li {
   margin: 0 20px;
-
 }
 
 header #gnb ul li a {
@@ -246,10 +248,15 @@ header #lnb .wrap>ul>li::before {
   content: '';
   display: block;
   height: 150px;
-  border-left: 1px solid #ccc;
+  border-left: 1px solid transparent;
   position: absolute;
   left: -10px;
   top: 50px;
+  transition: 0.3s;
+}
+
+header #navWrap:hover #lnb .wrap>ul>li::before {
+  border-color: #ccc;
 }
 
 header #lnb .wrap>ul>li:first-child::before {
@@ -284,7 +291,7 @@ header #lnb .wrap ul li ul li a::after {
   left: 0;
   content: '';
   margin-top: 2px;
-  border-bottom: solid 1px #000;
+  border-bottom: solid 1px rgb(158, 158, 158);
   transition: transform 250ms ease-in-out;
   transform: scaleX(0);
   transform-origin: center;
@@ -439,7 +446,7 @@ form fieldset label {
 /* Special Offers */
 
 #specialOffers {
-  height: 90vh;
+  height: 80vh;
   width: 100%;
   background-color: #fff;
   margin-top: 180px;
@@ -497,6 +504,7 @@ form fieldset label {
 
 .promo-slider a dt {
   font-size: 20px;
+  font-weight: 400;
   padding: 10px;
 }
 
@@ -563,37 +571,88 @@ form fieldset label {
   padding-top: 20px;
 }
 
-/*  ROOMS */
-
-#rooms {
-  margin-top: 400px;
+/* ROOMS, DINING 공통 */
+.twin {
   position: relative;
 }
 
-#rooms h2 {
+.twin h2 {
   position: absolute;
   top: 25%;
-  left: 58%;
   line-height: 55px;
   font-size: 40px;
-  text-align: left;
 }
 
-#rooms .slider-wrap {
+.twin .slider-wrap {
   width: 55vw;
   overflow: hidden;
 }
 
-#rooms .rooms-slider {
+.twin ul {
   display: flex;
   width: 2020vw;
 }
 
-#rooms .rooms-slider li {
+.twin ul li{
   width: 55vw;
   height: 40vw;
-  background: url(../assets/room-1.png) no-repeat center / cover;
   position: relative;
+  background: no-repeat center / cover;
+}
+
+.twin ul li span {
+  font-size: 60px;
+  color: #fff;
+  text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.7);
+  font-family: 'BaskervilleOldFace', serif;
+  position: absolute;
+  bottom: 10px;
+}
+
+.twin div:nth-child(3) {
+  position: absolute;
+  bottom: 0;
+}
+
+.twin div:nth-child(3) a {
+  font-family: 'SpoqaHanSansNeo', sans-serif;  
+  font-size: 20px;
+  color: #a6a6a6;
+}
+
+.twin div:nth-child(3) a.on {
+  color: #000;
+}
+
+.twin div:nth-child(3) a.on::after {
+  content: "";
+  display: inline-block;
+  left: 30px;
+  bottom: 5px;
+  width: 85px;
+  border-bottom: 1px solid #000;
+  margin: 0 10px;
+}
+
+.twin > p {
+  position: absolute;
+  top: 48%;
+  line-height: 25px;
+}
+
+/*  ROOMS */
+
+#rooms {
+  margin-top: 400px;
+}
+
+#rooms h2 {
+  left: 58%;
+  text-align: left;
+}
+
+#rooms .rooms-slider li {
+  background-image: url(../assets/room-1.png);
 }
 
 #rooms .rooms-slider li:nth-child(2) {
@@ -608,54 +667,24 @@ form fieldset label {
   background-image: url(../assets/room-4.png);
 }
 
-
 #rooms .rooms-slider li span {
-  font-size: 60px;
-  color: #fff;
-  text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.7);
-  font-family: 'BaskervilleOldFace', serif;
-  position: absolute;
-  bottom: 10px;
   right: 25px;
 }
 
 #rooms .rooms-pagination {
-  position: absolute;
-  bottom: 0;
   left: 58%;
 }
 
 #rooms .rooms-pagination a {
-  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
-  font-size: 20px;
-  color: #a6a6a6;
   margin-right: 5px;
 }
 
-#rooms .rooms-pagination a.on {
-  color: #000;
-}
-
-#rooms .rooms-pagination a.on::after {
-  content: "";
-  display: inline-block;
-  left: 30px;
-  bottom: 5px;
-  width: 85px;
-  border-bottom: 1px solid #000;
-  margin: 0 10px;
-}
-
 #rooms p {
-  position: absolute;
-  top: 48%;
   left: 58%;
-  line-height: 25px;
 }
 
 #rooms a.btn_trpt {
-  position: absolute;
-  top: 70%;
+
   left: 58%;
 }
 
@@ -679,16 +708,11 @@ form fieldset label {
 /*  DINING & BAR */
 #dining {
   margin-top: 127px;
-  position: relative;
 }
 
 #dining h2 {
-  position: absolute;
-  top: 25%;
-  right: 58%;
-  line-height: 55px;
-  font-size: 40px;
   text-align: right;
+  right: 58%;
   z-index: 10;
 }
 
@@ -699,16 +723,8 @@ form fieldset label {
   overflow: hidden;
 }
 
-#dining .dining-slider {
-  display: flex;
-  width: 2020vw;
-}
-
 #dining .dining-slider li {
-  width: 55vw;
-  height: 40vw;
-  background: url(../assets/dining-1.png) no-repeat center / cover;
-  position: relative;
+  background-image: url(../assets/dining-1.png);
 }
 
 #dining .dining-slider li:nth-child(2) {
@@ -724,47 +740,19 @@ form fieldset label {
 }
 
 #dining .dining-slider li span {
-  font-size: 60px;
-  color: #fff;
-  text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.7);
-  font-family: 'BaskervilleOldFace', serif;
-  position: absolute;
-  bottom: 10px;
   left: 25px;
 }
 
 #dining .dining-pagination {
-  position: absolute;
-  bottom: 0;
   right: 58%;
 }
 
 #dining .dining-pagination a {
-  font-family: 'Spoqa Han Sans Neo', 'sans-serif';
-  font-size: 20px;
-  color: #a6a6a6;
   margin-left: 5px;
 }
 
-#dining .dining-pagination a.on {
-  color: #000;
-}
-
-#dining .dining-pagination a.on::after {
-  content: "";
-  display: inline-block;
-  left: 30px;
-  bottom: 5px;
-  width: 85px;
-  border-bottom: 1px solid #000;
-  margin: 0 10px;
-}
-
 #dining p {
-  position: absolute;
-  top: 48%;
   right: 58%;
-  line-height: 25px;
   text-align: right;
 }
 
@@ -876,7 +864,7 @@ form fieldset label {
 /* MEMBERSHIP */
 
 #membership {
-  margin: 150px 0 200px;
+  margin: 100px 0 200px;
   width: 100%;
 }
 
@@ -928,6 +916,7 @@ form fieldset label {
 
 #wedding h2 {
   color: #fff;
+  font-size: 40px;
 }
 
 #wedding p {
@@ -1012,6 +1001,10 @@ form fieldset label {
   background-image: url(../assets/sns-6.png);
 }
 
+#sns .posts ul li:nth-child(7) a {
+  background-image: url(../assets/sns-7.png);
+}
+
 #sns .posts ul li:nth-child(2n) a {
   margin-top: 80px;
 }
@@ -1023,7 +1016,7 @@ a.top_btn {
   bottom: 50px;
   right: 90px;
   border-radius: 25%;
-  background-color: #776e66;
+  background-color: #fff;
   box-shadow: 2px 2px 20px 0px rgba(0, 0, 0, 0.2);
   z-index: 10;
 }

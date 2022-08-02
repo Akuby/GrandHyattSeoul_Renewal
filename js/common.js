@@ -13,6 +13,16 @@
 // $('.posts a').each(function() {
 //   $(this).css({backgroundImage:`url(../assets/sns-${$(this).parent().index()+1}.png)`})
 // })
-let rdWidth = parseInt($('#rooms').css('width'))*42/100;
+let rdWidth = parseInt($('#rooms').css('width')) * 42 / 100;
 $('#rooms svg line').attr('x2', rdWidth);
 $('#dining svg line').attr('x1', rdWidth);
+
+
+// 스크롤을 내릴 때는 없다가, 위로 올리면 내려오도록!
+$(window).scroll(function () {
+  if ($(document).scrollTop() >= $('header').innerHeight()) {
+    $('#navWrap').css({position: 'fixed'});
+  } else if ($(document).scrollTop() < $('header').innerHeight()) {
+    $('#navWrap').css({position: 'absolute'})
+  }
+})
