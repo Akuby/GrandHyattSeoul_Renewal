@@ -468,9 +468,10 @@ form fieldset label {
 .promo-slider ul li {
   width: 300px;
   position: relative;
-  background: url(../assets/offer-1.png) no-repeat;
+  background-repeat: no-repeat;
+  /* background: url(../assets/offer-1.png) no-repeat; */
 }
-
+/* 
 .promo-slider ul li:nth-child(2) {
   background-image: url(../assets/offer-2.png);
 }
@@ -485,7 +486,7 @@ form fieldset label {
 
 .promo-slider ul li:nth-child(5) {
   background-image: url(../assets/offer-5.png);
-}
+} */
 
 .promo-slider ul li::before {
   content: "";
@@ -640,6 +641,26 @@ form fieldset label {
   line-height: 25px;
 }
 
+.twin > a {
+  position: absolute;
+  top: 70%;
+}
+
+.twin > svg {
+  position: absolute;
+  top: 0;
+  width: 42%;
+  height: 1px;
+}
+
+.twin > svg line {
+  stroke-width: 1px;
+  stroke: black;
+  stroke-dasharray: 700;
+  stroke-dashoffset: 700;
+  animation: lineMove 2s forwards;
+}
+
 /*  ROOMS */
 
 #rooms {
@@ -651,7 +672,7 @@ form fieldset label {
   text-align: left;
 }
 
-#rooms .rooms-slider li {
+/* #rooms .rooms-slider li {
   background-image: url(../assets/room-1.png);
 }
 
@@ -665,7 +686,7 @@ form fieldset label {
 
 #rooms .rooms-slider li:nth-child(4) {
   background-image: url(../assets/room-4.png);
-}
+} */
 
 #rooms .rooms-slider li span {
   right: 25px;
@@ -684,25 +705,11 @@ form fieldset label {
 }
 
 #rooms a.btn_trpt {
-
   left: 58%;
 }
 
 #rooms svg {
-  position: absolute;
-  top: 0;
   left: 58%;
-  width: 42%;
-  height: 1px;
-}
-
-#rooms svg line {
-  stroke-width: 1px;
-  stroke: black;
-  stroke-dasharray: 700;
-  stroke-dashoffset: 700;
-  /*동적으로 정하기*/
-  animation: lineMove 2s forwards;
 }
 
 /*  DINING & BAR */
@@ -722,7 +729,7 @@ form fieldset label {
   width: 55vw;
   overflow: hidden;
 }
-
+/* 
 #dining .dining-slider li {
   background-image: url(../assets/dining-1.png);
 }
@@ -737,7 +744,7 @@ form fieldset label {
 
 #dining .dining-slider li:nth-child(4) {
   background-image: url(../assets/dining-4.png);
-}
+} */
 
 #dining .dining-slider li span {
   left: 25px;
@@ -757,26 +764,11 @@ form fieldset label {
 }
 
 #dining a.btn_trpt {
-  position: absolute;
-  top: 70%;
   right: 58%;
 }
 
 #dining svg {
-  position: absolute;
-  top: 0;
   right: 58%;
-  width: 42%;
-  height: 1px;
-}
-
-#dining svg line {
-  stroke-width: 1px;
-  stroke: black;
-  stroke-dasharray: 700;
-  stroke-dashoffset: 700;
-  /*동적으로 정하기*/
-  animation: lineMove 2s forwards;
 }
 
 /* FACILITIES */
@@ -802,19 +794,19 @@ form fieldset label {
 #facilities article {
   width: 32%;
   text-align: center;
-  background-image: url(../assets/facilities-1.png);
+  /* background-image: url(../assets/facilities-1.png); */
   background-size: cover;
   transition: 1s;
   color: #fff;
 }
 
-#facilities article:nth-child(2) {
+/* #facilities article:nth-child(2) {
   background-image: url(../assets/facilities-2.png);
 }
 
 #facilities article:nth-child(3) {
   background-image: url(../assets/facilities-3.png);
-}
+} */
 
 .facility_wrap {
   height: 500px;
@@ -978,10 +970,10 @@ form fieldset label {
   margin: 0 20px;
   text-indent: -9999em;
   background-size: cover;
-  background-image: url(../assets/sns-1.png);
+  /* background-image: url(../assets/sns-1.png); */
 }
 
-#sns .posts ul li:nth-child(2) a {
+/* #sns .posts ul li:nth-child(2) a {
   background-image: url(../assets/sns-2.png);
 }
 
@@ -1003,7 +995,7 @@ form fieldset label {
 
 #sns .posts ul li:nth-child(7) a {
   background-image: url(../assets/sns-7.png);
-}
+} */
 
 #sns .posts ul li:nth-child(2n) a {
   margin-top: 80px;
