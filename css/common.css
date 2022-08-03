@@ -124,7 +124,7 @@ small {
 }
 
 .btn_gold:hover {
-  box-shadow: 2px 2px 20px 0px rgba(0, 0, 0, 0.15);
+  box-shadow: 2px 2px 15px 0px rgba(0, 0, 0, 0.09);
 }
 
 h1,
@@ -306,17 +306,15 @@ form {
   position: absolute;
   background-color: #fff;
   bottom: 70px;
-  width: 1200px;
-  left: calc(50% - 600px);
+  width: fit-content;
+  left: calc(50% - 550px);
   font-family: 'BaskervilleOldFace', serif;
 }
 
 form fieldset {
   border: none;
-  width: 1200px;
   height: 140px;
   display: flex;
-  justify-content: space-between;
 }
 
 form fieldset input {
@@ -348,6 +346,7 @@ form fieldset input {
 #reserv_content .contWrap li {
   font-size: 40px;
   transition: .5s;
+  cursor: pointer;
   color: #ccc;
 }
 
@@ -365,7 +364,7 @@ form fieldset input {
 
 form fieldset label {
   color: #bdbdbd;
-  line-height: 30px;
+  line-height: 25px;
   margin-top: 30px;
 }
 
@@ -424,7 +423,6 @@ form fieldset label {
 
 .reservOpt {
   font-size: 35px;
-  width: 50px;
   margin-left: 10px;
   margin-top: 5px;
 }
@@ -447,9 +445,10 @@ form fieldset label {
 
 #specialOffers {
   height: 80vh;
+  min-height: 570px;
   width: 100%;
   background-color: #fff;
-  margin-top: 180px;
+  margin-top: 160px;
 }
 
 .promo-slider {
@@ -469,24 +468,7 @@ form fieldset label {
   width: 300px;
   position: relative;
   background-repeat: no-repeat;
-  /* background: url(../assets/offer-1.png) no-repeat; */
 }
-/* 
-.promo-slider ul li:nth-child(2) {
-  background-image: url(../assets/offer-2.png);
-}
-
-.promo-slider ul li:nth-child(3) {
-  background-image: url(../assets/offer-3.png);
-}
-
-.promo-slider ul li:nth-child(4) {
-  background-image: url(../assets/offer-4.png);
-}
-
-.promo-slider ul li:nth-child(5) {
-  background-image: url(../assets/offer-5.png);
-} */
 
 .promo-slider ul li::before {
   content: "";
@@ -497,10 +479,10 @@ form fieldset label {
 }
 
 .promo-slider a dl {
-  width: 260px;
+  width: 100%;
   text-align: center;
   margin: 0 auto;
-  padding-top: 310px;
+  padding-top: 102%;
 }
 
 .promo-slider a dt {
@@ -540,7 +522,7 @@ form fieldset label {
 /* ESG BANNER */
 
 #ESG {
-  margin-top: 150px;
+  margin-top: 130px;
   width: 100%;
   height: 365px;
   background: url(../assets/esg-bg.png);
@@ -672,22 +654,6 @@ form fieldset label {
   text-align: left;
 }
 
-/* #rooms .rooms-slider li {
-  background-image: url(../assets/room-1.png);
-}
-
-#rooms .rooms-slider li:nth-child(2) {
-  background-image: url(../assets/room-2.png);
-}
-
-#rooms .rooms-slider li:nth-child(3) {
-  background-image: url(../assets/room-3.png);
-}
-
-#rooms .rooms-slider li:nth-child(4) {
-  background-image: url(../assets/room-4.png);
-} */
-
 #rooms .rooms-slider li span {
   right: 25px;
 }
@@ -729,22 +695,6 @@ form fieldset label {
   width: 55vw;
   overflow: hidden;
 }
-/* 
-#dining .dining-slider li {
-  background-image: url(../assets/dining-1.png);
-}
-
-#dining .dining-slider li:nth-child(2) {
-  background-image: url(../assets/dining-2.png);
-}
-
-#dining .dining-slider li:nth-child(3) {
-  background-image: url(../assets/dining-3.png);
-}
-
-#dining .dining-slider li:nth-child(4) {
-  background-image: url(../assets/dining-4.png);
-} */
 
 #dining .dining-slider li span {
   left: 25px;
@@ -777,6 +727,7 @@ form fieldset label {
   margin-top: 200px;
   width: 100%;
   height: 80vh;
+  min-height: 665px;
 }
 
 #facilities h2 {
@@ -794,19 +745,10 @@ form fieldset label {
 #facilities article {
   width: 32%;
   text-align: center;
-  /* background-image: url(../assets/facilities-1.png); */
   background-size: cover;
   transition: 1s;
   color: #fff;
 }
-
-/* #facilities article:nth-child(2) {
-  background-image: url(../assets/facilities-2.png);
-}
-
-#facilities article:nth-child(3) {
-  background-image: url(../assets/facilities-3.png);
-} */
 
 .facility_wrap {
   height: 500px;
@@ -897,6 +839,7 @@ form fieldset label {
 
 /* WEDDING & MEETING */
 #wedding {
+  margin-top: 200px;
   width: 100%;
   height: 100vh;
   border: 1px solid #000;
@@ -970,32 +913,7 @@ form fieldset label {
   margin: 0 20px;
   text-indent: -9999em;
   background-size: cover;
-  /* background-image: url(../assets/sns-1.png); */
 }
-
-/* #sns .posts ul li:nth-child(2) a {
-  background-image: url(../assets/sns-2.png);
-}
-
-#sns .posts ul li:nth-child(3) a {
-  background-image: url(../assets/sns-3.png);
-}
-
-#sns .posts ul li:nth-child(4) a {
-  background-image: url(../assets/sns-4.png);
-}
-
-#sns .posts ul li:nth-child(5) a {
-  background-image: url(../assets/sns-5.png);
-}
-
-#sns .posts ul li:nth-child(6) a {
-  background-image: url(../assets/sns-6.png);
-}
-
-#sns .posts ul li:nth-child(7) a {
-  background-image: url(../assets/sns-7.png);
-} */
 
 #sns .posts ul li:nth-child(2n) a {
   margin-top: 80px;
@@ -1051,6 +969,7 @@ footer>span {
 footer .familySites {
   margin-top: 170px;
   width: 45%;
+  max-width: 670px;
   display: flex;
   justify-content: space-between;
 }
@@ -1086,27 +1005,9 @@ footer .familySites li:nth-child(4) a {
 }
 
 footer .familySites li:nth-child(5) a {
-  width: 50px;
-  height: 51px;
-  background-position: top -55px left -336px;
-}
-
-footer .familySites li:nth-child(6) a {
-  width: 54px;
-  height: 50px;
-  background-position: top -353px left -235px;
-}
-
-footer .familySites li:nth-child(7) a {
   width: 51px;
   height: 50px;
   background-position: top -158px left -335px;
-}
-
-footer .familySites li:nth-child(8) a {
-  width: 73px;
-  height: 50px;
-  background-position: top -340px left -333px;
 }
 
 footer > div:nth-child(3) {
@@ -1189,34 +1090,123 @@ footer >div:last-child address {
   display: inline;
 }
 
-@media screen and (max-width: 1500px) and (min-width: 1000px) {
-  /* .promo-slider {
-    width: 70%;
+@media screen and (max-width:1499px) {
+  .promo-slider {
+    width: 66%;
   }
-
   .promo-slider ul {
-    width: 120vw;
+    width: 170%;
   }
-
   .promo-slider ul li {
-    width: 20%;
-    background-size: 20vw;
+    width: 20vw;
+    background-size: 100%;
   }
-
   .promo-slider ul li::before {
-    right: -12%;
+    height: 26vw;
+    right: -8%;
   }
-
-  .promo-slider a dl {
-    width: auto;
-    padding-top: 103%;
+  .promo-slider a dt {
+    font-size: 19px;
+    font-weight: 400;
+    padding: 10px;
   }
-
-  .promo-control>a:first-child {
-    left: 5%;
+  
+  .promo-slider a dd {
+    font-size: 13px;
   }
-
-  .promo-control>a:last-child {
-    right: 5%;
-  } */
+  .promo-control > a:first-child {
+    left: calc(4%);
+  }
+  .promo-control > a:last-child {
+    right: calc(4%);
+  }
+  .twin h2 {
+    /* top: 25%;
+    line-height: 55px; */
+    font-size: 37px;
+  }
+  .twin > p {
+    font-size: 15px;
+    top: 50%;
+  }
+  .twin > a{
+    font-size: 15px;
+  }
+  .twin div:nth-child(3) a {
+    font-size: 17px;
+  }
+  #sns {
+    margin-top: 170px;
+  }
 }
+  
+  @media screen and (max-width:1199px) {
+    form {
+      width: 900px;
+      left: calc(50% - 450px);
+    }
+    #reserv_content {
+      width: 150px;
+    }
+    #reserv_content .contWrap {
+      width: 150px;
+    }
+    #reserv_content .contWrap li {
+      font-size: 32px;
+    }
+    form fieldset label {
+      margin-top: 35px;
+    }
+    .dateWrap {
+      width: 150px;
+    }
+    .dateWrap:first-of-type::after {
+      width: 10px;
+      right: -5px;
+    }
+    .dateWrap:nth-of-type(2) {
+      margin-right: 0;
+    }
+    .reserv_date {
+      line-height: 40px;
+      font-size: 28px;
+    }
+    .optWrap {
+      width: 90px;
+      margin: 0;
+      text-align: center;
+      align-items: center;
+    }
+    .reservOpt {
+      font-size: 28px;
+      width: 45px;
+      padding-top: 5px;
+      padding-left: 30px;
+      margin: 0;
+    }
+    .optWrap:last-of-type .reservOpt {
+      margin-left: 0;
+  }
+  #reserv_btn {
+    background-color: #000;
+    margin-right: -1px;
+    color: #fff;
+    width: 150px;
+    font-size: 30px;
+  }
+
+
+    #ESG>section article img {
+      width: 49vw;
+      top: 50px;
+      right: 7%;
+      position: absolute;
+  }
+  }
+  @media screen and (max-width:899px) {
+  /* 모바일 가로, 타블렛 세로 */
+  }
+  
+  @media screen and (max-width:599px) {
+  /* 모바일 세로 */
+  }

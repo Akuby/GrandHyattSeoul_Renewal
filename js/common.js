@@ -26,3 +26,9 @@ $(window).scroll(function () {
     $('#navWrap').css({position: 'absolute'})
   }
 })
+
+$('#reserv_content .contWrap li').on('click', function() {
+  $('#reserv_content .contWrap li').removeClass('selected')
+  $(this).addClass('selected')
+  $('#reserv_content .contWrap').prepend($(this))
+})
