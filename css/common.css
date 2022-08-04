@@ -747,7 +747,7 @@ form fieldset label {
 }
 
 #facilities article {
-  width: 32%;
+  width: 33.4%;
   text-align: center;
   background-size: cover;
   transition: 1s;
@@ -1755,7 +1755,7 @@ footer>div:last-child address {
     height: 800px;
 }
 #facilities h2 {
-  font-size: 34px;
+  font-size: 33px;
 }
   .facility_wrap {
     opacity: 1;
@@ -1857,7 +1857,7 @@ footer>div:last-child address {
 }
 #wedding h2 {
   color: #fff;
-  font-size: 34px;
+  font-size: 33px;
   position: relative;
   z-index: 1;
 }
@@ -1878,7 +1878,35 @@ footer>div:last-child address {
   background: transparent;
   border-color: #fff;
 }
-
+#sns h3 {
+  font-size: 33px;
+}
+#sns .posts {
+  width: 100%;
+}
+#sns .posts ul {
+  margin: 70px auto 0;
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  overflow: hidden;
+  flex-wrap: wrap;
+}
+#sns .posts ul li {
+  margin: 10px;
+}
+#sns .posts ul li a {
+  width: 250px;
+  height: 250px;
+  margin: 0;
+}
+#sns .posts ul li:nth-child(2n) a {
+  margin-top: 0px;
+}
+a.top_btn {
+  right: 25px;
+  bottom: 20px;
+}
 
 
 

@@ -17,12 +17,20 @@ $('#facilities article').each(function () {
   $(this).css({
     backgroundImage: `url(../assets/facilities-${$(this).index()+1}.png)`
   })
-  if ($(window).innerWidth() < 599) {
-    $(this).css({
-      backgroundImage: `url(../assets/mobile_facilities-${$(this).index()+1}.png)`
-    })
-  }
 })
+window.addEventListener('resize', function() {
+  $('#facilities article').each(function () {
+    if ($(window).innerWidth() < 899) {
+      $(this).css({
+        backgroundImage: `url(../assets/mobile_facilities-${$(this).index()+1}.png)`
+      })
+    } else {
+      $(this).css({
+        backgroundImage: `url(../assets/facilities-${$(this).index()+1}.png)`
+      })
+    }
+  })
+} )
 $('.posts a').each(function () {
   $(this).css({
     backgroundImage: `url(../assets/sns-${$(this).parent().index()+1}.png)`
