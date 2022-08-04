@@ -17,6 +17,11 @@ $('#facilities article').each(function () {
   $(this).css({
     backgroundImage: `url(../assets/facilities-${$(this).index()+1}.png)`
   })
+  if ($(window).innerWidth() < 599) {
+    $(this).css({
+      backgroundImage: `url(../assets/mobile_facilities-${$(this).index()+1}.png)`
+    })
+  }
 })
 $('.posts a').each(function () {
   $(this).css({
