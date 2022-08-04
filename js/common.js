@@ -18,6 +18,11 @@ $('#facilities article').each(function () {
     backgroundImage: `url(../assets/facilities-${$(this).index()+1}.png)`
   })
 })
+$('.posts a').each(function () {
+  $(this).css({
+    backgroundImage: `url(../assets/sns-${$(this).parent().index()+1}.png)`
+  })
+})
 window.addEventListener('resize', function() {
   $('#facilities article').each(function () {
     if ($(window).innerWidth() < 899) {
@@ -31,11 +36,7 @@ window.addEventListener('resize', function() {
     }
   })
 } )
-$('.posts a').each(function () {
-  $(this).css({
-    backgroundImage: `url(../assets/sns-${$(this).parent().index()+1}.png)`
-  })
-})
+
 let rdWidth = parseInt($('#rooms').css('width')) * 42 / 100;
 $('#rooms svg line').attr('x2', rdWidth);
 $('#dining svg line').attr('x1', rdWidth);
@@ -63,3 +64,18 @@ $('#reserv_content .contWrap li').on('click', function () {
   $(this).addClass('selected')
   $('#reserv_content .contWrap').prepend($(this))
 })
+
+// specialOffers 슬라이더
+let liLength = $('.promo-slider ul li').innerWidth() + 40;
+let prevSliding = function() {
+  $('.promo-slider ul:not(:animated)').prepend($('>li:last', $('.promo-slider ul'))).css({marginLeft:-liLength}).animate({marginLeft:0}, 500)
+}
+let nextSliding = function() {
+  $('.promo-slider ul:not(:animated)').animate({marginLeft: -liLength}, 500, function() {
+    $(this)
+    .css({marginLeft: '0'})
+    .append($('>li:first', $(this)))
+  })
+}
+$('.promo-control .prev').on('click', prevSliding)
+$('.promo-control .next').on('click', nextSliding)
