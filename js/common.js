@@ -1,37 +1,37 @@
 $('.promo-slider ul li').each(function () {
   $(this).css({
-    backgroundImage: `url(../assets/offer-${$(this).index()+1}.png)`
+    backgroundImage: `url(./assets/offer-${$(this).index()+1}.png)`
   })
 })
 $('.rooms-slider li').each(function () {
   $(this).css({
-    backgroundImage: `url(../assets/room-${$(this).index()+1}.png)`
+    backgroundImage: `url(./assets/room-${$(this).index()+1}.png)`
   })
 })
 $('.dining-slider li').each(function () {
   $(this).css({
-    backgroundImage: `url(../assets/dining-${$(this).index()+1}.png)`
+    backgroundImage: `url(./assets/dining-${$(this).index()+1}.png)`
   })
 })
 $('#facilities article').each(function () {
   $(this).css({
-    backgroundImage: `url(../assets/facilities-${$(this).index()+1}.png)`
+    backgroundImage: `url(./assets/facilities-${$(this).index()+1}.png)`
   })
 })
 $('.posts a').each(function () {
   $(this).css({
-    backgroundImage: `url(../assets/sns-${$(this).parent().index()+1}.png)`
+    backgroundImage: `url(./assets/sns-${$(this).parent().index()+1}.png)`
   })
 })
 window.addEventListener('resize', function() {
   $('#facilities article').each(function () {
     if ($(window).innerWidth() < 899) {
       $(this).css({
-        backgroundImage: `url(../assets/mobile_facilities-${$(this).index()+1}.png)`
+        backgroundImage: `url(./assets/mobile_facilities-${$(this).index()+1}.png)`
       })
     } else {
       $(this).css({
-        backgroundImage: `url(../assets/facilities-${$(this).index()+1}.png)`
+        backgroundImage: `url(./assets/facilities-${$(this).index()+1}.png)`
       })
     }
   })
