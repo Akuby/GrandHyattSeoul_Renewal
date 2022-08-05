@@ -66,7 +66,8 @@ $('#reserv_content .contWrap li').on('click', function () {
 })
 
 // specialOffers 슬라이더
-let liLength = $('.promo-slider ul li').innerWidth() + 40;
+// 리사이즈 할 때마다 변하도록 해줘야할까?
+let liLength = $('.promo-slider ul li').innerWidth() + 40; // 40은 li의 좌우 마진값
 let prevSliding = function() {
   $('.promo-slider ul:not(:animated)').prepend($('>li:last', $('.promo-slider ul'))).css({marginLeft:-liLength}).animate({marginLeft:0}, 500)
 }
@@ -77,5 +78,11 @@ let nextSliding = function() {
     .append($('>li:first', $(this)))
   })
 }
+let numSliding = function() {
+  $(this).addClass('on').siblings('a').removeClass('on');
+  let slideLeft = ($('.twin ul li').innerWidth()) * ($(this).index());
+  $(this).parent().prev().children('ul').stop().animate({marginLeft:-slideLeft}, 1000)
+}
 $('.promo-control .prev').on('click', prevSliding)
 $('.promo-control .next').on('click', nextSliding)
+$('.rooms-pagination a, .dining-pagination a').on('click', numSliding)
