@@ -571,7 +571,7 @@ form fieldset label {
   font-size: 40px;
 }
 
-.twin .slider-wrap {
+.twin .twin-wrap {
   width: 55vw;
   overflow: hidden;
 }
@@ -610,15 +610,19 @@ form fieldset label {
 
 .twin div:nth-child(3) a.on {
   color: #000;
+  transition: 0.5s;
 }
 
-.twin div:nth-child(3) a.on::after {
-  content: "";
+.twin div:nth-child(3) a>span {
   display: inline-block;
   left: 30px;
   bottom: 5px;
-  width: 85px;
+  width: 0px;
   border-bottom: 1px solid #000;
+}
+
+.twin div:nth-child(3) a:first-child>span {
+  width: 85px;
   margin: 0 10px;
 }
 
@@ -694,7 +698,7 @@ form fieldset label {
   z-index: 10;
 }
 
-#dining .slider-wrap {
+#dining .twin-wrap {
   position: relative;
   right: -45%;
   width: 55vw;
@@ -847,7 +851,6 @@ form fieldset label {
   margin-top: 200px;
   width: 100%;
   height: 100vh;
-  border: 1px solid #000;
   text-align: center;
   position: relative;
   padding: 40vh 0 0;
@@ -1657,7 +1660,7 @@ footer>div:last-child address {
     left: 5%;
   }
 
-  .twin .slider-wrap {
+  .twin .twin-wrap {
     width: 100vw;
     overflow: hidden;
   }
@@ -1725,7 +1728,7 @@ footer>div:last-child address {
     width: fit-content;
   }
 
-  #dining .slider-wrap {
+  #dining .twin-wrap {
     position: relative;
     right: 0;
     width: 100vw;
@@ -1743,12 +1746,15 @@ footer>div:last-child address {
     right: 5%;
     text-align: right;
   }
+
   #facilities {
     height: 800px;
-}
-#facilities h2 {
-  font-size: 33px;
-}
+  }
+
+  #facilities h2 {
+    font-size: 33px;
+  }
+
   .facility_wrap {
     opacity: 1;
     background: rgba(0, 0, 0, 0.25);
@@ -1787,6 +1793,7 @@ footer>div:last-child address {
   #facilities article dl dt::after {
     display: none;
   }
+
   #facilities article a {
     margin: 0;
     width: 100%;
@@ -1795,174 +1802,208 @@ footer>div:last-child address {
     position: absolute;
     top: 0;
     border: none;
-}
-#facilities article a:hover {
-  background-color: transparent;
-}
-#membership article {
-  line-height: 220px;
-  background-size: 500px, 500px;
-  background-position: top 19% left -401px, top 19% right -401px;
-  border: 1px solid #d8c3ae;
-}
-#membership article h3 {
-  padding-top: 0px;
-  font-size: 33px;
-}
+  }
 
-#membership article a {
-  margin: 0;
+  #facilities article a:hover {
+    background-color: transparent;
+  }
+
+  #membership article {
+    line-height: 220px;
+    background-size: 500px, 500px;
+    background-position: top 19% left -401px, top 19% right -401px;
+    border: 1px solid #d8c3ae;
+  }
+
+  #membership article h3 {
+    padding-top: 0px;
+    font-size: 33px;
+  }
+
+  #membership article a {
+    margin: 0;
     width: 100%;
     height: 100%;
     text-indent: -9999em;
     position: absolute;
     top: 0;
     border: none;
-}
-#membership article a:hover {
-  box-shadow: none;
-}
-#membership article svg {
-  display: none;
-}
-#wedding {
-  height: 900px;
-  padding-top: 330px;
-  border: none;
-  background: url(../assets/mobile_wedding.webp) center / cover;
-}
-#wedding::before {
-  display: none;
-}
-#wedding::after {
-  content: "";
-  display: block;
-  z-index: 0;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.4);
-}
-#wedding iframe {
-  display: none;
-}
-#wedding h2 {
-  color: #fff;
-  font-size: 33px;
-  position: relative;
-  z-index: 1;
-}
-#wedding p {
-  position: relative;
-  z-index: 1;
-}
-#wedding a {
-  width: 300px;
-  line-height: 70px;
-  margin: 20px auto;
-  display: block;
-  font-size: 16px;
-  position: relative;
-  z-index: 1;
-}
-#wedding a:hover {
-  background: transparent;
-  border-color: #fff;
-}
-#sns {
-  margin-bottom: 100px;
-}
-#sns h3 {
-  font-size: 33px;
-}
-#sns .posts {
-  width: 100%;
-}
-#sns .posts ul {
-  margin: 70px auto 0;
-  display: flex;
-  justify-content: center;
-  width: fit-content;
-  overflow: hidden;
-  flex-wrap: wrap;
-}
-#sns .posts ul li {
-  margin: 5px;
-}
-#sns .posts ul li a {
-  width: 230px;
-  height: 230px;
-  margin: 0;
-}
-#sns .posts ul li:nth-child(2n) a {
-  margin-top: 0px;
-}
-a.top_btn {
-  right: 25px;
-  bottom: 20px;
-}
-footer {
-  flex-direction: column;
-  justify-content: initial;
-  align-items: center;
-  height: fit-content;
-}
-footer > span {
-  display: none;
-}
-footer .familySites {
-  order: 2;
-  margin-top: 0px;
-  width: 100%;
-  height: 190px;
-  max-width: 100%;
-  background: #4b4642;
-  border-top: 1px solid #615b56;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-footer .familySites li {
-  width: 105px;
-  margin: 0 10px;
-  display: flex;
-  align-items: center;
-}
-footer .familySites li a {
-  margin: 0 auto;
-}
-footer>div:nth-child(3) {
-  order: 3;
-  width: 100%;
-  height: fit-content;
-  position: static;
-  background: #4b4642;
-  border-top: 1px solid #615b56;
-}
-footer .info {
-  width: 100%;
-  line-height: 50px;
-  margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  font-size: 14px;
-}
-footer>div:last-child {
-  text-align: center;
-  width: 100%;
-  height: 270px;
-  padding: 30px 0 70px;
-  box-sizing: border-box;
-  order: 1;
-}
-footer>div:last-child .footer_sns {
-  left: calc(50% - 106px);
-  bottom: 40px;
-}
-footer>div:last-child .footer_sns a:last-child {
- margin-right: 0;
-}
+  }
+
+  #membership article a:hover {
+    box-shadow: none;
+  }
+
+  #membership article svg {
+    display: none;
+  }
+
+  #wedding {
+    height: 900px;
+    padding-top: 330px;
+    border: none;
+    background: url(../assets/mobile_wedding.webp) center / cover;
+  }
+
+  #wedding::before {
+    display: none;
+  }
+
+  #wedding::after {
+    content: "";
+    display: block;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  #wedding iframe {
+    display: none;
+  }
+
+  #wedding h2 {
+    color: #fff;
+    font-size: 33px;
+    position: relative;
+    z-index: 1;
+  }
+
+  #wedding p {
+    position: relative;
+    z-index: 1;
+  }
+
+  #wedding a {
+    width: 300px;
+    line-height: 70px;
+    margin: 20px auto;
+    display: block;
+    font-size: 16px;
+    position: relative;
+    z-index: 1;
+  }
+
+  #wedding a:hover {
+    background: transparent;
+    border-color: #fff;
+  }
+
+  #sns {
+    margin-bottom: 100px;
+  }
+
+  #sns h3 {
+    font-size: 33px;
+  }
+
+  #sns .posts {
+    width: 100%;
+  }
+
+  #sns .posts ul {
+    margin: 70px auto 0;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    flex-wrap: wrap;
+  }
+
+  #sns .posts ul li {
+    margin: 5px;
+    width: 31%;
+    height: 100%;
+  }
+
+  #sns .posts ul li a {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+
+  #sns .posts ul li:nth-child(2n) a {
+    margin-top: 0px;
+  }
+
+  a.top_btn {
+    right: 25px;
+    bottom: 20px;
+  }
+
+  footer {
+    flex-direction: column;
+    justify-content: initial;
+    align-items: center;
+    height: fit-content;
+  }
+
+  footer>span {
+    display: none;
+  }
+
+  footer .familySites {
+    order: 2;
+    margin-top: 0px;
+    width: 100%;
+    height: 190px;
+    max-width: 100%;
+    background: #4b4642;
+    border-top: 1px solid #615b56;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  footer .familySites li {
+    width: 105px;
+    margin: 0 10px;
+    display: flex;
+    align-items: center;
+  }
+
+  footer .familySites li a {
+    margin: 0 auto;
+  }
+
+  footer>div:nth-child(3) {
+    order: 3;
+    width: 100%;
+    height: fit-content;
+    position: static;
+    background: #4b4642;
+    border-top: 1px solid #615b56;
+  }
+
+  footer .info {
+    width: 100%;
+    line-height: 50px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 14px;
+  }
+
+  footer>div:last-child {
+    text-align: center;
+    width: 100%;
+    height: 270px;
+    padding: 30px 0 70px;
+    box-sizing: border-box;
+    order: 1;
+  }
+
+  footer>div:last-child .footer_sns {
+    left: calc(50% - 106px);
+    bottom: 40px;
+  }
+
+  footer>div:last-child .footer_sns a:last-child {
+    margin-right: 0;
+  }
 
 
 
@@ -1977,8 +2018,14 @@ footer>div:last-child .footer_sns a:last-child {
 
 
 }
+
 @media screen and (max-width:767px) {
+
   #membership article {
     background-position: top 19% left -450px, top 19% right -450px;
-}
+  }
+
+  #sns .posts ul li {
+    width: 45%;
+  }
 }
