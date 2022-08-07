@@ -148,6 +148,24 @@ h4 {
   }
 }
 
+@keyframes shadowPulse {
+  0% {
+    top: 70px;
+    box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0);
+  }
+
+  100% {
+    top: 50px;
+    box-shadow: 0px 20px 20px 0px rgba(0, 0, 0, 0.5);
+  }
+}
+
+.shadow-pulse {
+  animation-name: shadowPulse;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
+}
+
 /* HEADER */
 header {
   position: relative;
@@ -162,8 +180,6 @@ header #navWrap {
   flex-direction: column;
   align-items: center;
   height: 130px;
-  /* height: 70px; */
-  /*헤더 아래로 내려갈 경우 */
   overflow: hidden;
   transition: .6s;
   position: absolute;
@@ -172,7 +188,6 @@ header #navWrap {
 
 header #navWrap:hover {
   height: 370px;
-  /* height: 290px; 헤더 아래로 내려갈 경우 */
   background-color: #fff;
 }
 
@@ -183,6 +198,40 @@ header #navWrap:hover h1 a {
 header #navWrap:hover #gnb ul li a {
   color: #000;
 }
+
+/* header 영역 밖 */
+header #navWrap.min {
+  position: fixed;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
+  background: #fff;
+}
+
+header #navWrap.min h1 a{
+  width: 175px;
+  height: 44px;
+  background-position: left top -43px;
+  background-size: 186%;
+  position: relative;
+  z-index: 100;
+}
+ 
+header #navWrap.min a {
+  color: #000;
+}
+
+header #navWrap.min #lnb {
+  margin-top: 25px;
+}
+
+header #navWrap.min #lnb .wrap ul li {
+  color: #000;
+  cursor: default;
+}
+
+header #navWrap.min #lnb .wrap>ul>li::before {
+  top: 60px;
+}
+
 
 header h1 a {
   display: block;
@@ -550,9 +599,10 @@ form fieldset label {
 
 #ESG>section article img {
   width: 590px;
-  top: 50px;
+  top: 70px;
   right: 80px;
   position: absolute;
+  box-shadow: 0px 0px 21px 0px rgb(0 0 0 / 0%);
 }
 
 #ESG>section article p {
@@ -578,11 +628,11 @@ form fieldset label {
 
 .twin ul {
   display: flex;
-  width: 2020vw;
+  width: 220vw;
 }
 
 .twin ul li {
-  width: 55vw;
+  width: 25%;
   height: 40vw;
   position: relative;
   background: no-repeat center / cover;
@@ -649,7 +699,6 @@ form fieldset label {
   stroke: black;
   stroke-dasharray: 700;
   stroke-dashoffset: 700;
-  animation: lineMove 2s forwards;
 }
 
 /*  ROOMS */
@@ -707,6 +756,10 @@ form fieldset label {
 
 #dining .dining-slider li span {
   left: 25px;
+}
+
+#dining .dining-slider li:nth-child(3) span {
+  text-transform: uppercase;
 }
 
 #dining .dining-pagination {
@@ -907,11 +960,15 @@ form fieldset label {
   margin: 20px 0 0;
 }
 
-#sns .posts ul {
+#sns .posts {
   margin-top: 100px;
+  overflow: hidden;
+}
+
+#sns .posts ul {
   display: flex;
   width: 100%;
-  overflow: hidden;
+
 }
 
 #sns .posts ul li a {
@@ -920,7 +977,8 @@ form fieldset label {
   height: 250px;
   margin: 0 20px;
   text-indent: -9999em;
-  background-size: cover;
+  background-size: 100%;
+  background-position: center;
 }
 
 #sns .posts ul li:nth-child(2n) a {
@@ -1161,6 +1219,7 @@ footer>div:last-child address {
 }
 
 @media screen and (max-width:1199px) {
+
   form {
     width: 900px;
     left: calc(50% - 450px);
@@ -1374,10 +1433,6 @@ footer>div:last-child address {
 
   #membership article svg {
     height: 220px;
-  }
-
-  #membership article svg line {
-    /* 1200 ~ 900 두번째 line 태그 y값 220으로 바꿔주기 */
   }
 
   #sns .posts ul li a {
@@ -1917,7 +1972,7 @@ footer>div:last-child address {
   #sns .posts ul li {
     margin: 5px;
     width: 31%;
-    height: 100%;
+    height: 33vw;
   }
 
   #sns .posts ul li a {
@@ -1984,7 +2039,7 @@ footer>div:last-child address {
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
-    font-size: 14px;
+    font-size: 13px;
   }
 
   footer>div:last-child {
@@ -2004,19 +2059,6 @@ footer>div:last-child address {
   footer>div:last-child .footer_sns a:last-child {
     margin-right: 0;
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
 
 @media screen and (max-width:767px) {
@@ -2027,5 +2069,6 @@ footer>div:last-child address {
 
   #sns .posts ul li {
     width: 45%;
+    height: 45vw;
   }
 }
