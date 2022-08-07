@@ -134,7 +134,7 @@ if (snsState == 1) { //eventlistener를 걸어줘야 되는데.. 어케하지
     $('#sns .posts ul').animate({
       marginLeft: `-=${$('#sns .posts ul').children('li').width() * 2
     }`
-    }, 6000, 'linear', function () {
+    }, 8000, 'linear', function () {
       $(this).append($(this).children('li:nth-child(1)'));
       $(this).append($(this).children('li:nth-child(1)'));
       $(this).css({
