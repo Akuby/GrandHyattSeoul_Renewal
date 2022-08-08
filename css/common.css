@@ -41,6 +41,14 @@ input {
   left: -9999em;
 }
 
+.mobile {
+  display: none;
+}
+
+.m {
+  display: none;
+}
+
 ul li {
   list-style: none;
 }
@@ -1472,30 +1480,214 @@ footer>div:last-child address {
 
 @media screen and (max-width:899px) {
   header {
-    height: 800px;
-    background: url(../assets/main-1.png) no-repeat top 0px right -200px / cover;
+    position: relative;
+    padding-top: 20px;
+    box-sizing: border-box;
   }
-
-  header #navWrap {
+  #navWrap.desktop {
+    display: none;
+  }
+  .mobile {
+    display: initial;
+  }
+  div.mobile a{
+    margin: 0 auto;
+  }
+  header>a.mobile {
+    display: block;
+    width: 30px;
+    height: 30px;
+    text-indent: -9999em;
+    position: fixed;
+    right: 20px;
+    color: #fff;
+    top: 20px;
+    z-index: 90;
+    background: url(../assets/sprite.png) no-repeat top -167px left -57px;
+  }
+  header>a.mobile.min {
+    background-position-y: top -213px;
+  }
+  #m_navWrap.mobile {
+    position: fixed;
+    top: 0;
+    right: -80vw;
     width: 80vw;
-    max-width: 400px;
     height: 100vh;
-    overflow: visible;
-    margin-left: 100vw;
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
   }
-
-  header h1 a {
+  #m_navWrap.mobile:hover {
+    height: 100vh;
+    background: #fff;
+  }
+  #m_navWrap.mobile > a.mobile {
     position: absolute;
-    left: calc(-50vw - 90px);
-    /*부모인 #navWrap이 오른쪽에 숨겨져야 하는데 가만히 있어야 하는 얘도 영향을 받는다.*/
-    width: 180px;
-    height: 44px;
-    background-size: 187%;
+    right: 20px;
+    top: 20px;
+    width: 30px;
+    height: 30px;
+    background: url(../assets/sprite.png) no-repeat top -123px left -56px;
+    text-indent: -9999em;
+  }
+  #m_gnb {
+    min-height: 280px;;
+    background: #f5e8d9;
+    overflow: hidden;
+  }
+  #m_gnb figure {
+    width: 300px;
+    margin: 40px auto 0;
+    text-align: center;
+  }
+  #m_gnb figure div {
+    width: 110px;
+    border-radius: 15px;
+    font-size: 11px;
+    color: #fff;
+    line-height:21px;
+    background:#333;
+    margin: 12px auto 0;
+  }
+  #m_gnb figure figcaption {
+    margin-top: 13px;
+    font-size: 21px;
+    font-weight: 400;
+  }
+  #m_gnb ul {
+    width: 80%;
+    margin: 20px auto 10px;
+    display: flex;
+    background: #fff;
+    border-radius: 25px;
+    justify-content: space-around;
+  }
+  #m_gnb ul li {
+    position: relative;
+  }
+  #m_gnb ul li:first-child::after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 20px;
+    border-right: 1px solid #d1cdcd;
+    top: 16px;
+    right: -10vw;
+  }
+  #m_gnb ul li a{
+    line-height: 50px;
+    font-size: 14px;
+    letter-spacing: 0.02em;
+    color: #585858;
   }
 
-  header #navWrap:hover h1 a {
-    background-position: left top;
+  #m_lnb {
+    height: 62%;
+    overflow: hidden;
   }
+  #m_lnb .ul1 {
+    height: 100%;
+    width: 42%;
+    background-color: #f6f6f6;
+    padding: 15px;
+    padding-top: 10px;
+    box-sizing: border-box;
+    position: relative;
+  }
+  #m_lnb .ul1 > li {
+    font-size: 14px;
+    font-weight: 400;
+    padding: 15px 0;
+  }
+  #m_lnb .ul1 > li > a {
+    display: block;
+    color: #b7b7b7;
+  }
+  #m_lnb .ul1 > li.onList a{
+    color: #000;
+  }
+  #m_lnb .ul1 > li .ul2 {
+    position: absolute;
+    width: 400px;
+    left: 37vw;
+    top: 14px;
+    opacity: 0;
+  }
+  #m_lnb .ul1 > li.onList .ul2 {
+    opacity: 1;
+  }
+  #m_lnb .ul1 > li.onList .ul2 li {
+    padding: 13px 0;
+    font-size: 15px;
+    font-weight: 300;
+  }
+
+  #m_etc {
+    min-height: 48px;
+    width: 100%;
+    text-align: center;
+    line-height: 48px;
+    border-top: 1px solid #d1cdcd;
+  }
+  
+  #m_etc a {
+    display: inline-block;
+    width: 49%;
+    font-size: 14px;
+    position: relative;
+  }
+#m_etc a:first-child::after {
+    content: "";
+    display: block;
+    position: absolute;
+    height: 20px;
+    border-right: 1px solid #d1cdcd;
+    top: 19px;
+    right: -1vw;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   form {
     width: 94%;
@@ -1739,6 +1931,10 @@ footer>div:last-child address {
 
   .twin div:nth-child(3) {
     display: none;
+  }
+
+  .twin p {
+    font-size: 16px;
   }
 
   #rooms {

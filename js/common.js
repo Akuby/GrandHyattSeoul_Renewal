@@ -41,13 +41,11 @@ $('#facilities article').each(function () {
 
 // header
 $(window).scroll(function () {
-  if ($(window).innerWidth() > 599) {
     if ($(document).scrollTop() >= $('header').innerHeight()) {
       $('#navWrap').addClass('min');
     } else if ($(document).scrollTop() < $('header').innerHeight()) {
       $('#navWrap').removeClass('min');
     }
-  }
 })
 let state = 1;
 let scrolling = function (e) {
@@ -56,23 +54,35 @@ let scrolling = function (e) {
       state = 0;
       $('#navWrap.min:not(:animated)').animate({
         top: -130
-      }, 200, function() {
+      }, 200, function () {
         state = 1
       })
     } else if (e.wheelDelta > 0 && state == 1) {
       state = 0;
       $('#navWrap.min:not(:animated)').animate({
         top: 0
-      }, 200, function() {
+      }, 200, function () {
         state = 1
       })
     }
   }
 }
 document.addEventListener('wheel', function (e) {
+  if ($(window).innerWidth() > 899) {
     scrolling(e)
   }
-)
+})
+
+$('header > a.mobile').on('click', function() {
+  $('#m_navWrap').animate({right : 0})
+})
+$('#m_navWrap > a.mobile').on('click', function() {
+  $('#m_navWrap').animate({right : '-80vw'})
+})
+$('#m_lnb .ul1 > li').on('click', function() {
+  $(this).siblings('li').removeClass('onList');
+  $(this).addClass('onList');
+})
 // form
 $('#reserv_content .contWrap li').on('click', function () {
   $('#reserv_content .contWrap li').removeClass('selected')
@@ -123,38 +133,45 @@ let numSliding = function () {
     })
   }
 }
+
 $('.promo-control .prev').on('click', prevSliding)
 $('.promo-control .next').on('click', nextSliding)
 $('.rooms-pagination a, .dining-pagination a').on('click', numSliding)
 
 // sns
-let snsState = 1;
-if (snsState == 1) { //eventlistener를 걸어줘야 되는데.. 어케하지
-  for (let i = 0; i < 999; i++) {
-    $('#sns .posts ul').animate({
-      marginLeft: `-=${$('#sns .posts ul').children('li').width() * 2
-    }`
-    }, 8000, 'linear', function () {
-      $(this).append($(this).children('li:nth-child(1)'));
-      $(this).append($(this).children('li:nth-child(1)'));
-      $(this).css({
-        marginLeft: 0
+let snsMoving = function () {
+  let snsState = 1;
+  if (snsState == 1) { //eventlistener를 걸어줘야 되는데.. 어케하지
+    for (let i = 0; i < 999; i++) {
+      $('#sns .posts ul').animate({
+        marginLeft: `-=${$('#sns .posts ul').children('li').width() * 2
+      }`
+      }, 8000, 'linear', function () {
+        $(this).append($(this).children('li:nth-child(1)'));
+        $(this).append($(this).children('li:nth-child(1)'));
+        $(this).css({
+          marginLeft: 0
+        })
       })
-    })
+    }
   }
+  $('#sns .posts ul li').mouseenter(function () {
+    snsState = 0;
+  }).mouseleave(function () {
+    snsState = 1;
+  })
 }
+
+if($(window).innerWidth() > 899) {
+  snsMoving();
+}
+
 // 작동 안됨 not working 왜냐면 어케하는지 모르겠음
 // + 왠지 모르겠는데 이미지가 자꾸 우글거림
-$('#sns .posts ul li').mouseenter(function () {
-  snsState = 0;
-}).mouseleave(function () {
-  snsState = 1;
-})
 
 
 // 리사이즈
 let resizing = function () {
-
   // special offer 영역 조절
   liLength = $('.promo-slider ul li').innerWidth() + 40;
 
@@ -167,8 +184,8 @@ let resizing = function () {
     marginLeft: -$('.dining-slider li').width() * $('.dining-pagination a.on').index()
   })
   twinWidth = parseInt($('.twin').css('width')) * 42 / 100;
-  $('#rooms svg line').attr('x2', twinWidth);
-  $('#dining svg line').attr('x1', twinWidth);
+  $('#rooms svg line').attr('x2', twinWidth).css({strokeDasharray:twinWidth, strokeDashoffset:twinWidth});
+  $('#dining svg line').attr('x1', twinWidth).css({strokeDasharray:twinWidth, strokeDashoffset:twinWidth});
 
 
   // facilities 영역 조절
