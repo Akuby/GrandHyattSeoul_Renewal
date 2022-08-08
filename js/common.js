@@ -35,52 +35,41 @@ $('#facilities article').each(function () {
   }
 })
 
-
-
-
-
 // header
-$(window).scroll(function () {
-    if ($(document).scrollTop() >= $('header').innerHeight()) {
-      $('#navWrap').addClass('min');
-      $('header>a.mobile').addClass('min')
-    } else if ($(document).scrollTop() < $('header').innerHeight()) {
-      $('#navWrap').removeClass('min');
-    }
-})
-let state = 1;
-let scrolling = function (e) {
+$(window).on('scroll', _.throttle(function () {
   if ($(document).scrollTop() >= $('header').innerHeight()) {
-    if (e.wheelDelta < 0 && state == 1) { // 휠을 내릴때
-      state = 0;
-      $('#navWrap.min:not(:animated)').animate({
-        top: -130
-      }, 200, function () {
-        state = 1
-      })
-    } else if (e.wheelDelta > 0 && state == 1) {
-      state = 0;
-      $('#navWrap.min:not(:animated)').animate({
-        top: 0
-      }, 200, function () {
-        state = 1
-      })
-    }
+    $('#navWrap').addClass('min');
+    $('header>a.mobile').addClass('min');
+    $('a.top_btn').animate({bottom: 50})
+  } else if ($(document).scrollTop() < $('header').innerHeight()) {
+    $('#navWrap').removeClass('min');
+    $('a.top_btn').animate({bottom:-70})
   }
-}
-document.addEventListener('wheel', function (e) {
-  if ($(window).innerWidth() > 899) {
-    scrolling(e)
-  }
-})
+}, 700))
 
-$('header > a.mobile').on('click', function() {
-  $('#m_navWrap').animate({right : 0})
+document.addEventListener('wheel', _.throttle(function (e) {
+  if (e.wheelDelta < 0) {
+    $('#navWrap.min:not(:animated)').animate({
+      top: -130
+    }, 200)
+  } else if (e.wheelDelta > 0) {
+    $('#navWrap.min:not(:animated)').animate({
+      top: 0
+    }, 200)
+  }
+}, 700));
+
+$('header > a.mobile').on('click', function () {
+  $('#m_navWrap').animate({
+    right: 0
+  })
 })
-$('#m_navWrap > a.mobile').on('click', function() {
-  $('#m_navWrap').animate({right : '-80vw'})
+$('#m_navWrap > a.mobile').on('click', function () {
+  $('#m_navWrap').animate({
+    right: '-80vw'
+  })
 })
-$('#m_lnb .ul1 > li').on('click', function() {
+$('#m_lnb .ul1 > li').on('click', function () {
   $(this).siblings('li').removeClass('onList');
   $(this).addClass('onList');
 })
@@ -142,7 +131,7 @@ $('.rooms-pagination a, .dining-pagination a').on('click', numSliding)
 // sns
 let snsMoving = function () {
   let snsState = 1;
-  if (snsState == 1) { //eventlistener를 걸어줘야 되는데.. 어케하지
+  if (snsState == 1) {
     for (let i = 0; i < 999; i++) {
       $('#sns .posts ul').animate({
         marginLeft: `-=${$('#sns .posts ul').children('li').width() * 2
@@ -163,13 +152,14 @@ let snsMoving = function () {
   })
 }
 
-if($(window).innerWidth() > 899) {
+if ($(window).innerWidth() > 899) {
   snsMoving();
 }
 
-// 작동 안됨 not working 왜냐면 어케하는지 모르겠음
-// + 왠지 모르겠는데 이미지가 자꾸 우글거림
-
+$('a.top_btn').on('click', function(e) {
+  e.preventDefault();
+  $('html, body').scrollTop($('#header'))
+})
 
 // 리사이즈
 let resizing = function () {
@@ -185,8 +175,14 @@ let resizing = function () {
     marginLeft: -$('.dining-slider li').width() * $('.dining-pagination a.on').index()
   })
   twinWidth = parseInt($('.twin').css('width')) * 42 / 100;
-  $('#rooms svg line').attr('x2', twinWidth).css({strokeDasharray:twinWidth, strokeDashoffset:twinWidth});
-  $('#dining svg line').attr('x1', twinWidth).css({strokeDasharray:twinWidth, strokeDashoffset:twinWidth});
+  $('#rooms > svg line').attr('x2', twinWidth).css({
+    strokeDasharray: twinWidth,
+    strokeDashoffset: twinWidth
+  });
+  $('#dining > svg line').attr('x1', twinWidth).css({
+    strokeDasharray: twinWidth,
+    strokeDashoffset: twinWidth
+  });
 
 
   // facilities 영역 조절
@@ -213,37 +209,51 @@ let resizing = function () {
 resizing();
 $(window).on('resize', resizing)
 
+
+let curScr, esgPos, roomPos, dinPos, memPos;
 // 스크롤
 $(window).on('scroll', function () {
-  let curScr = $(document).scrollTop() - 200;
-  let esgPos = $('#ESG').position().top - $('#ESG').height();
-  let roomPos = $('#rooms').position().top - parseInt($('#rooms').css('marginTop'));
-  let dinPos = $('#dining').position().top - $('#dining').height();
+  curScr = $(document).scrollTop() - 200;
+  esgPos = $('#ESG').position().top - $('#ESG').height();
+  roomPos = $('#rooms').position().top - parseInt($('#rooms').css('marginTop'));
+  dinPos = $('#dining').position().top - $('#dining').height();
+  memPos = $('#membership').position().top - 900;
   if ($(window).innerWidth() > 1199 && curScr >= esgPos) {
     $('#ESG img').addClass('shadow-pulse')
   } else if (curScr < esgPos - 500) {
     $('#ESG img').removeClass('shadow-pulse')
   }
   if (curScr >= roomPos) {
-    $('#rooms svg line').css({
+    $('#rooms > svg line').css({
       animationName: 'lineMove',
       animationDuration: '4s',
       animationFillMode: 'forwards'
     })
   } else if (curScr < roomPos - 300) {
-    $('#rooms svg line').css({
+    $('#rooms > svg line').css({
       animationName: 'none'
     })
   }
   if (curScr >= dinPos) {
-    $('#dining svg line').css({
+    $('#dining > svg line').css({
       animationName: 'lineMove',
       animationDuration: '4s',
       animationFillMode: 'forwards'
     })
   } else if (curScr < dinPos - 300) {
-    $('#dining svg line').css({
+    $('#dining > svg line').css({
       animationName: 'none'
+    })
+  }
+  if (curScr >= memPos) {
+$('#membership svg line').css({
+  animationName:'lineMove',
+  animationDuration:'5s',
+  animationFillMode:'forwards'
+})
+  } else if (curScr < memPos - 300) {
+    $('#membership svg line').css({
+      animationName:'none'
     })
   }
 })
