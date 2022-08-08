@@ -43,6 +43,7 @@ $('#facilities article').each(function () {
 $(window).scroll(function () {
     if ($(document).scrollTop() >= $('header').innerHeight()) {
       $('#navWrap').addClass('min');
+      $('header>a.mobile').addClass('min')
     } else if ($(document).scrollTop() < $('header').innerHeight()) {
       $('#navWrap').removeClass('min');
     }
