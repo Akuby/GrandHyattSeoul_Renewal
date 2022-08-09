@@ -1,3 +1,13 @@
+// let bgChange = function() {
+//   let i = 3;
+//   $('header div.bg').animate({opacity:1}, 1000)
+//   $('header').css({backgroundImage:`url(./assets/main-${i}.png)`})
+//   i++;
+//   $('header div.bg').css({backgroundImage:`url(./assets/main-${i}.png)`}).animate({opacity:1}, 1000)
+// }
+// setInterval(() => {
+//   bgChange()
+// }, 7000);
 let psliderImage = function() {
 $('.promo-slider ul li').each(function () {
   if ($(window).innerWidth() < 899) {

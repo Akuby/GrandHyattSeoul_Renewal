@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>그랜드 하얏트 서울 | 한 눈에 남산과 한강을 담다</title>
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/room.css">
+  <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+  <script src="./js/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+  <!-- HEADER -->
+  <header id="rooms">
+    <!-- nav for mobile -->
+    <div class="mobile">
+      <h1><a href="#">그랜드하얏트서울 로고</a></h1>
+    </div>
+    <a class="mobile" href="javascript:void(0)">네비게이션 보기</a>
+    <div id="m_navWrap" class="mobile">
+      <a class="mobile" href="javascript:void(0)">네비게이션 닫기</a>
+      <nav id="m_gnb">
+        <h2 class="hidden">본사사이트 및 예약 회원관련 메뉴</h2>
+        <figure>
+          <img width=80" src="./assets/persona.png" alt="사용자 프로필 이미지">
+          <div>Club Olympus</div>
+          <figcaption>홍길동</figcaption>
+        </figure>
+        <ul>
+          <li><a href="#">Reservation</a></li>
+          <li><a href="#">My Page</a></li>
+        </ul>
+      </nav>
+      <nav id="m_lnb">
+        <h2 class="hidden">그랜드 하얏트 서울 주요 메뉴</h2>
+        <ul class="ul1">
+          <li class="onList"><a href="javascript:void(0)">About</a>
+            <ul class="ul2">
+              <li><a href="javascript:void(0)">호텔 소개</a></li>
+              <li><a href="javascript:void(0)">로열티 멤버십</a></li>
+              <li><a href="javascript:void(0)">고객 센터</a></li>
+            </ul>
+          </li>
+          <li><a href="javascript:void(0)">Rooms</a>
+            <ul class="ul2">
+              <li><a href="javascript:void(0)">스위트 객실</a></li>
+              <li><a href="javascript:void(0)">일반 객실</a></li>
+            </ul>
+          </li>
+          <li><a href="javascript:void(0)">Offers</a>
+            <ul class="ul2">
+              <li><a href="javascript:void(0)">프로모션</a></li>
+              <li><a href="javascript:void(0)">패키지</a></li>
+              <li><a href="javascript:void(0)">액티비티</a></li>
+            </ul>
+          </li>
+          <li><a href="javascript:void(0)">Dining & Bar</a>
+            <ul class="ul2">
+              <li><a href="javascript:void(0)">322 소월로</a></li>
+              <li><a href="javascript:void(0)">라운지</a></li>
+              <li><a href="javascript:void(0)">레스토랑</a></li>
+              <li><a href="javascript:void(0)">바</a></li>
+            </ul>
+          </li>
+          <li><a href="javascript:void(0)">Facilities</a>
+            <ul class="ul2">
+              <li><a href="javascript:void(0)">수영장</a></li>
+              <li><a href="javascript:void(0)">클럽 올림푸스</a></li>
+              <li><a href="javascript:void(0)">스파</a></li>
+              <li><a href="javascript:void(0)">쇼핑 아케이드</a></li>
+            </ul>
+          </li>
+          <li><a href="javascript:void(0)">Wedding & Meeting</a>
+            <ul class="ul2">
+              <li><a href="javascript:void(0)">웨딩</a></li>
+              <li><a href="javascript:void(0)">비즈니스 미팅</a></li>
+              <li><a href="javascript:void(0)">프라이빗 게더링</a></li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <div id="m_etc">
+        <a href="javascript:void(0)">Grand Hyatt</a>
+        <a href="javascript:void(0)">Logout<span></span></a>
+      </div>
+    </div>
+    <!-- nav for desktop -->
+    <div id="navWrap" class="desktop">
+      <h1><a href="#">그랜드하얏트서울 로고</a></h1>
+      <!-- GNB -->
+      <nav id="gnb">
+        <h2 class="hidden">본사사이트 및 예약 회원관련 메뉴</h2>
+        <ul>
+          <li><a href="#">Grand Hyatt</a></li>
+          <li><a href="#">Reservation</a></li>
+        </ul>
+        <ul>
+          <li><a href="#">Log in</a></li>
+          <li><a href="#">Sign in</a></li>
+        </ul>
+      </nav>
+      <!-- LNB -->
+      <nav id="lnb">
+        <div class="wrap">
+          <h2 class="hidden">그랜드 하얏트 서울 주요 메뉴</h2>
+          <ul>
+            <li>About
+              <ul>
+                <li><a href="#">호텔 소개</a></li>
+                <li><a href="#">로열티 멤버십</a></li>
+                <li><a href="#">고객 센터</a></li>
+              </ul>
+            </li>
+            <li>Rooms
+              <ul>
+                <li><a href="#">스위트 객실</a></li>
+                <li><a href="#">일반 객실</a></li>
+              </ul>
+            </li>
+            <li>Offers
+              <ul>
+                <li><a href="#">프로모션</a></li>
+                <li><a href="#">패키지</a></li>
+                <li><a href="#">액티비티</a></li>
+              </ul>
+            </li>
+            <li>Dining & Bar
+              <ul>
+                <li><a href="#">322 소월로</a></li>
+                <li><a href="#">라운지</a></li>
+                <li><a href="#">레스토랑</a></li>
+                <li><a href="#">바</a></li>
+              </ul>
+            </li>
+            <li>Facilities
+              <ul>
+                <li><a href="#">수영장</a></li>
+                <li><a href="#">클럽 올림푸스</a></li>
+                <li><a href="#">스파</a></li>
+                <li><a href="#">쇼핑 아케이드</a></li>
+              </ul>
+            </li>
+            <li>Wedding & Meeting
+              <ul>
+                <li><a href="#">웨딩</a></li>
+                <li><a href="#">비즈니스 미팅</a></li>
+                <li><a href="#">프라이빗 게더링</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <h1>Rooms</h1>
+    <p>한국의 고유한 문화에서 영감을 받아 재해석한 모던한 객실 모티브로<br>투숙 고객의 안락함을 제공하는데 가치를 두고 있습니다.</p>
+  </header>
+  <main>
+    <div id="roomSelect">
+      <h2 class="hidden">객실 종류 선택</h2>
+      <ul>
+        <li><a href="#">All</a></li>
+        <li><a href="#">Suites</a></li>
+        <li><a href="#">Rooms</a></li>
+      </ul>
+    </div>
+    <section id="suites">
+      <h2 class="hidden">스위트룸</h2>
+      <div class="suites-special">
+        <p>Special</p>
+        <p>특별 예약이 필요한 객실입니다.</p>
+        <article id="presSuite">
+          <h3>Presidential Suite</h3>
+        </article>
+        <article id="ambSuite">
+          <h3>Ambassador Suite</h3>
+        </article>
+      </div>
+      <div class="suites-normal">
+        <article id="dipSuite">
+          <h3>Diplomatic Suite</h3>
+        </article>
+        <article id="gdExecutive">
+          <h3>Grand Executive Twin <span>and</span> King</h3>
+        </article>
+        <article id="gdSuite">
+          <h3>Grand Suite King</h3>
+        </article>
+      </div>
+    </section>
+    <section id="rooms">
+      <h2 class="hidden">일반 객실</h2>
+
+    </section>
+  </main>
+  <!-- TOP BUTTON -->
+  <a href="javascript:void(0)" class="top_btn">
+    <span class="hidden">상단으로 올라가기</span>
+    <span></span>
+  </a>
+  <footer>
+    <span></span>
+    <ul class="familySites">
+      <li><a href="https://www.hyatt.com/ko-KR/brands/grand-hyatt">그랜드 하얏트 바로가기</a></li>
+      <li><a href="https://www.hyatt.com/ko-KR/home">하얏트 바로가기</a></li>
+      <li><a href="https://www.hyatt.com/ko-KR/brands/hyatt-regency">하얏트 리젠시 바로가기</a></li>
+      <li><a href="https://www.hyatt.com/brands/park-hyatt">파크 하얏트 바로가기</a></li>
+      <li><a href="https://www.hyatt.com/ko-KR/home">월드 오브 하얏트 바로가기</a></li>
+    </ul>
+    <div>
+      <ul class="info">
+        <li><a href="javascript:void(0)">호텔 개요</a></li>
+        <li><a href="javascript:void(0)">채용 정보</a></li>
+        <li><a href="javascript:void(0)">이용 약관</a></li>
+        <li><a href="javascript:void(0)">쿠키 센터</a></li>
+        <li><a href="javascript:void(0)">보안 및 안전</a></li>
+        <li><a href="javascript:void(0)">현대판 노예제 및 인신매매</a></li>
+      </ul>
+    </div>
+    <div>
+      <p>서울시 용산구 소월로 322, 서울, 대한민국, 04347 </p>
+      <div class="footer_sns">
+        <a href="https://world.hyatt.com/content/gp/ko/rewards/mobile.html" target="_blank">하얏트 공식 앱 다운받기</a>
+        <a href="https://www.instagram.com/grandhyattseoul/" target="_blank">그랜드하얏트서울 공식 인스타그램 바로가기</a>
+        <a href="https://www.youtube.com/user/hyatt" target="_blank">하얏트 공식 유튜브 바로가기</a>
+      </div>
+      <address>전화 : +82 2 797 1234 | 팩스 : +82 2 798 6953<br>e-mail:seoul.grand@hyatt.com</address>
+      <small>&copy; 2022 Hyatt Corporation</small>
+    </div>
+  </footer>
+</body>
+
+</html>
