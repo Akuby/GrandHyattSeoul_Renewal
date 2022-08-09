@@ -1,8 +1,17 @@
+let psliderImage = function() {
 $('.promo-slider ul li').each(function () {
-  $(this).css({
-    backgroundImage: `url(./assets/offer-${$(this).index()+1}.png)`
-  })
+  if ($(window).innerWidth() < 899) {
+    $(this).css({
+      backgroundImage: `url(./assets/mobile_offer-${$(this).index()+1}.png)`
+    })
+  } else {
+    $(this).css({
+      backgroundImage: `url(./assets/offer-${$(this).index()+1}.png)`
+    })
+  }
 })
+};
+psliderImage()
 $('.rooms-slider li').each(function () {
   $(this).css({
     backgroundImage: `url(./assets/room-${$(this).index()+1}.png)`
@@ -48,6 +57,7 @@ $(window).on('scroll', _.throttle(function () {
 }, 700))
 
 document.addEventListener('wheel', _.throttle(function (e) {
+  if ($(document).scrollTop() >= $('header').innerHeight()) {
   if (e.wheelDelta < 0) {
     $('#navWrap.min:not(:animated)').animate({
       top: -130
@@ -57,6 +67,7 @@ document.addEventListener('wheel', _.throttle(function (e) {
       top: 0
     }, 200)
   }
+}
 }, 700));
 
 $('header > a.mobile').on('click', function () {
@@ -79,8 +90,7 @@ $('#reserv_content .contWrap li').on('click', function () {
   $(this).addClass('selected')
   $('#reserv_content .contWrap').prepend($(this))
 })
-
-// specialOffers
+// special Offers
 let liLength = $('.promo-slider ul li').innerWidth() + 40;
 let prevSliding = function () {
   $('.promo-slider ul:not(:animated)').prepend($('>li:last', $('.promo-slider ul'))).css({
@@ -95,7 +105,7 @@ let nextSliding = function () {
   }, 500, function () {
     $(this)
       .css({
-        marginLeft: '0'
+        marginLeft: 0
       })
       .append($('>li:first', $(this)))
   })
@@ -123,7 +133,6 @@ let numSliding = function () {
     })
   }
 }
-
 $('.promo-control .prev').on('click', prevSliding)
 $('.promo-control .next').on('click', nextSliding)
 $('.rooms-pagination a, .dining-pagination a').on('click', numSliding)
@@ -158,13 +167,34 @@ if ($(window).innerWidth() > 899) {
 
 $('a.top_btn').on('click', function(e) {
   e.preventDefault();
+  $('#navWrap').css({top:0});
   $('html, body').scrollTop($('#header'))
 })
 
 // 리사이즈
 let resizing = function () {
+  let winWidth = $(window).innerWidth();
   // special offer 영역 조절
+  psliderImage()
   liLength = $('.promo-slider ul li').innerWidth() + 40;
+  if (winWidth < 899) {
+    $('.promo-slider').addClass('swiper mySwiper').append($('<div class="swiper-pagination"></div>'));
+    $('.promo-slider ul').addClass('swiper-wrapper');
+    $('.promo-slider ul li').each(function() {
+      $(this).addClass('swiper-slide')
+    })
+    let swiper = new Swiper(".mySwiper", {
+        pagination: {
+          el: ".swiper-pagination",
+        },
+      });
+  } else {
+    $('.promo-slider').removeClass('swiper mySwiper').children('div.swiper-pagination').remove();
+    $('.promo-slider ul').removeClass('swiper-wrapper');
+    $('.promo-slider ul li').each(function() {
+      $(this).removeClass('swiper-slide')
+    })
+  }
 
   // rooms, dining 영역 조절
 
@@ -184,10 +214,25 @@ let resizing = function () {
     strokeDashoffset: twinWidth
   });
 
+  if (winWidth < 899) {
+    $('.twin-wrap').addClass('swiper mySwiper');
+    $('.twin-wrap > ul').addClass('swiper-wrapper');
+    $('.twin-wrap > ul > li').each(function() {
+      $(this).addClass('swiper-slide')
+    })
+    let swiper = new Swiper(".mySwiper", {slidesPerView: "auto",
+    centeredSlides: true});
+  } else {
+    $('.twin-wrap').removeClass('swiper mySwiper');
+    $('.twin-wrap > ul').removeClass('swiper-wrapper');
+    $('.twin-wrap > ul > li').each(function() {
+      $(this).removeClass('swiper-slide')
+    })
+  }
 
   // facilities 영역 조절
   $('#facilities article').each(function () {
-    if ($(window).innerWidth() < 899) {
+    if (winWidth < 899) {
       $(this).css({
         backgroundImage: `url(./assets/mobile_facilities-${$(this).index()+1}.png)`
       })
@@ -199,11 +244,15 @@ let resizing = function () {
   })
 
   // membership 영역 조절
-  if ($(window).innerWidth() < 1200) {
+  if (winWidth < 1200) {
     $('#membership svg line').attr({
       'y1': '220',
       'y2': '220'
     })
+  }
+
+  if (winWidth > 899) {
+    snsMoving();
   }
 }
 resizing();

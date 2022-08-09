@@ -125,8 +125,8 @@ small {
 }
 
 .btn_trpt:hover {
-  color: #fff;
-  background: transparent;
+  color: #000;
+  box-shadow: 2px 2px 15px 0px rgba(0, 0, 0, 0.18);
 }
 
 .btn_white:hover {
@@ -220,7 +220,7 @@ header #navWrap.min {
   background: #fff;
 }
 
-header #navWrap.min h1 a{
+header #navWrap.min h1 a {
   width: 175px;
   height: 44px;
   background-position: left top -43px;
@@ -228,7 +228,7 @@ header #navWrap.min h1 a{
   position: relative;
   z-index: 100;
 }
- 
+
 header #navWrap.min a {
   color: #000;
 }
@@ -523,7 +523,7 @@ form fieldset label {
 }
 
 .promo-slider ul {
-  width: 1700px;
+  width: 2040px;
   display: flex;
   justify-content: flex-start;
 }
@@ -622,16 +622,18 @@ form fieldset label {
 #ESG>section article p {
   padding-top: 20px;
 }
+
 #ESG .btn_black {
   position: relative;
 }
+
 #ESG svg {
   position: absolute;
   left: 0;
   top: 0;
   width: 100%;
   height: 45px;
-} 
+}
 
 #ESG svg rect {
   width: 100%;
@@ -645,6 +647,7 @@ form fieldset label {
   fill: transparent;
   transition: 1.5s;
 }
+
 #ESG svg rect:hover {
   stroke-dashoffset: 0
 }
@@ -741,7 +744,7 @@ form fieldset label {
   stroke-dashoffset: 700;
 }
 
-.twin a.btn_trpt > svg {
+.twin a.btn_trpt>svg {
   position: absolute;
   top: 0;
   left: 0;
@@ -749,14 +752,16 @@ form fieldset label {
   width: 100%;
   height: 100%;
 }
-.twin a.btn_trpt > svg line {
+
+.twin a.btn_trpt>svg line {
   stroke: #000;
   stroke-width: 47px;
   stroke-dasharray: 182;
   stroke-dashoffset: 182;
   transition: 1s stroke-dashoffset;
 }
-.twin a.btn_trpt > svg:hover line {
+
+.twin a.btn_trpt>svg:hover line {
   stroke-dashoffset: 0
 }
 
@@ -1226,7 +1231,7 @@ footer>div:last-child address {
   }
 
   .promo-slider ul {
-    width: calc(100vw + 200px);
+    width: calc(120vw + 240px);
   }
 
   .promo-slider ul li {
@@ -1353,7 +1358,7 @@ footer>div:last-child address {
   }
 
   .promo-slider ul {
-    width: calc(115vw + 200px);
+    width: calc(138vw + 240px);
   }
 
   .promo-slider ul li {
@@ -1534,15 +1539,19 @@ footer>div:last-child address {
     padding-top: 20px;
     box-sizing: border-box;
   }
+
   #navWrap.desktop {
     display: none;
   }
+
   .mobile {
     display: initial;
   }
-  div.mobile a{
+
+  div.mobile a {
     margin: 0 auto;
   }
+
   header>a.mobile {
     display: block;
     width: 30px;
@@ -1555,9 +1564,11 @@ footer>div:last-child address {
     z-index: 90;
     background: url(../assets/sprite.png) no-repeat top -167px left -57px;
   }
+
   header>a.mobile.min {
     background-position-y: top -213px;
   }
+
   #m_navWrap.mobile {
     position: fixed;
     top: 0;
@@ -1569,10 +1580,12 @@ footer>div:last-child address {
     flex-direction: column;
     z-index: 100;
   }
+
   #m_navWrap.mobile:hover {
     height: 100vh;
     background: #fff;
   }
+
   #m_navWrap.mobile > a.mobile {
     position: absolute;
     right: 20px;
@@ -1582,30 +1595,35 @@ footer>div:last-child address {
     background: url(../assets/sprite.png) no-repeat top -123px left -56px;
     text-indent: -9999em;
   }
+
   #m_gnb {
-    min-height: 280px;;
+    min-height: 280px;
     background: #f5e8d9;
     overflow: hidden;
   }
+
   #m_gnb figure {
     width: 300px;
     margin: 40px auto 0;
     text-align: center;
   }
+
   #m_gnb figure div {
     width: 110px;
     border-radius: 15px;
     font-size: 11px;
     color: #fff;
-    line-height:21px;
-    background:#333;
+    line-height: 21px;
+    background: #333;
     margin: 12px auto 0;
   }
+
   #m_gnb figure figcaption {
     margin-top: 13px;
     font-size: 21px;
     font-weight: 400;
   }
+
   #m_gnb ul {
     width: 80%;
     margin: 20px auto 10px;
@@ -1614,9 +1632,11 @@ footer>div:last-child address {
     border-radius: 25px;
     justify-content: space-around;
   }
+
   #m_gnb ul li {
     position: relative;
   }
+
   #m_gnb ul li:first-child::after {
     content: "";
     display: block;
@@ -1626,7 +1646,8 @@ footer>div:last-child address {
     top: 16px;
     right: -10vw;
   }
-  #m_gnb ul li a{
+
+  #m_gnb ul li a {
     line-height: 50px;
     font-size: 14px;
     letter-spacing: 0.02em;
@@ -1637,6 +1658,7 @@ footer>div:last-child address {
     height: 62%;
     overflow: hidden;
   }
+
   #m_lnb .ul1 {
     height: 100%;
     width: 42%;
@@ -1646,28 +1668,35 @@ footer>div:last-child address {
     box-sizing: border-box;
     position: relative;
   }
+
   #m_lnb .ul1 > li {
     font-size: 14px;
     font-weight: 400;
     padding: 15px 0;
   }
+
   #m_lnb .ul1 > li > a {
     display: block;
     color: #b7b7b7;
   }
-  #m_lnb .ul1 > li.onList a{
+
+  #m_lnb .ul1 > li.onList a {
     color: #000;
   }
+
   #m_lnb .ul1 > li .ul2 {
     position: absolute;
+    right: -9999em;
+    opacity: 0;
+  }
+
+  #m_lnb .ul1>li.onList .ul2 {
     width: 400px;
     left: 37vw;
     top: 14px;
-    opacity: 0;
-  }
-  #m_lnb .ul1 > li.onList .ul2 {
     opacity: 1;
   }
+
   #m_lnb .ul1 > li.onList .ul2 li {
     padding: 13px 0;
     font-size: 15px;
@@ -1681,14 +1710,15 @@ footer>div:last-child address {
     line-height: 48px;
     border-top: 1px solid #d1cdcd;
   }
-  
+
   #m_etc a {
     display: inline-block;
     width: 49%;
     font-size: 14px;
     position: relative;
   }
-#m_etc a:first-child::after {
+
+  #m_etc a:first-child::after {
     content: "";
     display: block;
     position: absolute;
@@ -1697,47 +1727,6 @@ footer>div:last-child address {
     top: 19px;
     right: -1vw;
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   form {
     width: 94%;
@@ -1881,22 +1870,29 @@ footer>div:last-child address {
   .promo-slider {
     margin: 50px auto 0;
     width: 90%;
-    height: 450px;
+    height: 550px;
   }
 
   .promo-slider ul {
-    width: 500%;
+    width: 600%;
   }
 
   .promo-slider ul li {
     width: 100%;
     height: 280px;
+    margin: 0;
     background-size: 100%;
     background-position: center;
   }
 
   .promo-slider ul li::before {
     display: none;
+  }
+  .promo-slider .swiper-pagination {
+    bottom: 40px;
+  }
+  .swiper-pagination-bullet-active {
+    background-color: #000;
   }
 
   .promo-slider a dl {
@@ -2026,6 +2022,7 @@ footer>div:last-child address {
     top: -180px;
     text-align: left;
     left: 5%;
+    right: auto;
     width: fit-content;
   }
 
@@ -2039,6 +2036,7 @@ footer>div:last-child address {
   #dining p {
     top: -75px;
     left: 5%;
+    right: auto;
     text-align: left;
     width: fit-content;
   }
@@ -2203,6 +2201,7 @@ footer>div:last-child address {
 
   #sns .posts {
     width: 100%;
+    margin-top: 0;
   }
 
   #sns .posts ul {
@@ -2225,6 +2224,7 @@ footer>div:last-child address {
     width: 100%;
     height: 100%;
     margin: 0;
+    background-repeat: no-repeat;
   }
 
   #sns .posts ul li:nth-child(2n) a {
