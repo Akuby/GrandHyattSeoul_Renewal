@@ -150,8 +150,8 @@ h4 {
   text-align: center;
 }
 
-::-webkit-scrollbar {
-  display: none;
+body::-webkit-scrollbar {
+  width: 0px;  /* 스크롤바의 너비 */
 }
 
 @keyframes lineMove {
@@ -181,17 +181,8 @@ h4 {
 header {
   position: relative;
   height: 100vh;
-  background: url(../assets/main-1.png) no-repeat center / cover;
 }
-header div.bg {
-  display: block;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: no-repeat center 10px / cover;
-  background-image: url(../assets/main-2.png);
-  opacity:0;
-}
+
 header #navWrap {
   width: 100%;
   display: flex;
@@ -605,7 +596,7 @@ footer>div:last-child .footer_sns {
   }
 
   header>a.mobile.min {
-    background-position-y: top -213px;
+    background: url(../assets/sprite.png) no-repeat top -213px left -57px;
   }
 
   #m_navWrap.mobile {

@@ -1,17 +1,30 @@
-header > div.backgroundSlider {
+header .backgroundSlider {
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
 }
-
-header > div.backgroundSlider .bg {
-  background: no-repeat top left / cover;
+header .backgroundSlider > div {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  background: no-repeat top center / cover;
 }
 
-.bg:nth-child(1) {
+header > div.backgroundSlider > div:nth-child(1) {
+  background-image: url(../assets/main-1.png);
+}
+header > div.backgroundSlider > div:nth-child(2) {
   background-image: url(../assets/main-2.png);
+}
+header > div.backgroundSlider > div:nth-child(3) {
+  background-image: url(../assets/main-3.png);
+}
+header > div.backgroundSlider > div:nth-child(4) {
+  background-image: url(../assets/main-4.png);
 }
 
 /* 빠른예약 */
@@ -51,28 +64,27 @@ form fieldset input {
   top: 30px;
 }
 
-#reserv_content .contWrap {
+#reserv_content > li {
   width: 200px;
   position: absolute;
-}
-
-#reserv_content .contWrap li {
   font-size: 40px;
   transition: .5s;
   cursor: pointer;
   color: #ccc;
+  bottom: -140px;
 }
 
 #reserv_content:hover li {
-  line-height: 50px;
+  bottom: -30px;
 }
 
-#reserv_content:hover li:first-child {
-  margin-top: 20px;
+#reserv_content:hover li.selected {
+  bottom: 25px;  
 }
 
 #reserv_content li.selected {
   color: #000;
+  bottom: 0;
 }
 
 form fieldset label {
@@ -284,16 +296,12 @@ form fieldset label {
 }
 
 #ESG svg rect {
-  width: 100%;
-  height: 45px;
-  x: 0;
-  y: 0;
   stroke-width: 1px;
   stroke-dasharray: 390;
   stroke-dashoffset: 390;
   stroke: #000;
   fill: transparent;
-  transition: 1.5s;
+  transition: 1.75s;
 }
 
 #ESG svg rect:hover {
@@ -786,11 +794,11 @@ form fieldset label {
     width: 150px;
   }
 
-  #reserv_content .contWrap {
+  #reserv_content li {
     width: 150px;
   }
 
-  #reserv_content .contWrap li {
+  #reserv_content li {
     font-size: 32px;
   }
 
@@ -827,12 +835,8 @@ form fieldset label {
     font-size: 28px;
     width: 45px;
     padding-top: 5px;
-    padding-left: 30px;
     margin: 0;
-  }
-
-  .optWrap:last-of-type .reservOpt {
-    margin-left: 0;
+    margin-left: 20px;
   }
 
   #reserv_btn {
@@ -1022,13 +1026,9 @@ form fieldset label {
     position: relative;
   }
 
-  #reserv_content .contWrap {
+  #reserv_content li {
     width: 100%;
     position: static;
-  }
-
-  #reserv_content li {
-    display: none;
   }
 
   #reserv_content li.selected {
@@ -1036,9 +1036,8 @@ form fieldset label {
     line-height: 105px;
   }
 
-  #reserv_content:hover li:first-child {
-    line-height: 105px;
-    margin-top: 0;
+  #reserv_content li:last-child {
+    display: none;
   }
 
   #reserv_content::before {
@@ -1278,7 +1277,7 @@ form fieldset label {
     text-indent: -9999em;
     line-height: 50px;
     border-color: #000;
-    background: url(../assets/sprite.png) no-repeat top -107px left 4px / 730%;
+    background: url(../assets/sprite.png) no-repeat top -103px left 4px / 740%;
     top: -96px;
     left: auto;
     right: 5%;
@@ -1305,6 +1304,7 @@ form fieldset label {
     right: 0;
     width: 100vw;
     overflow: hidden;
+    box-sizing: content-box;
   }
 
   #dining p {
@@ -1376,7 +1376,9 @@ form fieldset label {
     top: 0;
     border: none;
   }
-
+  #facilities article a::before {
+    display: none;
+  }
   #facilities article a:hover {
     background-color: transparent;
   }
@@ -1463,6 +1465,7 @@ form fieldset label {
   #wedding a:hover {
     background: transparent;
     border-color: #fff;
+    color: #fff;
   }
 
   #sns {

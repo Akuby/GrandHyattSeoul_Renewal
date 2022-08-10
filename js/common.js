@@ -1,3 +1,7 @@
+// let i = 0;
+// setInterval(() => {
+  
+// }, 2000);
 
 let psliderImage = function() {
 $('.promo-slider ul li').each(function () {
@@ -56,6 +60,7 @@ $(window).on('scroll', function () {
   } else if ($(document).scrollTop() < $('header').height() && state == 0 ) {
     state = 1;
     $('#navWrap').removeClass('min')
+    $('header>a.mobile').removeClass('min');
     $('a.top_btn').animate({bottom:-70})
   }
 })
@@ -89,10 +94,10 @@ $('#m_lnb .ul1 > li').on('click', function () {
   $(this).addClass('onList');
 })
 // form
-$('#reserv_content .contWrap li').on('click', function () {
-  $('#reserv_content .contWrap li').removeClass('selected')
+$('#reserv_content li').on('click', function () {
+  $(this).siblings('li').removeClass('selected')
   $(this).addClass('selected')
-  $('#reserv_content .contWrap').prepend($(this))
+  $('#reserv_content').prepend($(this))
 })
 // special Offers
 let liLength = $('.promo-slider ul li').innerWidth() + 40;
@@ -140,27 +145,13 @@ let numSliding = function () {
 $('.promo-control .prev').on('click', prevSliding)
 $('.promo-control .next').on('click', nextSliding)
 $('.rooms-pagination a, .dining-pagination a').on('click', numSliding)
-let snsState;
 // sns
-let snsMoving = function (snsState) {
-  if (snsState == 1) {
-    for (let i = 0; i < 999; i++) {
-      $('#sns .posts ul').animate({
-        marginLeft: `-=${$('#sns .posts ul').children('li').width() * 2
-      }`
-      }, 8000, 'linear', function () {
-        $(this).append($(this).children('li:nth-child(1)'));
-        $(this).append($(this).children('li:nth-child(1)'));
-        $(this).css({
-          marginLeft: 0
-        })
-      })
-    }
-  } else if (snsState == 0) {return false}
-  $('#sns .posts ul li').mouseenter(function () {
-    snsState = 0;
-  }).mouseleave(function () {
-    snsState = 1;
+let snsMoving = function() {
+  let liLength = parseInt($('.posts ul li:eq(0)').width()) * -2;
+  $('.posts ul').animate({marginLeft: liLength}, 8000, 'linear', function() {
+    $(this).children('li:eq(0)').appendTo($(this));
+    $(this).children('li:eq(0)').appendTo($(this));
+    $(this).css({marginLeft : 0})
   })
 }
 
@@ -250,14 +241,22 @@ let resizing = function () {
     })
   }
 
+  // sns 애니메이션 조절
+  startInterval(0, null)
   if (winWidth > 899) {
-    snsState = 1;
+    startInterval(8000, snsMoving) // delay 없이 시작
   } else if (winWidth <= 899 ) {
-    snsState = 0;
+    startInterval(0, null) // ??
   }
-  snsMoving(snsState);
 }
-
+function startInterval(seconds, callback) {
+  if ( callback == null ) {
+    return false
+  } else {
+    callback();
+    return setInterval(callback, seconds);
+  }
+}
 resizing();
 $(window).on('resize', resizing)
 
