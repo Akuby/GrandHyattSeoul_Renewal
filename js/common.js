@@ -1,13 +1,4 @@
-// let bgChange = function() {
-//   let i = 3;
-//   $('header div.bg').animate({opacity:1}, 1000)
-//   $('header').css({backgroundImage:`url(./assets/main-${i}.png)`})
-//   i++;
-//   $('header div.bg').css({backgroundImage:`url(./assets/main-${i}.png)`}).animate({opacity:1}, 1000)
-// }
-// setInterval(() => {
-//   bgChange()
-// }, 7000);
+
 let psliderImage = function() {
 $('.promo-slider ul li').each(function () {
   if ($(window).innerWidth() < 899) {
@@ -55,30 +46,33 @@ $('#facilities article').each(function () {
 })
 
 // header
-$(window).on('scroll', _.throttle(function () {
-  if ($(document).scrollTop() >= $('header').innerHeight()) {
-    $('#navWrap').addClass('min');
+let state = 1;
+$(window).on('scroll', function () {
+  if ($(window).scrollTop() >= $('header').height() && state == 1) {
+    state =0;
+    $('#navWrap').addClass('min').css({ top: -130 }).animate({ top: 0 }, 700)
     $('header>a.mobile').addClass('min');
     $('a.top_btn').animate({bottom: 50})
-  } else if ($(document).scrollTop() < $('header').innerHeight()) {
-    $('#navWrap').removeClass('min');
+  } else if ($(document).scrollTop() < $('header').height() && state == 0 ) {
+    state = 1;
+    $('#navWrap').removeClass('min')
     $('a.top_btn').animate({bottom:-70})
   }
-}, 700))
+})
 
-document.addEventListener('wheel', _.throttle(function (e) {
-  if ($(document).scrollTop() >= $('header').innerHeight()) {
-  if (e.wheelDelta < 0) {
-    $('#navWrap.min:not(:animated)').animate({
-      top: -130
-    }, 200)
-  } else if (e.wheelDelta > 0) {
-    $('#navWrap.min:not(:animated)').animate({
-      top: 0
-    }, 200)
-  }
-}
-}, 700));
+// document.addEventListener('wheel', _.throttle(function (e) {
+//   if ($(document).scrollTop() >= $('header').innerHeight()) {
+//   if (e.wheelDelta < 0) {
+//     $('#navWrap.min:not(:animated)').animate({
+//       top: -130
+//     }, 200)
+//   } else if (e.wheelDelta > 0) {
+//     $('#navWrap.min:not(:animated)').animate({
+//       top: 0
+//     }, 200)
+//   }
+// }
+// }, 700));
 
 $('header > a.mobile').on('click', function () {
   $('#m_navWrap').animate({
@@ -146,10 +140,9 @@ let numSliding = function () {
 $('.promo-control .prev').on('click', prevSliding)
 $('.promo-control .next').on('click', nextSliding)
 $('.rooms-pagination a, .dining-pagination a').on('click', numSliding)
-
+let snsState;
 // sns
-let snsMoving = function () {
-  let snsState = 1;
+let snsMoving = function (snsState) {
   if (snsState == 1) {
     for (let i = 0; i < 999; i++) {
       $('#sns .posts ul').animate({
@@ -163,16 +156,12 @@ let snsMoving = function () {
         })
       })
     }
-  }
+  } else if (snsState == 0) {return false}
   $('#sns .posts ul li').mouseenter(function () {
     snsState = 0;
   }).mouseleave(function () {
     snsState = 1;
   })
-}
-
-if ($(window).innerWidth() > 899) {
-  snsMoving();
 }
 
 $('a.top_btn').on('click', function(e) {
@@ -262,9 +251,13 @@ let resizing = function () {
   }
 
   if (winWidth > 899) {
-    snsMoving();
+    snsState = 1;
+  } else if (winWidth <= 899 ) {
+    snsState = 0;
   }
+  snsMoving(snsState);
 }
+
 resizing();
 $(window).on('resize', resizing)
 
@@ -285,7 +278,7 @@ $(window).on('scroll', function () {
   if (curScr >= roomPos) {
     $('#rooms > svg line').css({
       animationName: 'lineMove',
-      animationDuration: '4s',
+      animationDuration: '2s',
       animationFillMode: 'forwards'
     })
   } else if (curScr < roomPos - 300) {
@@ -296,7 +289,7 @@ $(window).on('scroll', function () {
   if (curScr >= dinPos) {
     $('#dining > svg line').css({
       animationName: 'lineMove',
-      animationDuration: '4s',
+      animationDuration: '2s',
       animationFillMode: 'forwards'
     })
   } else if (curScr < dinPos - 300) {
@@ -307,9 +300,9 @@ $(window).on('scroll', function () {
   if (curScr >= memPos) {
 $('#membership svg line').css({
   animationName:'lineMove',
-  animationDuration:'5s',
+  animationDuration:'3s',
   animationFillMode:'forwards'
-})
+});
   } else if (curScr < memPos - 300) {
     $('#membership svg line').css({
       animationName:'none'

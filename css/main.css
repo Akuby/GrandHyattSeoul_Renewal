@@ -1,3 +1,19 @@
+header > div.backgroundSlider {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+header > div.backgroundSlider .bg {
+  background: no-repeat top left / cover;
+}
+
+.bg:nth-child(1) {
+  background-image: url(../assets/main-2.png);
+}
+
 /* 빠른예약 */
 form {
   position: absolute;
@@ -551,6 +567,28 @@ form fieldset label {
 #facilities article a {
   margin: 40px auto 0;
   font-size: 13px;
+  position: relative;
+}
+
+#facilities article a span {
+  position: relative;
+}
+
+#facilities article a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255,255,255, 0.7);
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: 0.5s;
+}
+
+#facilities article a:hover::before {
+  transform: scaleX(1);
 }
 
 /* MEMBERSHIP */
@@ -587,7 +625,7 @@ form fieldset label {
 }
 
 #membership article svg line {
-  stroke-width: 1px;
+  stroke-width: 2px;
   stroke: #d8c3ae;
   stroke-dasharray: 100vw;
   stroke-dashoffset: 100vw;

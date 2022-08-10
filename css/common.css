@@ -13,8 +13,8 @@
 }
 
 /* 초기화 */
-html {
-  scroll-behavior: smooth;
+* {
+  box-sizing: border-box;
 }
 
 body,
@@ -130,8 +130,7 @@ small {
 }
 
 .btn_white:hover {
-  background-color: #000;
-  border-color: #000;
+  color: #000;
 }
 
 .btn_gold:hover {
@@ -189,7 +188,7 @@ header div.bg {
   position: absolute;
   width: 100%;
   height: 100%;
-  background: no-repeat center / cover;
+  background: no-repeat center 10px / cover;
   background-image: url(../assets/main-2.png);
   opacity:0;
 }
@@ -200,9 +199,9 @@ header #navWrap {
   align-items: center;
   height: 130px;
   overflow: hidden;
-  transition: .6s;
   position: absolute;
   z-index: 999;
+  transition: 0.5s;
 }
 
 header #navWrap:hover {
@@ -220,7 +219,7 @@ header #navWrap:hover #gnb ul li a {
 /* header 영역 밖 */
 header #navWrap.min {
   position: fixed;
-  top: -130px;
+  
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
   background: #fff;
 }
@@ -484,7 +483,6 @@ footer>div:last-child {
   width: 45%;
   height: 270px;
   padding: 50px 30px;
-  box-sizing: border-box;
 }
 
 footer>div:last-child .footer_sns {
@@ -561,7 +559,6 @@ footer>div:last-child {
   width: 45%;
   height: 270px;
   padding: 50px 30px;
-  box-sizing: border-box;
 }
 
 footer>div:last-child address {
@@ -580,7 +577,6 @@ footer>div:last-child .footer_sns {
   header {
     position: relative;
     padding-top: 20px;
-    box-sizing: border-box;
   }
 
   #navWrap.desktop {
@@ -708,7 +704,6 @@ footer>div:last-child .footer_sns {
     background-color: #f6f6f6;
     padding: 15px;
     padding-top: 10px;
-    box-sizing: border-box;
     position: relative;
   }
 
@@ -832,7 +827,6 @@ footer>div:last-child .footer_sns {
     width: 100%;
     height: 270px;
     padding: 30px 0 70px;
-    box-sizing: border-box;
     order: 1;
   }
 
@@ -845,4 +839,3 @@ footer>div:last-child .footer_sns {
     margin-right: 0;
   }
 }
-
