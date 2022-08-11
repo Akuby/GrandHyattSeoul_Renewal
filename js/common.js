@@ -219,6 +219,15 @@ let autoMoving = function (winWidth, stateSns) {
 }
 autoMoving($(window).width())
 
+$('.posts ul li a').mouseenter(function() {
+  // console.log('on')
+  clearInterval(timer)
+}).mouseleave(function() {
+  autoMoving($(window).width(), stateSns);
+})
+
+
+// TOP 버튼
 $('a.top_btn').on('click', function (e) {
   e.preventDefault();
   $('#navWrap').css({
