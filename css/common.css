@@ -151,7 +151,15 @@ h4 {
 }
 
 body::-webkit-scrollbar {
-  width: 0px;  /* 스크롤바의 너비 */
+  width: 7px;  /* 스크롤바의 너비 */
+}
+body::-webkit-scrollbar-thumb {
+  height: 30%; /* 스크롤바의 길이 */
+  background: #4b4642; /* 스크롤바의 색상 */
+  border-radius: 10px;
+}
+body::-webkit-scrollbar-track {
+  background: #fff;  /*스크롤바 뒷 배경 색상*/
 }
 
 @keyframes lineMove {
@@ -577,6 +585,8 @@ footer>div:last-child .footer_sns {
 
   .mobile {
     display: initial;
+    position: relative;
+    z-index: 10;
   }
 
   div.mobile a {

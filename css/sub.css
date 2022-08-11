@@ -1,5 +1,30 @@
 @charset "utf-8";
 
 header#rooms {
-  background-image: url(../asstes_sub/main-1.png);
+  background: url(../asstes_sub/main-1.png) no-repeat top -1px center / 104%;
+  position: relative;
+  overflow: hidden;
+}
+
+
+header#rooms > h1 {
+  position: absolute;
+  font-size: 60px;
+  font-weight: 400;
+  color: #fff;
+  left: calc(50% - 85px);
+  top: 40%;
+}
+header#rooms > p {
+  position: absolute;
+  color: #fff;
+  text-align: center;
+  left: calc(50% - 280px);
+  top: 53%;
+  line-height: 32px;
+  font-size: 20px;
+}
+main h3 {
+  font-family: 'Noto';
+  font-size: 45px;
 }

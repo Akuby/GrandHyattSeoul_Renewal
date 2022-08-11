@@ -1,12 +1,25 @@
+// 메인 문구 애니메이션
+$('header > p').animate({
+  opacity: 1,
+  top: $('header').height() / 2
+}, 1000)
+
+// 메인화면 페이드아웃 슬라이더
+$('header').children(':first').after('<div class="backgroundSlider"></div>');
+$('.backgroundSlider').append('<div data-n="1" class=active></div><div data-n="2"></div><div data-n="3"></div><div data-n="4"></div>')
+
 setInterval(() => {
   $('.backgroundSlider').children('div:eq(1)').addClass('active').animate({
     opacity: 1
   }, 1000, function () {
-    $(this).prev().css({opacity:0}).removeClass('active').appendTo($(this).parent());
+    $(this).prev().css({
+      opacity: 0
+    }).removeClass('active').appendTo($(this).parent());
   });
 
 }, 10000);
 
+// 프로모션 슬라이더
 let psliderImage = function () {
   $('.promo-slider ul li').each(function () {
     if ($(window).innerWidth() < 899) {
@@ -158,18 +171,53 @@ $('.promo-control .prev').on('click', prevSliding)
 $('.promo-control .next').on('click', nextSliding)
 $('.rooms-pagination a, .dining-pagination a').on('click', numSliding)
 // sns
-let snsMoving = function () {
-  let liLength = parseInt($('.posts ul li:eq(0)').width()) * -2;
-  $('.posts ul').animate({
-    marginLeft: liLength
-  }, 8000, 'linear', function () {
-    $(this).children('li:eq(0)').appendTo($(this));
-    $(this).children('li:eq(0)').appendTo($(this));
-    $(this).css({
+let stateSns;
+let timer;
+let snsMoving1 = function () {
+  if (parseInt($('.posts ul').css('marginLeft')) <= -580) {
+    $('.posts ul').append($('.posts ul li:first')).append($('.posts ul li:first')).css({
       marginLeft: 0
     })
-  })
+  } else {
+    $('.posts ul').css({
+      marginLeft: '-=1'
+    })
+  }
 }
+
+let snsMoving2 = function () {
+  if (parseInt($('.posts ul').css('marginLeft')) <= -520) {
+    $('.posts ul').append($('.posts ul li:first')).append($('.posts ul li:first')).css({
+      marginLeft: 0
+    })
+  } else {
+    $('.posts ul').css({
+      marginLeft: '-=1'
+    })
+  }
+}
+
+let autoMoving = function (winWidth, stateSns) {
+  // console.log(winWidth, stateSns)
+  if (winWidth > 1200 && stateSns == 1) {
+    // console.log('start 1200이상')
+    clearInterval(timer)
+    stateSns = 2;
+    timer = setInterval(snsMoving1, 10);
+  } else if (winWidth <= 1200 && stateSns == 2) {
+    // console.log('start 1200이하')
+    clearInterval(timer)
+    stateSns = 1;
+    timer = setInterval(snsMoving2, 10);
+  } else if (winWidth <= 899 && stateSns == 3) {
+    clearInterval(timer)
+    // console.log('stop 900 이하')
+    $('.posts ul').css({
+      marginLeft: 'auto'
+    })
+  }
+}
+autoMoving($(window).width())
 
 $('a.top_btn').on('click', function (e) {
   e.preventDefault();
@@ -185,7 +233,7 @@ let resizing = function () {
   // special offer 영역 조절
   psliderImage()
   liLength = $('.promo-slider ul li').innerWidth() + 40;
-  if (winWidth < 899) {
+  if (winWidth <= 899) {
     $('.promo-slider').addClass('swiper mySwiper').append($('<div class="swiper-pagination"></div>'));
     $('.promo-slider ul').addClass('swiper-wrapper');
     $('.promo-slider ul li').each(function () {
@@ -262,22 +310,16 @@ let resizing = function () {
   }
 
   // sns 애니메이션 조절
-  startInterval(0, null)
-  if (winWidth > 899) {
-    startInterval(8000, snsMoving) // delay 없이 시작
+  if (winWidth > 1200) {
+    stateSns = 1
+  } else if (winWidth <= 1200 && winWidth > 899) {
+    stateSns = 2
   } else if (winWidth <= 899) {
-    startInterval(0, null) // ??
+    stateSns = 3
   }
+  autoMoving(winWidth, stateSns);
 }
 
-function startInterval(seconds, callback) {
-  if (callback == null) {
-    return false
-  } else {
-    callback();
-    return setInterval(callback, seconds);
-  }
-}
 resizing();
 $(window).on('resize', resizing)
 
