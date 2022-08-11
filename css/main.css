@@ -10,20 +10,24 @@ header .backgroundSlider > div {
   position: absolute;
   width: 100%;
   height: 100%;
-  opacity: 1;
+  opacity: 0;
   background: no-repeat top center / cover;
+  z-index: -1;
 }
-
-header > div.backgroundSlider > div:nth-child(1) {
+header .backgroundSlider > div.active {
+  z-index: 0;
+}
+header > div.backgroundSlider > div[data-n = "1"] {
   background-image: url(../assets/main-1.png);
 }
-header > div.backgroundSlider > div:nth-child(2) {
+header > div.backgroundSlider > div[data-n = "2"] {
   background-image: url(../assets/main-2.png);
 }
-header > div.backgroundSlider > div:nth-child(3) {
+header > div.backgroundSlider > div[data-n = "3"] {
   background-image: url(../assets/main-3.png);
+  background-position-y: bottom;
 }
-header > div.backgroundSlider > div:nth-child(4) {
+header > div.backgroundSlider > div[data-n = "4"] {
   background-image: url(../assets/main-4.png);
 }
 

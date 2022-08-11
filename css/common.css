@@ -181,6 +181,7 @@ body::-webkit-scrollbar {
 header {
   position: relative;
   height: 100vh;
+  background: url(../assets/main-1.png) no-repeat top center / cover;
 }
 
 header #navWrap {

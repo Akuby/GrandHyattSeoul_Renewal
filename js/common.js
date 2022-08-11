@@ -1,20 +1,24 @@
-// let i = 0;
-// setInterval(() => {
-  
-// }, 2000);
+setInterval(() => {
+  $('.backgroundSlider').children('div:eq(1)').addClass('active').animate({
+    opacity: 1
+  }, 1000, function () {
+    $(this).prev().css({opacity:0}).removeClass('active').appendTo($(this).parent());
+  });
 
-let psliderImage = function() {
-$('.promo-slider ul li').each(function () {
-  if ($(window).innerWidth() < 899) {
-    $(this).css({
-      backgroundImage: `url(./assets/mobile_offer-${$(this).index()+1}.png)`
-    })
-  } else {
-    $(this).css({
-      backgroundImage: `url(./assets/offer-${$(this).index()+1}.png)`
-    })
-  }
-})
+}, 10000);
+
+let psliderImage = function () {
+  $('.promo-slider ul li').each(function () {
+    if ($(window).innerWidth() < 899) {
+      $(this).css({
+        backgroundImage: `url(./assets/mobile_offer-${$(this).index()+1}.png)`
+      })
+    } else {
+      $(this).css({
+        backgroundImage: `url(./assets/offer-${$(this).index()+1}.png)`
+      })
+    }
+  })
 };
 psliderImage()
 $('.rooms-slider li').each(function () {
@@ -53,15 +57,23 @@ $('#facilities article').each(function () {
 let state = 1;
 $(window).on('scroll', function () {
   if ($(window).scrollTop() >= $('header').height() && state == 1) {
-    state =0;
-    $('#navWrap').addClass('min').css({ top: -130 }).animate({ top: 0 }, 700)
+    state = 0;
+    $('#navWrap').addClass('min').css({
+      top: -130
+    }).animate({
+      top: 0
+    }, 700)
     $('header>a.mobile').addClass('min');
-    $('a.top_btn').animate({bottom: 50})
-  } else if ($(document).scrollTop() < $('header').height() && state == 0 ) {
+    $('a.top_btn').animate({
+      bottom: 50
+    })
+  } else if ($(document).scrollTop() < $('header').height() && state == 0) {
     state = 1;
     $('#navWrap').removeClass('min')
     $('header>a.mobile').removeClass('min');
-    $('a.top_btn').animate({bottom:-70})
+    $('a.top_btn').animate({
+      bottom: -70
+    })
   }
 })
 
@@ -146,18 +158,24 @@ $('.promo-control .prev').on('click', prevSliding)
 $('.promo-control .next').on('click', nextSliding)
 $('.rooms-pagination a, .dining-pagination a').on('click', numSliding)
 // sns
-let snsMoving = function() {
+let snsMoving = function () {
   let liLength = parseInt($('.posts ul li:eq(0)').width()) * -2;
-  $('.posts ul').animate({marginLeft: liLength}, 8000, 'linear', function() {
+  $('.posts ul').animate({
+    marginLeft: liLength
+  }, 8000, 'linear', function () {
     $(this).children('li:eq(0)').appendTo($(this));
     $(this).children('li:eq(0)').appendTo($(this));
-    $(this).css({marginLeft : 0})
+    $(this).css({
+      marginLeft: 0
+    })
   })
 }
 
-$('a.top_btn').on('click', function(e) {
+$('a.top_btn').on('click', function (e) {
   e.preventDefault();
-  $('#navWrap').css({top:0});
+  $('#navWrap').css({
+    top: 0
+  });
   $('html, body').scrollTop($('#header'))
 })
 
@@ -170,18 +188,18 @@ let resizing = function () {
   if (winWidth < 899) {
     $('.promo-slider').addClass('swiper mySwiper').append($('<div class="swiper-pagination"></div>'));
     $('.promo-slider ul').addClass('swiper-wrapper');
-    $('.promo-slider ul li').each(function() {
+    $('.promo-slider ul li').each(function () {
       $(this).addClass('swiper-slide')
     })
     let swiper = new Swiper(".mySwiper", {
-        pagination: {
-          el: ".swiper-pagination",
-        },
-      });
+      pagination: {
+        el: ".swiper-pagination",
+      },
+    });
   } else {
     $('.promo-slider').removeClass('swiper mySwiper').children('div.swiper-pagination').remove();
     $('.promo-slider ul').removeClass('swiper-wrapper');
-    $('.promo-slider ul li').each(function() {
+    $('.promo-slider ul li').each(function () {
       $(this).removeClass('swiper-slide')
     })
   }
@@ -207,15 +225,17 @@ let resizing = function () {
   if (winWidth < 899) {
     $('.twin-wrap').addClass('swiper mySwiper');
     $('.twin-wrap > ul').addClass('swiper-wrapper');
-    $('.twin-wrap > ul > li').each(function() {
+    $('.twin-wrap > ul > li').each(function () {
       $(this).addClass('swiper-slide')
     })
-    let swiper = new Swiper(".mySwiper", {slidesPerView: "auto",
-    centeredSlides: true});
+    let swiper = new Swiper(".mySwiper", {
+      slidesPerView: "auto",
+      centeredSlides: true
+    });
   } else {
     $('.twin-wrap').removeClass('swiper mySwiper');
     $('.twin-wrap > ul').removeClass('swiper-wrapper');
-    $('.twin-wrap > ul > li').each(function() {
+    $('.twin-wrap > ul > li').each(function () {
       $(this).removeClass('swiper-slide')
     })
   }
@@ -245,12 +265,13 @@ let resizing = function () {
   startInterval(0, null)
   if (winWidth > 899) {
     startInterval(8000, snsMoving) // delay 없이 시작
-  } else if (winWidth <= 899 ) {
+  } else if (winWidth <= 899) {
     startInterval(0, null) // ??
   }
 }
+
 function startInterval(seconds, callback) {
-  if ( callback == null ) {
+  if (callback == null) {
     return false
   } else {
     callback();
@@ -297,14 +318,14 @@ $(window).on('scroll', function () {
     })
   }
   if (curScr >= memPos) {
-$('#membership svg line').css({
-  animationName:'lineMove',
-  animationDuration:'3s',
-  animationFillMode:'forwards'
-});
+    $('#membership svg line').css({
+      animationName: 'lineMove',
+      animationDuration: '3s',
+      animationFillMode: 'forwards'
+    });
   } else if (curScr < memPos - 300) {
     $('#membership svg line').css({
-      animationName:'none'
+      animationName: 'none'
     })
   }
 })
