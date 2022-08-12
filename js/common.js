@@ -1,23 +1,25 @@
 // 메인 문구 애니메이션
 $('header > p').animate({
   opacity: 1,
-  top: $('header').height() / 2
-}, 1000)
+  top: $('header').height() / 2 - 20
+}, 1000, 'easeOutQuad')
 
 // 메인화면 페이드아웃 슬라이더
 $('header').children(':first').after('<div class="backgroundSlider"></div>');
-$('.backgroundSlider').append('<div data-n="1" class=active></div><div data-n="2"></div><div data-n="3"></div><div data-n="4"></div>')
+$('.backgroundSlider')
+.append('<div class="bg-wrap active"><div data-n="1"></div></div><div class="bg-wrap"><div data-n="2"></div></div><div class="bg-wrap"><div data-n="3"></div></div><div class="bg-wrap"><div data-n="4"></div></div>')
 
 setInterval(() => {
-  $('.backgroundSlider').children('div:eq(1)').addClass('active').animate({
-    opacity: 1
-  }, 1000, function () {
+  $('.backgroundSlider').children('div:eq(1)').addClass('active').css({transform:'scale(1.03)'}).animate({
+    opacity: 1,
+  }, 1800, function () {
     $(this).prev().css({
-      opacity: 0
+      opacity: 0,
+      transform: 'scale(1)'
     }).removeClass('active').appendTo($(this).parent());
   });
 
-}, 10000);
+}, 5800);
 
 // 프로모션 슬라이더
 let psliderImage = function () {

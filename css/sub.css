@@ -1,30 +1,132 @@
 @charset "utf-8";
-
-header#rooms {
-  background: url(../asstes_sub/main-1.png) no-repeat top -1px center / 104%;
+/* COMMON */
+main h2 {
+  font-size: 45px;
+}
+section > p {
+  text-align: center;
+}
+article {
+  position: relative;
+}
+article > h3 {
+  position: absolute;
+  top: 0;
+  left: 61vw;
+  font-size: 50px;
+}
+article > p {
+  position: absolute;
+  top: 50px;
+  left: 61vw;
+}
+/* HEADER */
+header#sub_rooms {
+  background: url(../asstes_sub/main-1.png) no-repeat top -1px center / cover;
   position: relative;
   overflow: hidden;
+  height: 100vh + 1px;
 }
 
-
-header#rooms > h1 {
+header#sub_rooms > h1 {
   position: absolute;
-  font-size: 60px;
+  font-size: 65px;
   font-weight: 400;
   color: #fff;
   left: calc(50% - 85px);
-  top: 40%;
+  top: 43%;
+  opacity: 0;
 }
-header#rooms > p {
+header#sub_rooms > p {
   position: absolute;
   color: #fff;
   text-align: center;
   left: calc(50% - 280px);
-  top: 53%;
+  top: 56%;
   line-height: 32px;
   font-size: 20px;
+  opacity: 0;
 }
-main h3 {
-  font-family: 'Noto';
-  font-size: 45px;
+/* ROOM SELECT */
+#roomSelect {
+  padding: 50px 50px 0;
+}
+#roomSelect ul {
+  width: fit-content;
+  display: flex;
+  border-bottom: 1px solid #000;
+}
+#roomSelect ul li {
+  padding: 10px 25px 10px 0;
+}
+#roomSelect ul li.selected a{
+  color: #000;
+  transition: color 0.5s;
+}
+#roomSelect ul li a {
+  font-size: 30px;
+  font-family: 'BaskervilleOldFace',serif;
+  color: #ccc;
+}
+/* SUITES */
+
+#suites .suites-special {}
+
+article .swiper {
+  max-width: 60vw;
+  overflow: hidden;
+  position: relative;
+}
+article .swiper-wrapper {
+  display: flex;
+  width: calc(60vw * 5);
+}
+article .swiper-slide {
+  width: 20%;
+}
+article .swiper-slide img {
+  display: block;
+  width: 100%;
+}
+
+@media screen and (max-width:1499px) {
+  header#sub_rooms > p {
+    font-size: 19px;
+    left: calc(50% - 266px);
+  }
+  #roomSelect ul li a {
+    font-size: 28px;
+  }
+}
+@media screen and (max-width:899px) {
+  header#sub_rooms {
+    height: 80vh;
+  }
+  header#sub_rooms > p {
+    position: absolute;
+    left: -9999em;
+  }
+  #roomSelect {
+    padding:40px 32px;
+  }
+  #roomSelect ul {
+    margin: 0 auto;
+    border-bottom: 0;
+  }
+  #roomSelect ul li {
+    padding: 0;
+    margin: 0 10px 5px;
+    width: 72px;
+    text-align: center;
+  }
+  #roomSelect ul li:first-child{
+    width: 30px;
+    margin-left: 20px;
+  }
+  #roomSelect ul li.selected a{
+    border-bottom: 1px solid #000;
+  }
+  #roomSelect ul li a {
+    font-size: 25px;
+  }
 }
