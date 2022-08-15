@@ -641,6 +641,7 @@ footer>div:last-child .footer_sns {
     min-height: 280px;
     background: #f5e8d9;
     overflow: hidden;
+    height: 29vh;
   }
 
   #m_gnb figure {
@@ -696,7 +697,7 @@ footer>div:last-child .footer_sns {
   }
 
   #m_lnb {
-    height: 62%;
+    height: 64vh;
     overflow: hidden;
   }
 
@@ -747,7 +748,7 @@ footer>div:last-child .footer_sns {
     min-height: 48px;
     width: 100%;
     text-align: center;
-    line-height: 48px;
+    line-height: 7vh;
     border-top: 1px solid #d1cdcd;
   }
 
