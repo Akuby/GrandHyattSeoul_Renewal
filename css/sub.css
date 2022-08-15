@@ -1,25 +1,158 @@
 @charset "utf-8";
+
 /* COMMON */
-main h2 {
-  font-size: 45px;
+body {
+  overflow-x: hidden;
 }
-section > p {
+#tip {
+  position: absolute;
   text-align: center;
+  width: 60px;
+  line-height: 60px;
+  background-color: rgba(179, 15, 15, 0.715);
+  color: #fff;
+  font-size: 12px;
+  border-radius: 50%;
+  text-transform: uppercase;
 }
-article {
+main h2 {
+  font-size: 40px;
   position: relative;
 }
-article > h3 {
+
+main h2::before {
+  content: "";
   position: absolute;
+  border-bottom: 1px solid #000;
+  width: 42vw;
+  bottom: 0px;
+  left: 2vw;
+}
+
+main h2::after {
+  content: "";
+  position: absolute;
+  border-bottom: 1px solid #000;
+  width: 42vw;
+  bottom: 0px;
+  right: 2vw;
+}
+section {
+  overflow: hidden;
+}
+section>p {
+  text-align: center;
+  font-size: 14px;
+}
+
+article {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin-bottom: 80px;
+}
+
+article .contentBox {
+  margin-left: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   top: 0;
-  left: 61vw;
+  width: 450px;
+}
+
+article .contentBox>h3 {
   font-size: 50px;
+  text-align: left;
+  margin-bottom: 40px;
+  position: relative;
 }
-article > p {
+
+article.special .contentBox>h3 span {
   position: absolute;
-  top: 50px;
-  left: 61vw;
+  color: #ccc;
+  font-size: 20px;
+  font-weight: 300;
 }
+
+article .contentBox>p {
+  left: 61vw;
+  margin-bottom: 40px;
+  line-height: 27px;
+}
+
+article.special .contentBox>p>span {
+  background-color: rgb(236, 236, 236);
+}
+
+article .swiper {
+  max-width: 60vw;
+  overflow: hidden;
+  position: relative;
+}
+
+article:nth-of-type(2n) {
+  justify-content: flex-end;
+}
+
+article:nth-of-type(2n) .swiper {
+  order: 2;
+}
+
+article:nth-of-type(2n) .contentBox {
+  margin-left: 0;
+  margin-right: 40px;
+}
+
+article .swiper-wrapper {
+  display: flex;
+  width: calc(60vw * 5);
+}
+
+article .swiper-slide {
+  width: 20%;
+}
+
+article .swiper-slide img {
+  display: block;
+  width: 120%;
+}
+
+article .contentBox>a.btn {
+  width: 200px;
+  line-height: 45px;
+  border: 1px solid #000;
+  text-align: center;
+  transition: 0.5s color, 0.5s box-shadow, 1.3s border-color;
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+}
+
+article .contentBox>a.btn:hover {
+  color: #fff;
+  box-shadow: 2px 2px 15px 0px rgba(0, 0, 0, 0.18);
+  border-color: transparent;
+}
+
+article .contentBox>a.btn::after {
+  content: "";
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 105%;
+  background-color: rgb(0, 0, 0);
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: 0.5s;
+  z-index: -1;
+}
+
+article .contentBox>a.btn:hover::after {
+  transform: scaleX(1);
+}
+
 /* HEADER */
 header#sub_rooms {
   background: url(../asstes_sub/main-1.png) no-repeat top -1px center / cover;
@@ -28,7 +161,7 @@ header#sub_rooms {
   height: 100vh + 1px;
 }
 
-header#sub_rooms > h1 {
+header#sub_rooms>h1 {
   position: absolute;
   font-size: 65px;
   font-weight: 400;
@@ -37,96 +170,257 @@ header#sub_rooms > h1 {
   top: 43%;
   opacity: 0;
 }
-header#sub_rooms > p {
+
+header#sub_rooms>p {
   position: absolute;
   color: #fff;
   text-align: center;
-  left: calc(50% - 280px);
+  left: calc(50% - 266px);
   top: 56%;
   line-height: 32px;
-  font-size: 20px;
+  font-size: 18px;
   opacity: 0;
 }
+
+#presSuite>p:nth-child(3) {
+  color: red;
+}
+
 /* ROOM SELECT */
 #roomSelect {
   padding: 50px 50px 0;
+  position: relative;
 }
+
 #roomSelect ul {
   width: fit-content;
   display: flex;
-  border-bottom: 1px solid #000;
 }
+
 #roomSelect ul li {
   padding: 10px 25px 10px 0;
 }
-#roomSelect ul li.selected a{
-  color: #000;
-  transition: color 0.5s;
-}
+
 #roomSelect ul li a {
   font-size: 30px;
-  font-family: 'BaskervilleOldFace',serif;
+  font-family: 'BaskervilleOldFace', serif;
   color: #ccc;
 }
-/* SUITES */
 
-#suites .suites-special {}
-
-article .swiper {
-  max-width: 60vw;
-  overflow: hidden;
+#roomSelect ul li.selected a {
+  color: #000;
+  transition: color 0.5s;
   position: relative;
 }
-article .swiper-wrapper {
-  display: flex;
-  width: calc(60vw * 5);
+
+#roomSelect ul li.selected a::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  left: 19%;
+  /*계산 필요*/
+  width: 45px;
+  height: 45px;
+  background-color: rgba(119, 110, 102, 0.181);
+  border-radius: 40px;
+  z-index: -1;
 }
-article .swiper-slide {
-  width: 20%;
+
+#roomSelect ul li.selected:nth-child(1) a::before {
+  left: -4px;
 }
-article .swiper-slide img {
-  display: block;
-  width: 100%;
+
+
+/* SUITES */
+
+#suites .suites-special {
+  margin-top: 50px;
+}
+
+#suites .specialRooms {
+  text-align: center;
+}
+
+/* ROOMS */
+
+#rooms>p {
+  margin-bottom: 50px;
 }
 
 @media screen and (max-width:1499px) {
-  header#sub_rooms > p {
+  header#sub_rooms>p {
     font-size: 19px;
     left: calc(50% - 266px);
   }
+
   #roomSelect ul li a {
     font-size: 28px;
   }
+
+  article .contentBox>h3 {
+    font-size: 38px;
+  }
+
+  article .contentBox>p {
+    font-size: 15px;
+  }
 }
+
+@media screen and (max-width:1299px) {
+  main h2 {
+    font-size: 36px;
+  }
+
+  article .contentBox>h3 {
+    font-size: 36px;
+  }
+
+  article .contentBox>p {
+    font-size: 14px;
+  }
+
+  article .contentBox {
+    width: 350px;
+    margin: 20px auto 0;
+  }
+
+  article:nth-of-type(2n) .contentBox {
+    width: 350px;
+    margin: 20px auto 0;
+  }
+}
+
+@media screen and (max-width:1071px) {
+  main h2::before {
+    width: 38vw;
+    left: 3vw;
+  }
+
+  main h2::after {
+    width: 38vw;
+    right: 3vw;
+  }
+
+  article .contentBox {
+    width: 330px;
+  }
+
+  article:nth-of-type(2n) .contentBox {
+    width: 330px;
+  }
+
+  article .contentBox>h3 {
+    margin-bottom: 20px;
+  }
+
+  article .contentBox>p {
+    margin-bottom: 20px;
+  }
+}
+
 @media screen and (max-width:899px) {
+  main h2 {
+    font-size: 30px;
+  }
+
+  main h2::before {
+    width: 37vw;
+  }
+
+  main h2::after {
+    width: 37vw;
+  }
+
   header#sub_rooms {
     height: 80vh;
   }
-  header#sub_rooms > p {
+
+  header#sub_rooms>h1 {
+    font-size: 50px;
+    left: calc(50% - 70px);
+  }
+
+  header#sub_rooms>p {
     position: absolute;
     left: -9999em;
   }
+
   #roomSelect {
-    padding:40px 32px;
+    padding: 60px 32px;
   }
+
   #roomSelect ul {
     margin: 0 auto;
     border-bottom: 0;
   }
+
   #roomSelect ul li {
     padding: 0;
     margin: 0 10px 5px;
     width: 72px;
     text-align: center;
   }
-  #roomSelect ul li:first-child{
+
+  #roomSelect ul li:first-child {
     width: 30px;
     margin-left: 20px;
   }
-  #roomSelect ul li.selected a{
+
+  #roomSelect ul li.selected a {
     border-bottom: 1px solid #000;
   }
+
   #roomSelect ul li a {
-    font-size: 25px;
+    font-size: 28px;
+  }
+
+  #roomSelect ul li.selected a::before {
+    display: none;
+  }
+
+  article {
+    flex-direction: column;
+  }
+
+  article .swiper {
+    max-width: 100vw;
+  }
+
+  article .swiper-wrapper {
+    display: flex;
+    width: 500%;
+  }
+
+  article:nth-of-type(2n) .swiper {
+    left: 0;
+    order: 0;
+  }
+
+  article .contentBox {
+    width: 90%;
+    text-align: justify;
+  }
+
+  article:nth-of-type(2n) .contentBox {
+    width: 90%;
+    text-align: justify;
+  }
+
+  article .contentBox>p {
+    margin-bottom: 30px;
+  }
+
+  article .contentBox>a.btn {
+    width: 100%;
+  }
+
+  article .contentBox>a.btn:hover {
+    color: #000;
+    border-color: #000;
+    box-shadow: none;
+  }
+
+  article .contentBox>a.btn::after {
+    display: none;
   }
 }
