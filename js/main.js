@@ -177,6 +177,8 @@ $('.posts ul li a').mouseenter(function() {
 // 리사이즈
 let resizing = function () {
   let winWidth = $(window).innerWidth();
+  // backgroundSlider 삭제
+  $('.backgroundSlider').css({display:'none'})
   // special offer 영역 조절
   psliderImage()
   liLength = $('.promo-slider ul li').innerWidth() + 40;

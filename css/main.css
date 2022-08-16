@@ -1117,11 +1117,11 @@ form fieldset label {
 
   .reserv_date {
     line-height: 50px;
-    font-size: 35px;
+    font-size: 28px;
   }
 
   .dateWrap {
-    width: 38%;
+    width: 42%;
     height: 110px;
     justify-content: center;
   }
@@ -1129,6 +1129,7 @@ form fieldset label {
   .dateWrap:nth-of-type(1) {
     position: relative;
     left: 5%;
+    margin: 0;
     margin-bottom: 14px;
   }
 
@@ -1143,6 +1144,7 @@ form fieldset label {
     position: absolute;
     left: 55%;
     top: 105px;
+    margin-left: 0;
   }
 
   .dateWrap:nth-of-type(2)::after {
@@ -1186,7 +1188,7 @@ form fieldset label {
   }
 
   .reservOpt {
-    font-size: 34px;
+    font-size: 28px;
   }
 
   #reserv_btn {
@@ -1314,7 +1316,8 @@ form fieldset label {
   }
 
   .twin p {
-    font-size: 16px;
+    max-width: 76vw;
+    font-size: 13px;
   }
 
   #rooms {
@@ -1374,6 +1377,7 @@ form fieldset label {
     right: auto;
     text-align: left;
     width: fit-content;
+
   }
 
   #dining .dining-slider li span {
