@@ -845,8 +845,7 @@ form fieldset label {
     left: calc(50% - 421px);
   }
   form {
-    width: 900px;
-    left: calc(50% - 450px);
+    left: calc(50% - 464px);
   }
 
   #reserv_content {
