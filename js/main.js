@@ -1,7 +1,7 @@
 // 메인 문구 애니메이션
 $('header > p').animate({
   opacity: 1,
-  top: $('header').height() / 2 - 20
+  top: $('header').height() / 2 - 40
 }, 1000, 'easeOutQuad')
 
 // 메인화면 페이드아웃 슬라이더
@@ -9,8 +9,12 @@ $('header').children(':first').after('<div class="backgroundSlider"></div>');
 $('.backgroundSlider')
 .append('<div class="bg-wrap active"><div data-n="1"></div></div><div class="bg-wrap"><div data-n="2"></div></div><div class="bg-wrap"><div data-n="3"></div></div><div class="bg-wrap"><div data-n="4"></div></div>')
 
+$('.backgroundSlider').children('div:eq(0)').animate({
+  opacity:1
+}, 10).css({transform:'scale(1.08)'});
+
 setInterval(() => {
-  $('.backgroundSlider').children('div:eq(1)').addClass('active').css({transform:'scale(1.03)'}).animate({
+  $('.backgroundSlider').children('div:eq(1)').addClass('active').css({transform:'scale(1.1)'}).animate({
     opacity: 1,
   }, 1800, function () {
     $(this).prev().css({
@@ -177,12 +181,12 @@ $('.posts ul li a').mouseenter(function() {
 // 리사이즈
 let resizing = function () {
   let winWidth = $(window).innerWidth();
-  // backgroundSlider 삭제
-  $('.backgroundSlider').css({display:'none'})
+  // backgroundSlider 삭제 및
   // special offer 영역 조절
   psliderImage()
   liLength = $('.promo-slider ul li').innerWidth() + 40;
-  if (winWidth <= 899) {
+  if (winWidth <= 899) { // 모바일 환경
+    $('.backgroundSlider').hide()
     $('.promo-slider').addClass('swiper mySwiper').append($('<div class="swiper-pagination"></div>'));
     $('.promo-slider ul').addClass('swiper-wrapper');
     $('.promo-slider ul li').each(function () {
@@ -193,10 +197,25 @@ let resizing = function () {
         el: ".swiper-pagination",
       },
     });
-  } else {
+    $('.twin-wrap').addClass('swiper mySwiper');
+    $('.twin-wrap > ul').addClass('swiper-wrapper');
+    $('.twin-wrap > ul > li').each(function () {
+      $(this).addClass('swiper-slide')
+    })
+    let swiper2 = new Swiper(".mySwiper", {
+      slidesPerView: "auto",
+      centeredSlides: true
+    });
+  } else { // 모바일 환경 X
+    $('.backgroundSlider').show()
     $('.promo-slider').removeClass('swiper mySwiper').children('div.swiper-pagination').remove();
     $('.promo-slider ul').removeClass('swiper-wrapper');
     $('.promo-slider ul li').each(function () {
+      $(this).removeClass('swiper-slide')
+    });
+    $('.twin-wrap').removeClass('swiper mySwiper');
+    $('.twin-wrap > ul').removeClass('swiper-wrapper');
+    $('.twin-wrap > ul > li').each(function () {
       $(this).removeClass('swiper-slide')
     })
   }
@@ -219,27 +238,9 @@ let resizing = function () {
     strokeDashoffset: twinWidth
   });
 
-  if (winWidth < 899) {
-    $('.twin-wrap').addClass('swiper mySwiper');
-    $('.twin-wrap > ul').addClass('swiper-wrapper');
-    $('.twin-wrap > ul > li').each(function () {
-      $(this).addClass('swiper-slide')
-    })
-    let swiper = new Swiper(".mySwiper", {
-      slidesPerView: "auto",
-      centeredSlides: true
-    });
-  } else {
-    $('.twin-wrap').removeClass('swiper mySwiper');
-    $('.twin-wrap > ul').removeClass('swiper-wrapper');
-    $('.twin-wrap > ul > li').each(function () {
-      $(this).removeClass('swiper-slide')
-    })
-  }
-
   // facilities 영역 조절
   $('#facilities article').each(function () {
-    if (winWidth < 899) {
+    if (winWidth <= 899) {
       $(this).css({
         backgroundImage: `url(./assets/mobile_facilities-${$(this).index()+1}.png)`
       })
@@ -252,7 +253,11 @@ let resizing = function () {
 
   // membership 영역 조절
   if (winWidth < 1200) {
-    $('#membership svg line').attr({
+    $('#membership svg line:first-child').attr({
+      'y1' : '0',
+      'y2' : '0'
+    })
+    $('#membership svg line:last-child').attr({
       'y1': '220',
       'y2': '220'
     })

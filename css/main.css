@@ -1,6 +1,11 @@
-/* body::-webkit-scrollbar {
-  display: none;
-} */
+@font-face {
+  font-family: "Agatho";
+  src: url('../assets/fonts/Agatho_BoldCAPS.otf') format("opentype");
+}
+@font-face {
+  font-family: "Coolvetica";
+  src: url("../assets/fonts/coolvetica.otf") format("opentype");
+}
 body {
   overflow-x: hidden;
   overflow-y: auto;
@@ -27,7 +32,7 @@ header .backgroundSlider > .bg-wrap {
 header .backgroundSlider > .bg-wrap > div {
   width: 100%;
   height: 100%;
-  background: no-repeat top center / 100%;
+  background: no-repeat top center / cover;
 }
 header .backgroundSlider> .bg-wrap.active {
   z-index: 0;
@@ -47,17 +52,17 @@ header > div.backgroundSlider > .bg-wrap > div[data-n = "4"] {
 }
 
 header > p {
-  width: 945px;
-  line-height: 45px;
-  font-size: 50px;
-  font-weight: 400;
-  font-family: 'BaskervilleOldFace', serif;
+  width: fit-content;
+  font-size: 55px;
+  font-weight: 700;
+  font-family: 'Noto Sans KR', serif;
   text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.7);
   color: #fff;
   position: absolute;
   top: calc(50% - 50px);
-  left: calc(50% - 472px);
+  left: calc(50% - 506px);
   opacity: 0;
+  /* text-transform: uppercase; */
 }
 
 /* 빠른예약 */
@@ -802,10 +807,6 @@ form fieldset label {
     padding: 10px 0;
   }
 
-  .promo-slider a dd {
-    font-size: 13px;
-  }
-
   .promo-control>a:first-child {
     left: calc(4%);
   }
@@ -840,9 +841,8 @@ form fieldset label {
 
 @media screen and (max-width:1199px) {
   header > p {
-    width: 700px;
-    font-size: 35px;
-    left: calc(50% - 350px);
+    font-size: 45px;
+    left: calc(50% - 421px);
   }
   form {
     width: 900px;
@@ -926,10 +926,6 @@ form fieldset label {
     font-size: 16px;
   }
 
-  .promo-slider a dd {
-    font-size: 12px;
-  }
-
   .promo-control>a {
     top: -210px;
     width: 50px;
@@ -938,12 +934,12 @@ form fieldset label {
 
   .promo-control>a:first-child {
     left: 2%;
-    background-position: top -108px left 3px;
+    background-position: top -110px left 1px;
   }
 
   .promo-control>a:last-child {
     right: 2%;
-    background-position: top -150px left 1px;
+    background-position: top -151px left 1px;
   }
 
   #ESG {
@@ -1136,7 +1132,7 @@ form fieldset label {
   .dateWrap:first-of-type::after {
     width: 20px;
     border-bottom: 1px solid #ccc;
-    right: -20%;
+    right: 0%;
     top: 65px;
   }
 

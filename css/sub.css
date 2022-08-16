@@ -167,7 +167,7 @@ header#sub_rooms>h1 {
   font-weight: 400;
   color: #fff;
   left: calc(50% - 85px);
-  top: 43%;
+  top: 39%;
   opacity: 0;
 }
 
@@ -176,7 +176,7 @@ header#sub_rooms>p {
   color: #fff;
   text-align: center;
   left: calc(50% - 266px);
-  top: 56%;
+  top: 52%;
   line-height: 32px;
   font-size: 18px;
   opacity: 0;

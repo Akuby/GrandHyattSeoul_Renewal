@@ -259,6 +259,8 @@ header h1 a {
   background-image: url(../assets/sprite.png);
   background-position: left top;
   margin-top: 20px;
+  position: relative;
+  z-index: 10;
 }
 
 header #gnb {

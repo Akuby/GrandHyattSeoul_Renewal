@@ -25,44 +25,6 @@ $('#roomSelect ul li').on('click', function (e) {
     })
 })
 
-// Slider cursor 
-$('#tip').hide()
-$('.swiper').each(function() {
-$(this).append('<div id="tip">drag</div>');
-$(this).on('mouseenter', function () {
-  $(this).css({
-    // cursor: 'none'
-  })
-  $('#tip')
-    .show()
-}).on('mouseleave', function () {
-  $('#tip').hide();
-}).on('mousemove', function (e) {
-  $('#tip').css({
-    top: e.offsetY + 5,
-    left: e.offsetX + 5
-  })
-}).on('mousedown', function (e) {
-  $('#tip').css({
-    top: e.offsetY + 5,
-    left: e.offsetX + 5
-  })
-})
-})
-
-
-
-
-
-
-
 const swiper = new Swiper(".mySwiper", {
-  pagination: {
-    el: ".swiper-pagination",
-    type: "progressbar",
-  },
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev",
-  },
+  grabCursor: true
 });
