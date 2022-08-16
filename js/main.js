@@ -1,7 +1,7 @@
 // 메인 문구 애니메이션
-$('header > p').animate({
-  opacity: 1,
-  top: $('header').height() / 2 - 40
+$('header > p').delay(1000).animate({
+  opacity: 1
+  // top: $('header').height() / 2 - 40
 }, 1000, 'easeOutQuad')
 
 // 메인화면 페이드아웃 슬라이더

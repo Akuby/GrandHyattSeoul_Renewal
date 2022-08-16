@@ -89,6 +89,7 @@ article .swiper {
   max-width: 60vw;
   overflow: hidden;
   position: relative;
+  margin: auto 0;
 }
 
 article:nth-of-type(2n) {
