@@ -1,6 +1,6 @@
 // 헤더 애니메이션
 $('#sub_rooms').prepend('<div class="bg"><div></div></div>')
-$('#sub_rooms > div.bg').
+
 $('#sub_rooms > h1').animate({
   opacity: 1
 }, 1000)
