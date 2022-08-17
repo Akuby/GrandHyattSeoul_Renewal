@@ -187,34 +187,34 @@ let resizing = function () {
   liLength = $('.promo-slider ul li').innerWidth() + 40;
   if (winWidth <= 899) { // 모바일 환경
     $('.backgroundSlider').hide()
-    $('.promo-slider').addClass('swiper mySwiper');
+    $('.promo-slider').addClass('swiper mySwiper1');
     $('.promo-slider ul').addClass('swiper-wrapper');
     $('.promo-slider ul li').each(function () {
       $(this).addClass('swiper-slide')
     })
-    let swiper = new Swiper(".mySwiper", {
+    let swiper = new Swiper(".mySwiper1", {
       pagination: {
         el: ".swiper-pagination",
       },
     });
-    $('.twin-wrap').addClass('swiper mySwiper');
+    $('.twin-wrap').addClass('swiper mySwiper2');
     $('.twin-wrap > ul').addClass('swiper-wrapper');
 
     $('.twin-wrap > ul > li').each(function () {
       $(this).addClass('swiper-slide').css({ width: '85vw'})
     })
-    let swiper2 = new Swiper(".mySwiper", {
+    let swiper2 = new Swiper(".mySwiper2", {
       slidesPerView: "auto",
       centeredSlides: true
     });
   } else { // 모바일 환경 X
     $('.backgroundSlider').show()
-    $('.promo-slider').removeClass('swiper mySwiper').children('div.swiper-pagination').remove();
+    $('.promo-slider').removeClass('swiper mySwiper1').children('div.swiper-pagination').remove();
     $('.promo-slider ul').removeClass('swiper-wrapper');
     $('.promo-slider ul li').each(function () {
       $(this).removeClass('swiper-slide')
     });
-    $('.twin-wrap').removeClass('swiper mySwiper');
+    $('.twin-wrap').removeClass('swiper mySwiper2');
     $('.twin-wrap > ul').removeClass('swiper-wrapper');
     $('.twin-wrap > ul > li').each(function () {
       $(this).removeClass('swiper-slide')
@@ -222,7 +222,7 @@ let resizing = function () {
   }
 
   // rooms, dining 영역 조절
-
+  $('#dining p').text('11개의 레스토랑과 바의 아름다운 야경을 즐기며 다양한 요리와 와인, 칵테일 등을 즐겨보시기 바랍니다.')
   $('.rooms-slider').css({
     marginLeft: -$('.rooms-slider li').width() * $('.rooms-pagination a.on').index()
   })
