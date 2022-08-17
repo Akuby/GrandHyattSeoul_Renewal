@@ -187,7 +187,7 @@ let resizing = function () {
   liLength = $('.promo-slider ul li').innerWidth() + 40;
   if (winWidth <= 899) { // 모바일 환경
     $('.backgroundSlider').hide()
-    $('.promo-slider').addClass('swiper mySwiper').append($('<div class="swiper-pagination"></div>'));
+    $('.promo-slider').addClass('swiper mySwiper');
     $('.promo-slider ul').addClass('swiper-wrapper');
     $('.promo-slider ul li').each(function () {
       $(this).addClass('swiper-slide')
@@ -199,8 +199,9 @@ let resizing = function () {
     });
     $('.twin-wrap').addClass('swiper mySwiper');
     $('.twin-wrap > ul').addClass('swiper-wrapper');
+
     $('.twin-wrap > ul > li').each(function () {
-      $(this).addClass('swiper-slide')
+      $(this).addClass('swiper-slide').css({ width: '85vw'})
     })
     let swiper2 = new Swiper(".mySwiper", {
       slidesPerView: "auto",
@@ -275,7 +276,9 @@ let resizing = function () {
 }
 
 resizing();
-$(window).on('resize', resizing)
+$(window).on('resize',  _.debounce(function() {
+  resizing();
+}, 100))
 
 
 let curScr, esgPos, roomPos, dinPos, memPos;

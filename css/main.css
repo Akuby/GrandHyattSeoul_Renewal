@@ -841,7 +841,6 @@ form fieldset label {
 @media screen and (max-width:1199px) {
   header > p {
     font-size: 45px;
-    left: calc(50% - 421px);
   }
   form {
     width: 900px;

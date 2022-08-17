@@ -1,14 +1,18 @@
 // 헤더 애니메이션
 $('#sub_rooms').prepend('<div class="bg"><div></div></div>')
 
-$('#sub_rooms > h1').animate({
+$('.bg').animate({
+  opacity:1
+}, 10).css({transform:'scale(1.08)'});
+
+$('#sub_rooms > h1').delay(600).animate({
   opacity: 1
 }, 1000)
 setTimeout(() => {
   $('#sub_rooms > p').animate({
     opacity: 1
   }, 1000)
-}, 200);
+}, 1100);
 
 // room selection
 $('#roomSelect ul li').on('click', function (e) {

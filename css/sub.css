@@ -146,12 +146,28 @@ article .contentBox>a.btn:hover::after {
 
 /* HEADER */
 header#sub_rooms {
-  background: url(../asstes_sub/main-1.png) no-repeat top -1px center / cover;
+  background: none;
   position: relative;
   overflow: hidden;
   height: 100vh + 1px;
 }
-
+header#sub_rooms .bg {
+  display: block;
+  position: absolute;
+  top: -20px;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 0;
+  transform-origin: center;
+  transform: scale(1);
+  transition: transform 1.8s;
+}
+header#sub_rooms .bg > div {
+  width: 100%;
+  height: 105%;
+  background: url(../asstes_sub/main-1.png) no-repeat top center / cover;
+}
 header#sub_rooms>h1 {
   position: absolute;
   font-size: 65px;
@@ -159,7 +175,7 @@ header#sub_rooms>h1 {
   font-family: 'Noto Sans KR', sans-serif;
   text-shadow: 0px 0px 7px rgb(39, 39, 39);
   color: #fff;
-  left: calc(50% - 85px);
+  left: calc(50% - 100px);
   top: 39%;
   opacity: 0;
 }
