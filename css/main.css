@@ -1134,7 +1134,7 @@ form fieldset label {
   .dateWrap:first-of-type::after {
     width: 20px;
     border-bottom: 1px solid #ccc;
-    right: 0%;
+    right: -20px;
     top: 65px;
   }
 

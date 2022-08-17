@@ -151,20 +151,16 @@ let snsMoving2 = function () {
 }
 
 let autoMoving = function (winWidth, stateSns) {
-  // console.log(winWidth, stateSns)
   if (winWidth > 1200 && stateSns == 1) {
-    // console.log('start 1200이상')
     clearInterval(timer)
     stateSns = 2;
     timer = setInterval(snsMoving1, 10);
   } else if (winWidth <= 1200 && stateSns == 2) {
-    // console.log('start 1200이하')
     clearInterval(timer)
     stateSns = 1;
     timer = setInterval(snsMoving2, 10);
   } else if (winWidth <= 899 && stateSns == 3) {
     clearInterval(timer)
-    // console.log('stop 900 이하')
     $('.posts ul').css({
       marginLeft: 'auto'
     })
@@ -207,7 +203,9 @@ let resizing = function () {
       slidesPerView: "auto",
       centeredSlides: true
     });
-  } else { // 모바일 환경 X
+    $('#dining p').text('11개의 레스토랑과 바의 아름다운 야경을 즐기며 다양한 요리와 와인, 칵테일 등을 즐겨보시기 바랍니다.')
+  } 
+  else { // 모바일 환경 X
     $('.backgroundSlider').show()
     $('.promo-slider').removeClass('swiper mySwiper1').children('div.swiper-pagination').remove();
     $('.promo-slider ul').removeClass('swiper-wrapper');
@@ -219,10 +217,11 @@ let resizing = function () {
     $('.twin-wrap > ul > li').each(function () {
       $(this).removeClass('swiper-slide')
     })
+    $('#dining p').html('11개의 레스토랑과 바의 아름다운 야경을 즐기며<br>다양한 요리와 와인, 칵테일 등을 즐겨보시기 바랍니다.')
   }
 
   // rooms, dining 영역 조절
-  $('#dining p').text('11개의 레스토랑과 바의 아름다운 야경을 즐기며 다양한 요리와 와인, 칵테일 등을 즐겨보시기 바랍니다.')
+  
   $('.rooms-slider').css({
     marginLeft: -$('.rooms-slider li').width() * $('.rooms-pagination a.on').index()
   })

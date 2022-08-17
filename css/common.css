@@ -411,36 +411,37 @@ footer .familySites li a {
   display: block;
   text-indent: -999em;
   background: url(../assets/sprite.png) no-repeat;
+  background-size: 360px;
 }
 
 footer .familySites li:first-child a {
-  width: 79px;
+  width:62px;
   height: 39px;
-  background-position: top -57px left -231px;
+  background-position: top -46px left -201px;
 }
 
 footer .familySites li:nth-child(2) a {
-  width: 75px;
+  width: 61px;
   height: 38px;
-  background-position: top -233px left -334px;
+  background-position: top -197px left -286px;
 }
 
 footer .familySites li:nth-child(3) a {
-  width: 105px;
-  height: 40px;
-  background-position: top -150px left -231px;
+  width: 90px;
+  height: 39px;
+  background-position: top -124px left -198px;
 }
 
 footer .familySites li:nth-child(4) a {
-  width: 105px;
+  width: 89px;
   height: 40px;
-  background-position: top -241px left -231px;
+  background-position: top -201px left -196px;
 }
 
 footer .familySites li:nth-child(5) a {
-  width: 51px;
-  height: 50px;
-  background-position: top -158px left -335px;
+  width: 49px;
+  height: 49px;
+  background-position: top -133px left -283px;
 }
 
 footer>div:nth-child(3) {
@@ -580,7 +581,7 @@ footer>div:last-child .footer_sns {
     position: relative;
     padding-top: 20px;
     height: 60vh;
-    background: url(../assets/main-1.png) no-repeat top right -150px / cover;
+    background: url(../assets/main-1.png) no-repeat top right 0px / cover;
   }
 
   #navWrap.desktop {
@@ -792,10 +793,11 @@ footer>div:last-child .footer_sns {
   }
 
   footer .familySites {
+    align-items: center;
     order: 2;
     margin-top: 0px;
     width: 100%;
-    height: 190px;
+    height: 148px;
     max-width: 100%;
     background: #4b4642;
     border-top: 1px solid #615b56;
@@ -804,7 +806,8 @@ footer>div:last-child .footer_sns {
   }
 
   footer .familySites li {
-    width: 105px;
+    width: fit-content;
+    height: 65px;
     margin: 0 10px;
     display: flex;
     align-items: center;
