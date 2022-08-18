@@ -596,7 +596,7 @@ footer>div:last-child .footer_sns {
 
   div.mobile a {
     margin: 0 auto;
-    width: 155px;
+    width: 115px;
     height: 38px;
     background-size: 294px;
   }
@@ -617,7 +617,16 @@ footer>div:last-child .footer_sns {
   header>a.mobile.min {
     background: url(../assets/sprite.png) no-repeat top -213px left -57px;
   }
-
+  header > .fadeOut {
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 90;
+    opacity: 0;
+  }
   #m_navWrap.mobile {
     position: fixed;
     top: 0;
@@ -629,24 +638,18 @@ footer>div:last-child .footer_sns {
     flex-direction: column;
     z-index: 100;
   }
-
-  #m_navWrap.mobile:hover {
-    height: 100vh;
-    background: #fff;
-  }
-
   #m_navWrap.mobile > a.mobile {
     position: absolute;
-    right: 20px;
-    top: 20px;
+    right: 17px;
+    top: 25px;
     width: 30px;
     height: 30px;
-    background: url(../assets/sprite.png) no-repeat top -123px left -56px;
+    background: url(../assets/sprite.png) no-repeat top -94px left -43px / 327px;
     text-indent: -9999em;
   }
 
   #m_gnb {
-    min-height: 280px;
+    min-height: 235px;
     background: #f5e8d9;
     overflow: hidden;
     height: 29vh;
@@ -654,7 +657,7 @@ footer>div:last-child .footer_sns {
 
   #m_gnb figure {
     width: 300px;
-    margin: 40px auto 0;
+    margin: 25px auto 0;
     text-align: center;
   }
 
@@ -665,18 +668,18 @@ footer>div:last-child .footer_sns {
     color: #fff;
     line-height: 21px;
     background: #333;
-    margin: 12px auto 0;
+    margin: 10px auto 0;
   }
 
   #m_gnb figure figcaption {
-    margin-top: 13px;
-    font-size: 21px;
+    margin-top: 10px;
+    font-size: 1.1em;
     font-weight: 400;
   }
 
   #m_gnb ul {
     width: 80%;
-    margin: 20px auto 10px;
+    margin: 16px auto 10px;
     display: flex;
     background: #fff;
     border-radius: 25px;
@@ -694,12 +697,12 @@ footer>div:last-child .footer_sns {
     height: 20px;
     border-right: 1px solid #d1cdcd;
     top: 16px;
-    right: -10vw;
+    right: -8vw;
   }
 
   #m_gnb ul li a {
-    line-height: 50px;
-    font-size: 14px;
+    line-height: 44px;
+    font-size: 0.85em;
     letter-spacing: 0.02em;
     color: #585858;
   }
@@ -721,12 +724,13 @@ footer>div:last-child .footer_sns {
   #m_lnb .ul1 > li {
     font-size: 14px;
     font-weight: 400;
-    padding: 15px 0;
+    padding: 15px 0 0;
   }
 
   #m_lnb .ul1 > li > a {
     display: block;
     color: #b7b7b7;
+    font-size: 1em;
   }
 
   #m_lnb .ul1 > li.onList a {
@@ -752,6 +756,10 @@ footer>div:last-child .footer_sns {
     font-weight: 300;
   }
 
+  #m_lnb .ul2 > li > a {
+    font-size: 0.9em;
+  }
+
   #m_etc {
     min-height: 48px;
     width: 100%;
@@ -763,7 +771,7 @@ footer>div:last-child .footer_sns {
   #m_etc a {
     display: inline-block;
     width: 49%;
-    font-size: 14px;
+    font-size: 0.85em;
     position: relative;
   }
 
@@ -771,9 +779,9 @@ footer>div:last-child .footer_sns {
     content: "";
     display: block;
     position: absolute;
-    height: 20px;
+    height: 18px;
     border-right: 1px solid #d1cdcd;
-    top: 19px;
+    top: 16px;
     right: -1vw;
   }
   a.top_btn {

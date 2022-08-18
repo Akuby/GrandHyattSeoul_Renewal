@@ -22,29 +22,37 @@ $(window).on('scroll', function () {
   }
 })
 
-// document.addEventListener('wheel', _.throttle(function (e) {
+// $('html, body').on('mousewheel DOMMouseScroll', _.debounce(function (e) {
 //   if ($(document).scrollTop() >= $('header').innerHeight()) {
-//   if (e.wheelDelta < 0) {
-//     $('#navWrap.min:not(:animated)').animate({
-//       top: -130
-//     }, 200)
-//   } else if (e.wheelDelta > 0) {
-//     $('#navWrap.min:not(:animated)').animate({
-//       top: 0
-//     }, 200)
+//     let scrollDelta = e.originalEvent.deltaY
+//     if (scrollDelta > 0) {
+//       $('#navWrap.min:not(:animated)').animate({
+//         top: -130
+//       }, 200)
+//     } else if (scrollDelta < 0) {
+//       $('#navWrap.min:not(:animated)').animate({
+//         top: 0
+//       }, 200)
+//     }
 //   }
-// }
-// }, 700));
+// }, 200));
 
 $('header > a.mobile').on('click', function () {
   $('#m_navWrap').animate({
     right: 0
-  })
+  }).before('<div class="fadeOut"></div>')
+  $('.fadeOut').animate({opacity:1}, 500)
+  $('body').css({overflow:'hidden'})
 })
 $('#m_navWrap > a.mobile').on('click', function () {
   $('#m_navWrap').animate({
     right: '-80vw'
   })
+  $('.fadeOut').animate({opacity:0}, 500, function() {
+    $(this).remove()
+  })
+  $('body').css({overflow:'visible'})
+
 })
 $('#m_lnb .ul1 > li').on('click', function () {
   $(this).siblings('li').removeClass('onList');
@@ -59,4 +67,3 @@ $('a.top_btn').on('click', function (e) {
   });
   $('html, body').scrollTop($('#header'))
 })
-
