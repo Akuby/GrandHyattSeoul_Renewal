@@ -22,21 +22,6 @@ $(window).on('scroll', function () {
   }
 })
 
-// $('html, body').on('mousewheel DOMMouseScroll', _.debounce(function (e) {
-//   if ($(document).scrollTop() >= $('header').innerHeight()) {
-//     let scrollDelta = e.originalEvent.deltaY
-//     if (scrollDelta > 0) {
-//       $('#navWrap.min:not(:animated)').animate({
-//         top: -130
-//       }, 200)
-//     } else if (scrollDelta < 0) {
-//       $('#navWrap.min:not(:animated)').animate({
-//         top: 0
-//       }, 200)
-//     }
-//   }
-// }, 200));
-
 $('header > a.mobile').on('click', function () {
   $('#m_navWrap').animate({
     right: 0
