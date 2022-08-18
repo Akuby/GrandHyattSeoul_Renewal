@@ -60,7 +60,8 @@ $('.posts a').each(function () {
     backgroundImage: `url(./assets/sns-${$(this).parent().data('bg')}.png)`
   })
 })
-$('#facilities article').each(function () {
+let faclBg = function() {
+  $('#facilities article').each(function () {
   if ($(window).innerWidth() < 899) {
     $(this).css({
       backgroundImage: `url(./assets/mobile_facilities-${$(this).index()+1}.png)`
@@ -71,12 +72,15 @@ $('#facilities article').each(function () {
     })
   }
 })
+}
+faclBg();
+
 // form
 $('#reserv_content li').on('click', function () {
-  $(this).siblings('li').removeClass('selected')
-  $(this).addClass('selected')
-  $('#reserv_content').prepend($(this))
+  $(this).addClass('selected').siblings('li').removeClass('selected')
+  $(this).parent().prepend($(this))
 })
+
 // special Offers
 let liLength = $('.promo-slider ul li').innerWidth() + 40;
 let prevSliding = function () {
@@ -168,12 +172,13 @@ let autoMoving = function (winWidth, stateSns) {
 }
 autoMoving($(window).width())
 
+// 포스팅에 마우스 진입 시 멈춤
 $('.posts ul li a').mouseenter(function() {
-  // console.log('on')
   clearInterval(timer)
 }).mouseleave(function() {
   autoMoving($(window).width(), stateSns);
 })
+
 // 리사이즈
 let resizing = function () {
   let winWidth = $(window).innerWidth();
@@ -205,7 +210,7 @@ let resizing = function () {
     });
     $('#dining p').text('11개의 레스토랑과 바의 아름다운 야경을 즐기며 다양한 요리와 와인, 칵테일 등을 즐겨보시기 바랍니다.')
   } 
-  else { // 모바일 환경 X
+  else { // DESKTOP 환경
     $('.backgroundSlider').show()
     $('.promo-slider').removeClass('swiper mySwiper1').children('div.swiper-pagination').remove();
     $('.promo-slider ul').removeClass('swiper-wrapper');
@@ -239,17 +244,7 @@ let resizing = function () {
   });
 
   // facilities 영역 조절
-  $('#facilities article').each(function () {
-    if (winWidth <= 899) {
-      $(this).css({
-        backgroundImage: `url(./assets/mobile_facilities-${$(this).index()+1}.png)`
-      })
-    } else {
-      $(this).css({
-        backgroundImage: `url(./assets/facilities-${$(this).index()+1}.png)`
-      })
-    }
-  })
+  faclBg();
 
   // membership 영역 조절
   if (winWidth < 1200) {
