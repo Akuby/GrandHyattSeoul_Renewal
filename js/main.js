@@ -30,11 +30,11 @@ let psliderImage = function () {
   $('.promo-slider ul li').each(function () {
     if ($(window).innerWidth() < 899) {
       $(this).css({
-        backgroundImage: `url(./assets/mobile_offer-${$(this).index()+1}.png)`
+        backgroundImage: `url(./assets/mobile_offer-${$(this).index()+1}.webp)`
       })
     } else {
       $(this).css({
-        backgroundImage: `url(./assets/offer-${$(this).index()+1}.png)`
+        backgroundImage: `url(./assets/offer-${$(this).index()+1}.webp)`
       })
     }
   })
@@ -42,33 +42,28 @@ let psliderImage = function () {
 psliderImage()
 $('.rooms-slider li').each(function () {
   $(this).css({
-    backgroundImage: `url(./assets/room-${$(this).index()+1}.png)`
+    backgroundImage: `url(./assets/room-${$(this).index()+1}.webp)`
   })
 })
 $('.dining-slider li').each(function () {
   $(this).css({
-    backgroundImage: `url(./assets/dining-${$(this).index()+1}.png)`
-  })
-})
-$('#facilities article').each(function () {
-  $(this).css({
-    backgroundImage: `url(./assets/facilities-${$(this).index()+1}.png)`
+    backgroundImage: `url(./assets/dining-${$(this).index()+1}.webp)`
   })
 })
 $('.posts a').each(function () {
   $(this).css({
-    backgroundImage: `url(./assets/sns-${$(this).parent().data('bg')}.png)`
+    backgroundImage: `url(./assets/sns-${$(this).parent().data('bg')}.webp)`
   })
 })
 let faclBg = function() {
   $('#facilities article').each(function () {
   if ($(window).innerWidth() < 899) {
     $(this).css({
-      backgroundImage: `url(./assets/mobile_facilities-${$(this).index()+1}.png)`
+      backgroundImage: `url(./assets/mobile_facilities-${$(this).index()+1}.webp)`
     })
   } else {
     $(this).css({
-      backgroundImage: `url(./assets/facilities-${$(this).index()+1}.png)`
+      backgroundImage: `url(./assets/facilities-${$(this).index()+1}.webp)`
     })
   }
 })

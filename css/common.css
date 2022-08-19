@@ -189,7 +189,7 @@ body::-webkit-scrollbar-track {
 header {
   position: relative;
   height: 100vh;
-  background: url(../assets/main-1.png) no-repeat top center / cover;
+  background: url(../assets/main-1.webp) no-repeat top center / cover;
 }
 
 header #navWrap {
@@ -256,7 +256,7 @@ header h1 a {
   width: 226px;
   height: 54px;
   text-indent: -9999em;
-  background-image: url(../assets/sprite.png);
+  background-image: url(../assets/sprite.webp);
   background-position: left top;
   margin-top: 20px;
   position: relative;
@@ -382,7 +382,7 @@ footer {
   width: 100%;
   height: 320px;
   color: #bbb;
-  background: url(../assets/footer-bg.png) repeat top center / 1350px;
+  background: url(../assets/footer-bg.webp) repeat top center / 1350px;
 }
 
 footer a {
@@ -396,7 +396,7 @@ footer>span {
   left: 20%;
   width: 226px;
   height: 54px;
-  background: url(../assets/sprite.png) no-repeat left bottom;
+  background: url(../assets/sprite.webp) no-repeat left bottom;
 }
 
 footer .familySites {
@@ -410,7 +410,7 @@ footer .familySites {
 footer .familySites li a {
   display: block;
   text-indent: -999em;
-  background: url(../assets/sprite.png) no-repeat;
+  background: url(../assets/sprite.webp) no-repeat;
   background-size: 360px;
 }
 
@@ -499,7 +499,7 @@ footer>div:last-child .footer_sns a {
   height: 62px;
   margin-right: 10px;
   text-indent: -999em;
-  background: url(../assets/sprite.png) no-repeat;
+  background: url(../assets/sprite.webp) no-repeat;
   background-position: top -281px left -81px;
 }
 
@@ -544,7 +544,7 @@ a.top_btn span {
   display: block;
   width: 60px;
   height: 60px;
-  background: url(../assets/sprite.png) no-repeat;
+  background: url(../assets/sprite.webp) no-repeat;
   background-position: left 6px top -196px;
 }
 @media screen and (max-width:1199px) {
@@ -581,7 +581,7 @@ footer>div:last-child .footer_sns {
     position: relative;
     padding-top: 20px;
     height: 60vh;
-    background: url(../assets/main-1.png) no-repeat top right 0px / cover;
+    background: url(../assets/main-1.webp) no-repeat top right 0px / cover;
   }
 
   #navWrap.desktop {
@@ -611,11 +611,11 @@ footer>div:last-child .footer_sns {
     color: #fff;
     top: 20px;
     z-index: 90;
-    background: url(../assets/sprite.png) no-repeat top -167px left -57px;
+    background: url(../assets/sprite.webp) no-repeat top -167px left -57px;
   }
 
   header>a.mobile.min {
-    background: url(../assets/sprite.png) no-repeat top -213px left -57px;
+    background: url(../assets/sprite.webp) no-repeat top -213px left -57px;
   }
   header > .fadeOut {
     width: 100vw;
@@ -644,7 +644,7 @@ footer>div:last-child .footer_sns {
     top: 25px;
     width: 30px;
     height: 30px;
-    background: url(../assets/sprite.png) no-repeat top -94px left -43px / 327px;
+    background: url(../assets/sprite.webp) no-repeat top -94px left -43px / 327px;
     text-indent: -9999em;
   }
 
