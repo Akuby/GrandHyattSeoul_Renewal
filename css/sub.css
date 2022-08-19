@@ -166,7 +166,7 @@ header#sub_rooms .bg {
 header#sub_rooms .bg > div {
   width: 100%;
   height: 105%;
-  background: url(../asstes_sub/main-1.png) no-repeat top center / cover;
+  background: url(../asstes_sub/main-1.webp) no-repeat top center / cover;
 }
 header#sub_rooms>h1 {
   position: absolute;
