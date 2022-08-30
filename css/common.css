@@ -1,6 +1,11 @@
 @charset "UTF-8";
 
 @font-face {
+  font-family: "Noto Sans KR";
+  src: url("../assets/fonts/NotoSansKR-Regular.otf") format("opentype");
+}
+
+@font-face {
   font-family: "BaskervilleOldFace";
   src: url("../assets/fonts/BASKVILL.ttf") format("truetype");
   font-weight: normal;
