@@ -1086,6 +1086,7 @@ form fieldset label {
   #reserv_content li {
     width: 100%;
     position: static;
+    font-size: 26px;
   }
 
   #reserv_content li.selected {
@@ -1113,7 +1114,7 @@ form fieldset label {
 
   .reserv_date {
     line-height: 50px;
-    font-size: 28px;
+    font-size: 24px;
   }
 
   .dateWrap {
@@ -1199,10 +1200,10 @@ form fieldset label {
     height: 600px;
   }
   #specialOffers h2 {
-    font-size: 1.8em;
+    font-size: 1.45em;
   }
   .promo-slider {
-    margin: 50px auto 0;
+    margin: 0 auto;
     width: 90%;
     height: 550px;
   }
@@ -1230,15 +1231,15 @@ form fieldset label {
   }
 
   .promo-slider a dl {
-    padding-top: 280px;
+    padding-top: 245px;
   }
 
   .promo-slider a dt {
-    font-size: 1.35em;
+    font-size: 1em;
   }
 
   .promo-slider a dd {
-    font-size: 0.9em;
+    font-size: 0.7em;
   }
 
   .promo-control {
@@ -1265,10 +1266,10 @@ form fieldset label {
 
   #ESG>section article h4 {
     text-align: center;
-    font-size: 1.85em;
+    font-size: 1.45em;
   }
   #ESG>section article p {
-    font-size: 0.9em;
+    font-size: 0.7em;
   }
   #ESG>section article img {
     width: 100%;
@@ -1277,15 +1278,25 @@ form fieldset label {
   }
 
   #ESG>section article .btn_black {
+    width: 120px;
+    line-height: 35px;
     margin: 40px auto;
+    font-size: 0.7em;
   }
 
+  #ESG svg {
+    display: none;
+  }
+  .btn_black:hover {
+    background-color: #000;
+    color: #fff;
+  }
   #rooms {
     margin-top: 700px;
   }
 
   #rooms h2 {
-    top: -180px;
+    top: -165px;
     left: 5%;
   }
 
@@ -1307,7 +1318,7 @@ form fieldset label {
     height: 500px;
   }
   .twin ul li span {
-    font-size: 2.2em;
+    font-size: 1.85em;
   }
   .twin ul li:first-child {
     margin-left: 0;
@@ -1317,12 +1328,13 @@ form fieldset label {
     display: none;
   }
   .twin h2 {
-    font-size: 1.85em;
+    font-size: 1.45em;
     line-height: 1.35em;
   }
   .twin p {
     max-width: 76vw;
-    font-size: 0.9em;
+    font-size: 0.7em;
+    line-height: 1.8em;
   }
 
   #rooms {
@@ -1340,13 +1352,13 @@ form fieldset label {
 
   #rooms a.btn_trpt,
   #dining a.btn_trpt {
-    width: 42px;
-    height: 42px;
+    width: 37px;
+    height: 37px;
     border-radius: 50%;
     text-indent: -9999em;
     line-height: 50px;
     border-color: #000;
-    background: url(../assets/sprite.webp) no-repeat top -103px left 4px / 740%;
+    background: url(../assets/sprite.webp) no-repeat top -91px left 4px / 740%;
     top: -96px;
     left: auto;
     right: 5%;
@@ -1392,11 +1404,12 @@ form fieldset label {
 
   #facilities {
     min-height: auto;
-    height: 70vh;
+    height: 45vh;
+    margin-bottom: 10vh;
   }
 
   #facilities h2 {
-    font-size: 33px;
+    font-size: 1.45em;
   }
 
   .facility_wrap {
@@ -1426,7 +1439,7 @@ form fieldset label {
 
   #facilities article dl dt {
     text-shadow: 0px 0px 8px rgba(0, 0, 0, 0.7);
-    font-size: 1.85em;
+    font-size: 1.45em;
   }
 
   #facilities article dl dd {
@@ -1466,7 +1479,7 @@ form fieldset label {
 
   #membership article h3 {
     padding-top: 0px;
-    font-size: 1.55em;
+    font-size: 1.45em;
   }
 
   #membership article a {
@@ -1490,7 +1503,7 @@ form fieldset label {
   #wedding {
     height: 90vh;
     padding-top: 33vh;
-    margin-top: 7em;
+    margin-top: 10vh;
     border: none;
     background: url(../assets/mobile_wedding.webp) center / cover;
   }
@@ -1517,7 +1530,7 @@ form fieldset label {
 
   #wedding h2 {
     color: #fff;
-    font-size: 1.75em;
+    font-size: 1.45em;
     position: relative;
     z-index: 1;
   }
@@ -1548,12 +1561,13 @@ form fieldset label {
   }
 
   #sns h3 {
-    font-size: 1.85em;
+    font-size: 1.45em;
   }
 
   #sns p {
     font-size: 0.9em;
     margin-top: 1em;
+    word-break: keep-all;
   }
 
   #sns .posts {

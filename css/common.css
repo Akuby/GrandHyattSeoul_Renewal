@@ -1,11 +1,6 @@
 @charset "UTF-8";
 
 @font-face {
-  font-family: "Noto Sans KR";
-  src: url("../assets/fonts/NotoSansKR-Regular.otf") format("opentype");
-}
-
-@font-face {
   font-family: "BaskervilleOldFace";
   src: url("../assets/fonts/BASKVILL.ttf") format("truetype");
   font-weight: normal;
@@ -601,7 +596,7 @@ footer>div:last-child .footer_sns {
 
   div.mobile a {
     margin: 0 auto;
-    width: 160px;
+    width: 80px;
     height: 38px;
     background-size: 294px;
   }
@@ -661,7 +656,7 @@ footer>div:last-child .footer_sns {
   }
 
   #m_gnb figure {
-    width: 300px;
+    width: 260px;
     margin: 25px auto 0;
     text-align: center;
   }
