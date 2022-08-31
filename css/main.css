@@ -1210,6 +1210,7 @@ form fieldset label {
 
   .promo-slider ul {
     width: 600%;
+    margin-top: 30px;
   }
 
   .promo-slider ul li {
@@ -1231,7 +1232,7 @@ form fieldset label {
   }
 
   .promo-slider a dl {
-    padding-top: 245px;
+    padding-top: 290px;
   }
 
   .promo-slider a dt {
