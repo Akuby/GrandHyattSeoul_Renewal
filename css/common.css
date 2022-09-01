@@ -353,7 +353,10 @@ header #lnb .wrap ul li ul li a {
   position: relative;
   padding-bottom: 5px;
 }
-
+header #lnb .wrap ul li ul li a[href="./room.html"] {
+  color: rgb(179, 15, 15);
+  font-weight: 700;
+}
 header #lnb .wrap ul li ul li a::after {
   position: absolute;
   /*기준을 a로 해주고, width를 100%를 주면 완성!*/
