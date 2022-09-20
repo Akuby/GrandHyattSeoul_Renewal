@@ -1403,12 +1403,6 @@ form fieldset label {
     text-align: right;
   }
 
-  #facilities {
-    min-height: auto;
-    height: 45vh;
-    margin-bottom: 10vh;
-  }
-
   #facilities h2 {
     font-size: 1.45em;
   }
